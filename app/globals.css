@@ -1,0 +1,237 @@
+/* Font Inclusions */
+@font-face {
+  font-family: "Olde English";
+  src: url(/public/OldeEnglish.ttf);
+}
+
+/* CSS Root Variables Template */
+
+:root {
+  /* Shade Variables */
+  --white: #fffafa;
+  --black: #1e1e1e;
+  --grey: #808080;
+
+  /* Color Variables */
+  --color-main: #04130c;
+  --color-secondary: #ba983a;
+  /* --color-tertiary: ;
+  --color-accent: ;
+  --color-neutral: ; */
+
+  /* Border Radii */
+  --border-rad-large: 25px;
+  --border-rad-medium: 12.5px;
+  --border-rad-small: 5px;
+
+  /* Padding */
+  --padding-main: 2.5rem;
+  --padding-main-mobile: 0.5rem 1rem;
+  --padding-navigation: 1.25rem 1.5rem;
+  --padding-navigation-mobile: 1rem;
+
+  /* Button Padding */
+  --button-padding: 0.75rem 1rem;
+  --button-padding-mobile: 0.5rem 0.75rem;
+
+  /* Font Families */
+  --secondary-font: "Olde English";
+  --tertiary-font: "Times New Roman", Times, serif;
+
+  /* Font Sizing */
+  --font-size-heading: 7vw;
+  --font-size-heading-mobile: 10vw;
+
+  --font-size-subtitle: calc(var(--font-size-heading) * 0.75);
+  --font-size-subtitle-mobile: calc(var(--font-size-heading-mobile) * 0.75);
+
+  --font-size-subhead: calc(var(--font-size-heading) * 0.3);
+  --font-size-subhead-mobile: calc(var(--font-size-heading-mobile) * 0.3);
+
+  --font-size-text: calc(var(--font-size-heading) * 0.22);
+  --font-size-text-mobile: calc(var(--font-size-heading-mobile) * 0.22);
+
+  --font-size-small: calc(var(--font-size-heading) * 0.08);
+  --font-size-small-mobile: calc(var(--font-size-heading-mobile) * 0.08);
+
+  /* Transition and Effects */
+  --transition-fast: 0.3s ease-in-out;
+  --transition-normal: 0.5s ease-in-out;
+
+  --box-shadow-light: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-heavy: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+
+  /* Animations */
+  --slidedown: slidedown 2s ease forwards;
+  --fadein: fadein 3s ease-in-out forwards;
+  --menu-animate: menuanimate 1s ease-in-out forwards;
+}
+
+/* Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Component and Utility Styles */
+.main-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: var(--button-padding);
+  background-color: var(--white);
+  border-radius: var(--border-rad-large);
+  transition: var(--transition-normal);
+  text-decoration: none;
+
+  color: var(--black);
+}
+.main-button svg{
+  width: 15px;
+  height: 15px;
+}
+.main-button:hover{
+  background-color: var(--color-main);
+  color: var(--color-secondary);
+  transition: var(--transition-normal);
+  box-shadow: 0px 0px 7px 5px rgba(255, 255, 255, 0.05);
+}
+
+.menulink {
+  font-size: var(--font-size-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+
+  padding: 0.75rem 0;
+  border-bottom: solid var(--black) 1px;
+  color: var(--black);
+  font-weight: 100;
+  transition: var(--transition-normal);
+}
+.menulink svg{
+  width: 20px;
+  height: 20px;
+}
+.menulink:hover {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-main);
+  color: var(--color-secondary);
+  transition: var(--transition-normal);
+  border-bottom: solid var(--color-secondary) 1px;
+}
+
+body {
+  background-color: var(--black);
+}
+
+.tag,
+.tag-small {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size-text);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+}
+
+.tag-small {
+  padding: 0.1rem 0.5rem;
+  font-size: calc(var(--font-size-text) * 0.8);
+}
+
+.logo {
+  text-align: center;
+  color: var(--black);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+.logo:hover {
+  color: var(--color-secondary);
+  transition: var(--transition-normal);
+}
+.logo p {
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-text);
+}
+
+/* Loading Styles */
+/* .loading {
+} */
+
+/* Animations */
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    top: -100%;
+  }
+  to {
+    opacity: 1;
+    top: 0%;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes menuanimate {
+  from {
+    opacity: 0;
+    bottom: -100%;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+/* Page Transitions */
+.page-transition {
+  opacity: 0;
+  animation: fadein 2s ease-in-out forwards;
+  animation-fill-mode: both;
+}
+
+/* Media Queries for Responsive Adjustments */
+
+/* Main */
+@media (min-width: 1200px) {
+  /* Tablet Styles */
+  /* Adjust styles as needed */
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  /* Tablet Styles */
+  /* Adjust styles as needed */
+  .logo p {
+    font-size: var(--font-size-subhead);
+  }
+}
+
+/* Cellphone */
+@media (max-width: 500px) {
+  /* Mobile Styles */
+  /* Adjust styles as needed */
+  .logo p {
+    font-size: var(--font-size-subhead-mobile);
+  }
+  .main-button{
+    font-size: 0.95rem;
+  }
+  .menulink{
+    font-size: 1.25rem;
+  }
+}

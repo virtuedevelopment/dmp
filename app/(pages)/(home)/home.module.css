@@ -1,0 +1,46 @@
+.hero {
+  height: 95svh;
+  background-color: var(--white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-main);
+}
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: saturate(0);
+}
+.hero h1 {
+  font-size: var(--font-size-subtitle);
+  font-weight: 500;
+  opacity: 0;
+  color: var(--white);
+  z-index: 2;
+
+  animation: var(--fadein);
+  animation-delay: 0.5s;
+}
+
+.hero a{
+  z-index: 2;
+}
+
+@media (max-width: 500px) {
+  /* Mobile Styles */
+  /* Adjust styles as needed */
+ .hero{
+  align-items: center;
+  justify-content: center;
+ }
+ .hero h1{
+  font-size: var(--font-size-heading-mobile);
+  text-align: center;
+ }
+}
