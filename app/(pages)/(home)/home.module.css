@@ -40,7 +40,7 @@
   justify-content: center;
  }
  .hero h1{
-  font-size: var(--font-size-heading-mobile);
+  font-size: var(--font-size-subtitle-mobile);
   text-align: center;
  }
 }

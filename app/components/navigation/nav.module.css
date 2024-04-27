@@ -163,9 +163,6 @@
   .menubarsolid {
     flex-direction: row-reverse;
   }
-  .logo {
-    font-size: 1.75rem;
-  }
   .shop {
     display: none;
   }
@@ -178,5 +175,9 @@
   }
   .megamenulist {
     width: 100%;
+  }
+  .mainmenu h1{
+    font-size: var(--font-size-subhead-mobile);
+    font-weight: 400;
   }
 }

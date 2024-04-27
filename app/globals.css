@@ -39,11 +39,11 @@
   --tertiary-font: "Times New Roman", Times, serif;
 
   /* Font Sizing */
-  --font-size-heading: 7vw;
-  --font-size-heading-mobile: 10vw;
+  --font-size-heading: 8rem;
+  --font-size-heading-mobile: 5rem;
 
-  --font-size-subtitle: calc(var(--font-size-heading) * 0.75);
-  --font-size-subtitle-mobile: calc(var(--font-size-heading-mobile) * 0.75);
+  --font-size-subtitle: calc(var(--font-size-heading) * 0.60);
+  --font-size-subtitle-mobile: calc(var(--font-size-heading-mobile) * 0.60);
 
   --font-size-subhead: calc(var(--font-size-heading) * 0.3);
   --font-size-subhead-mobile: calc(var(--font-size-heading-mobile) * 0.3);
@@ -232,6 +232,6 @@ body {
     font-size: 0.95rem;
   }
   .menulink{
-    font-size: 1.25rem;
+    font-size: var(--font-size-text-mobile)
   }
 }
