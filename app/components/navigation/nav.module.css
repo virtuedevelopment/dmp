@@ -33,6 +33,9 @@
   color: var(--black);
   transition: var(--transition-normal);
 }
+.menubar:hover #logo {
+  content: url("/logo2.svg");
+}
 
 .menubarsolid {
   padding: var(--padding-navigation);
@@ -75,6 +78,9 @@
 .logo:hover {
   transition: var(--transition-normal);
   color: var(--color-secondary) !important;
+}
+.logo:hover img {
+  transition: var(--transition-normal);
 }
 
 .menuButton {
@@ -176,7 +182,7 @@
   .megamenulist {
     width: 100%;
   }
-  .mainmenu h1{
+  .mainmenu h1 {
     font-size: var(--font-size-subhead-mobile);
     font-weight: 400;
   }
