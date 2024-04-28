@@ -8,14 +8,7 @@ export default function Home() {
   return (
     <Transition>
       <section className={styles.hero}>
-        <video
-          src={
-            "https://videos.pexels.com/video-files/6766332/6766332-uhd_3840_2160_25fps.mp4"
-          }
-          loop
-          autoPlay
-          muted
-        ></video>
+        <video src={"/backvid.mp4"} loop autoPlay muted></video>
         <h1>
           Handcrafted <br /> Excellence.
         </h1>
