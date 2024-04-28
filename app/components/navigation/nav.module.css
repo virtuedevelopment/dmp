@@ -33,9 +33,6 @@
   color: var(--black);
   transition: var(--transition-normal);
 }
-.menubar:hover #logo {
-  content: url("/logo2.svg");
-}
 
 .menubarsolid {
   padding: var(--padding-navigation);
@@ -71,13 +68,16 @@
   font-family: var(--secondary-font);
   font-size: var(--font-size-subhead);
   transition: var(--transition-normal);
-  transition: var();
   text-decoration: none;
   color: var(--white);
 }
 .logo:hover {
   transition: var(--transition-normal);
   color: var(--color-secondary) !important;
+}
+.logo img {
+  width: 85px;
+  height: 50px;
 }
 .logo:hover img {
   transition: var(--transition-normal);
@@ -155,7 +155,7 @@
   width: 100%;
   font-size: var(--font-size-subhead);
   padding: 0.75rem 0;
-  border-bottom: solid 1px var(--black);
+  /* border-bottom: solid 1px var(--black); */
   color: var(--black);
 }
 
