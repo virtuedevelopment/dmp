@@ -13,7 +13,7 @@
   --grey: #808080;
 
   /* Color Variables */
-  --color-main: #04130c;
+  --color-main: #061D13;
   --color-secondary: #ba983a;
   /* --color-tertiary: ;
   --color-accent: ;
@@ -51,8 +51,8 @@
   --font-size-text: calc(var(--font-size-heading) * 0.22);
   --font-size-text-mobile: calc(var(--font-size-heading-mobile) * 0.22);
 
-  --font-size-small: calc(var(--font-size-heading) * 0.15);
-  --font-size-small-mobile: calc(var(--font-size-heading-mobile) * 0.15);
+  --font-size-small: calc(var(--font-size-heading) * 0.12);
+  --font-size-small-mobile: calc(var(--font-size-heading-mobile) * 0.12);
 
   /* Transition and Effects */
   --transition-fast: 0.3s ease-in-out;
@@ -75,6 +75,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
+  scroll-behavior: smooth;
 }
 
 /* Component and Utility Styles */
@@ -260,4 +261,3 @@ body {
     font-size: var(--font-size-text-mobile);
   }
 }
-

@@ -38,7 +38,7 @@ export default function MegaMenu({ state, toggle }) {
 
       <Image
         className={styles.menuimg}
-        src={"/man.svg"}
+        src={"/manequin.svg"}
         width={500}
         height={500}
         alt="Man in suit"

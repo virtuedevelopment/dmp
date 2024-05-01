@@ -34,7 +34,36 @@ export default function Home() {
         <Image src={"/material.svg"} width={500} height={500} alt="material" />
       </section>
 
-      <section className={styles.featured}></section>
+      <section className={styles.promotion}>
+        <h3>Alden Classics.</h3>
+      </section>
+
+      <section className={styles.featured}>
+        <Image src={"man.svg"} width={300} height={500} alt="suit model" />
+
+        <div className={styles.infoboxmain}>
+          <h3>Experience</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+            aut cum quam nisi! Recusandae, adipisci, dolorum, modi dolores cum
+            est ipsum sit earum omnis doloribus autem incidunt? Voluptates,
+            atque obcaecati!
+          </p>
+          <span style={{zIndex:'2'}} ><Href  url={"/"} route={"Catalog"} classname={"secondary-button"} /></span>
+        </div>
+
+        <div className={styles.infoboxsub}>
+          <h3>Elegance.</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+            aut cum quam nisi! Recusandae, adipisci, dolorum, modi dolores cum
+            est ipsum sit earum omnis doloribus autem incidunt? Voluptates,
+            atque obcaecati!
+          </p>
+        </div>
+
+        <h1>Stylish & Classic</h1>
+      </section>
 
       <section className={styles.magazines}>
         <h3 style={{ fontWeight: "100" }}>VOGUE</h3>
@@ -42,6 +71,9 @@ export default function Home() {
         <h3 style={{ fontWeight: "100" }}>VOGUE</h3>
         <h3>Forbes</h3>
       </section>
+
+
+
     </Transition>
   );
 }

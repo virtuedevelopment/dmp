@@ -73,6 +73,109 @@
   font-family: var(--tertiary-font);
 }
 
+.featured {
+  min-height: 100svh;
+  background-color: var(--white);
+  position: relative;
+  padding: var(--padding-main);
+}
+.featured img {
+  height: 95%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.featured h1 {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  position: absolute;
+  font-size: 12.5vw;
+  letter-spacing: 10px;
+  font-family: var(--tertiary-font);
+  font-style: italic;
+  color: var(--black);
+  opacity: 0.15;
+}
+
+.infoboxmain {
+  width: 50%;
+  padding: 1rem;
+  position: absolute;
+  left: 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.infoboxmain h3 {
+  font-size: var(--font-size-heading);
+  color: var(--black);
+}
+.infoboxmain p {
+  font-size: var(--font-size-small);
+  font-weight: 100;
+  line-height: 2;
+  width: 60%;
+}
+
+.infoboxsub {
+  width: 45%;
+  padding: 1rem;
+  position: absolute;
+  right: 2.5%;
+  top: 18%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.infoboxsub h3 {
+  width: 100%;
+  font-size: var(--font-size-heading);
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+.infoboxsub p {
+  font-size: var(--font-size-small);
+  font-weight: 100;
+  line-height: 2;
+  width: 60%;
+}
+
+.promotion {
+  min-height: 65svh;
+  background-color: var(--color-main);
+  padding: var(--padding-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.promotion h3 {
+  font-size: var(--font-size-subtitle);
+  color: var(--color-secondary);
+}
+
+@media (max-width: 1000px) {
+  /* Tablet Styles */
+  /* Adjust styles as needed */
+  .infoboxsub h3,
+  .infoboxmain h3 {
+    font-size: var(--font-size-heading-mobile);
+  }
+}
+
 @media (max-width: 500px) {
   /* Mobile Styles */
   /* Adjust styles as needed */
@@ -110,5 +213,19 @@
 
   .magazines {
     display: none;
+  }
+
+  .infoboxsub {
+    display: none;
+  }
+  .infoboxmain {
+    display: none;
+  }
+  .featured h1 {
+    display: none;
+  }
+  .featured img {
+    width: 100%;
+    height: 70%;
   }
 }
