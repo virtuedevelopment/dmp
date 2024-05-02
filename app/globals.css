@@ -31,7 +31,7 @@
   --padding-navigation-mobile: 1rem;
 
   /* Button Padding */
-  --button-padding: 0.75rem 1rem;
+  --button-padding: 0.75rem 1.75rem;
   --button-padding-mobile: 0.5rem 0.75rem;
 
   /* Font Families */
@@ -42,17 +42,23 @@
   --font-size-heading: 7rem;
   --font-size-heading-mobile: 4rem;
 
-  --font-size-subtitle: calc(var(--font-size-heading) * 0.6);
-  --font-size-subtitle-mobile: calc(var(--font-size-heading-mobile) * 0.6);
+  --font-size-heading-max: calc(var(--font-size-heading) * 1.5);
+  --font-size-heading-max-mobile: calc(var(--font-size-heading-mobile) * 1.5);
 
-  --font-size-subhead: calc(var(--font-size-heading) * 0.3);
-  --font-size-subhead-mobile: calc(var(--font-size-heading-mobile) * 0.3);
+  --font-size-head: calc(var(--font-size-heading) * 0.85);
+  --font-size-head-mobile: calc(var(--font-size-heading-mobile) * 0.85);
+
+  --font-size-subtitle: calc(var(--font-size-heading) * 0.66);
+  --font-size-subtitle-mobile: calc(var(--font-size-heading-mobile) * 0.66);
+
+  --font-size-subhead: calc(var(--font-size-heading) * 0.43);
+  --font-size-subhead-mobile: calc(var(--font-size-heading-mobile) * 0.43);
 
   --font-size-text: calc(var(--font-size-heading) * 0.22);
   --font-size-text-mobile: calc(var(--font-size-heading-mobile) * 0.22);
 
-  --font-size-small: calc(var(--font-size-heading) * 0.12);
-  --font-size-small-mobile: calc(var(--font-size-heading-mobile) * 0.12);
+  --font-size-small: calc(var(--font-size-heading) * 0.16);
+  --font-size-small-mobile: calc(var(--font-size-heading-mobile) * 0.16);
 
   /* Transition and Effects */
   --transition-fast: 0.3s ease-in-out;
@@ -79,55 +85,7 @@
 }
 
 /* Component and Utility Styles */
-.main-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
 
-  padding: var(--button-padding);
-  background-color: var(--white);
-  border-radius: var(--border-rad-large);
-  transition: var(--transition-normal);
-  text-decoration: none;
-
-  color: var(--black);
-}
-.main-button svg {
-  width: 15px;
-  height: 15px;
-}
-.main-button:hover {
-  background-color: var(--color-main);
-  color: var(--color-secondary);
-  transition: var(--transition-normal);
-  box-shadow: 0px 0px 7px 5px rgba(255, 255, 255, 0.05);
-}
-
-.secondary-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  padding: var(--button-padding);
-  background-color: var(--black);
-  border-radius: var(--border-rad-large);
-  transition: var(--transition-normal);
-  text-decoration: none;
-
-  color: var(--white);
-}
-.secondary-button svg {
-  width: 15px;
-  height: 15px;
-}
-.secondary-button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-main);
-  transition: var(--transition-normal);
-  box-shadow: 0px 0px 7px 5px rgba(255, 255, 255, 0.05);
-}
 
 .menulink {
   font-size: var(--font-size-small);

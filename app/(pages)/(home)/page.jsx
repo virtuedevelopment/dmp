@@ -35,21 +35,42 @@ export default function Home() {
       </section>
 
       <section className={styles.promotion}>
+        <Image
+          src={"classics_background.svg"}
+          width={500}
+          height={500}
+          alt="background"
+        />
         <h3>Alden Classics.</h3>
       </section>
 
       <section className={styles.featured}>
-        <Image src={"man.svg"} width={300} height={500} alt="suit model" />
+        <Image
+          className={styles.back}
+          src={"featured_img.svg"}
+          width={300}
+          height={500}
+          alt="suit model"
+        />
+        <Image
+          className={styles.front}
+          src={"man.svg"}
+          width={300}
+          height={500}
+          alt="suit model"
+        />
 
         <div className={styles.infoboxmain}>
-          <h3>Experience</h3>
+          <h3>Experience.</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
             aut cum quam nisi! Recusandae, adipisci, dolorum, modi dolores cum
             est ipsum sit earum omnis doloribus autem incidunt? Voluptates,
             atque obcaecati!
           </p>
-          <span style={{zIndex:'2'}} ><Href  url={"/"} route={"Catalog"} classname={"secondary-button"} /></span>
+          <span style={{ zIndex: "2" }}>
+            <Href url={"/"} route={"Catalog"} classname={"secondary-button"} />
+          </span>
         </div>
 
         <div className={styles.infoboxsub}>
@@ -60,20 +81,20 @@ export default function Home() {
             est ipsum sit earum omnis doloribus autem incidunt? Voluptates,
             atque obcaecati!
           </p>
+          <Href url={"/"} route={"Catalog"} classname={"secondary-button"} />
         </div>
 
-        <h1>Stylish & Classic</h1>
+        <div className={styles.mobileinfo}>
+          <h3>Experience Elegance.</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+            blanditiis enim, delectus omnis fuga adipisci inventore? Dignissimos
+            iusto ex, doloribus eum itaque, dolore exercitationem quas,
+            consequuntur ratione sit corrupti nostrum.
+          </p>
+          <Href url={"/"} route={"Catalog"} classname={"secondary-button"} />
+        </div>
       </section>
-
-      <section className={styles.magazines}>
-        <h3 style={{ fontWeight: "100" }}>VOGUE</h3>
-        <h3>Forbes</h3>
-        <h3 style={{ fontWeight: "100" }}>VOGUE</h3>
-        <h3>Forbes</h3>
-      </section>
-
-
-
     </Transition>
   );
 }
