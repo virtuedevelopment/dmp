@@ -64,7 +64,7 @@
   gap: 0.25rem;
   width: 100%;
 
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   /* border-bottom: solid var(--black) 1px; */
   color: var(--black);
   font-weight: 100;
@@ -75,7 +75,7 @@
   height: 15px;
 }
 .menulink:hover {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--color-main);
   color: var(--color-secondary);
   transition: var(--transition-normal);
