@@ -27,11 +27,11 @@ const configurations = {
     // Routing for various user roles
     routes: {
         mainRoutes: [
-            { route: 'HOME', url: '/', icon: '' },
-            { route: 'ABOUT', url: '/about', icon: '' },
-            { route: 'LOCATIONS', url: '/locations', icon: '' },
-            { route: 'CUSTOMIZE', url: '/customize', icon: '' },
-            { route: 'CONTACT', url: '/contact', icon: '' },
+            { route: 'Home', url: '/', icon: '' },
+            { route: 'About', url: '/about', icon: '' },
+            { route: 'Locations', url: '/locations', icon: '' },
+            { route: 'Customize', url: '/customize', icon: '' },
+            { route: 'Contact', url: '/contact', icon: '' },
             // More main routes
         ],
         authRoutes: [
@@ -44,11 +44,11 @@ const configurations = {
             // More admin routes
         ],
         catalogRoutes: [
-            { route: 'SUITS', url: '/users/profile', params: {} },
-            { route: 'PANTS', url: '/users/profile', params: {} },
-            { route: 'SHOES', url: '/users/profile', params: {} },
-            { route: 'OUTWEAR', url: '/users/profile', params: {} },
-            { route: 'ACCESSORIES', url: '/users/profile', params: {} },
+            { route: 'Suits', url: '/users/profile', params: {} },
+            { route: 'Pants', url: '/users/profile', params: {} },
+            { route: 'Shoes', url: '/users/profile', params: {} },
+            { route: 'Outwear', url: '/users/profile', params: {} },
+            { route: 'Accessories', url: '/users/profile', params: {} },
             // More user routes
         ],
     },

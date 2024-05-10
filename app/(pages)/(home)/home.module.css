@@ -19,13 +19,15 @@
 }
 .hero h1 {
   font-size: var(--font-size-subtitle);
-  font-weight: 500;
+  line-height: 1;
+  font-weight: 600;
   opacity: 0;
   color: var(--white);
   z-index: 2;
 
   animation: var(--fadein);
   animation-delay: 0.5s;
+  margin-bottom: 0.75rem;
 }
 .hero a {
   z-index: 2;
