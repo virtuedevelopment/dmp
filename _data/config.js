@@ -29,8 +29,7 @@ const configurations = {
         mainRoutes: [
             { route: 'Home', url: '/', icon: '' },
             { route: 'About', url: '/about', icon: '' },
-            { route: 'Locations', url: '/locations', icon: '' },
-            { route: 'Customize', url: '/customize', icon: '' },
+            { route: 'Catalog', url: '/catalog', icon: '' },
             { route: 'Contact', url: '/contact', icon: '' },
             // More main routes
         ],
@@ -44,11 +43,11 @@ const configurations = {
             // More admin routes
         ],
         catalogRoutes: [
-            { route: 'Suits', url: '/users/profile', params: {} },
-            { route: 'Pants', url: '/users/profile', params: {} },
-            { route: 'Shoes', url: '/users/profile', params: {} },
-            { route: 'Outwear', url: '/users/profile', params: {} },
-            { route: 'Accessories', url: '/users/profile', params: {} },
+            { route: 'all', url: '/catalog', params: { category: 'all' } },
+            { route: 'suits', url: '/catalog', params: { category: 'suits' } },
+            { route: 'pants', url: '/catalog', params: { category: 'pants' } },
+            { route: 'shoes', url: '/catalog', params: { category: 'shoes' } },
+            { route: 'outerwear', url: '/catalog', params: { category: 'outwear' } },
             // More user routes
         ],
     },

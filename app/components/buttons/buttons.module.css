@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-.main-button {
+.mainbutton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -17,12 +16,12 @@
   line-height: 1.15;
   font-weight: 100;
 }
-.main-button svg {
+.mainbutton svg {
   width: 15px;
   height: 15px;
 }
 
-.main-button:hover {
+.mainbutton:hover {
   background-color: var(--color-main);
   color: var(--color-secondary);
   transition: var(--transition-normal);
@@ -71,7 +70,7 @@
   /* border-bottom: solid var(--black) 1px; */
   color: var(--black);
   transition: var(--transition-normal);
-  font-family: var(--body-style)
+  font-family: var(--body-style);
 }
 .menulink svg {
   width: 15px;
@@ -83,4 +82,30 @@
   color: var(--color-secondary);
   transition: var(--transition-normal);
   /* border-bottom: solid var(--color-secondary) 1px; */
+}
+
+.transparent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  border: solid 1px var(--grey);
+  padding: var(--button-padding);
+  border-radius: var(--border-rad-large);
+  transition: var(--transition-normal);
+  text-decoration: none;
+
+  color: var(--grey);
+  line-height: 1.15;
+  font-weight: 100;
+}
+.transparent svg {
+  width: 15px;
+  height: 15px;
+}
+.transparent:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transition: var(--transition-normal);
 }

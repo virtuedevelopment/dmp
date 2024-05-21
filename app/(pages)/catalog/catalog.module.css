@@ -1,0 +1,247 @@
+.header {
+  width: 100%;
+  height: 90svh;
+  background: url("/catalog-background.svg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.75rem;
+}
+.infobox {
+  width: 100%;
+  height: 75svh;
+  margin-top: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  /* border: dotted 2px red; */
+}
+.infobox h1 {
+  color: var(--white);
+  font-size: var(--font-size-head);
+}
+.infobox p {
+  width: 50%;
+  color: var(--white);
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.catalog {
+  background-color: var(--white);
+  min-height: 75svh;
+  position: relative;
+}
+
+.nav {
+  width: 100%;
+  padding: var(--padding-navigation);
+  box-shadow: var(--box-shadow-heavy);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.nav .options button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: var(--black);
+  transition: var(--transition-normal);
+  font-size: 0.95rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 300;
+}
+.nav .options button svg {
+  width: 14px;
+  height: 14px;
+}
+.nav .options button:hover {
+  color: var(--color-secondary);
+  transition: var(--transition-normal);
+}
+
+.searchbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+}
+.searchbtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.loading {
+  padding: var(--padding-main);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  min-height: 75svh;
+}
+.loading svg {
+  color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+.loading p {
+  color: var(--black);
+  animation: pulse 2s linear infinite;
+}
+
+.productbox {
+  height: 85svh;
+  padding: var(--padding-main);
+  overflow-y: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.peek {
+  border: solid 0.5px var(--grey);
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--black);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+.peek span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: var(--border-rad-medium);
+  font-size: 10px;
+  z-index: 1;
+}
+.peek .info {
+  width: 100%;
+  background-color: var(--white);
+}
+.peek .info p {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+  color: var(--black);
+}
+.peek .info small {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  color: var(--black);
+}
+.peek img {
+  opacity: 0.5;
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+.peek:hover {
+  box-shadow: var(--box-shadow-heavy);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100svh;
+  backdrop-filter: blur(3.5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .controlbox {
+  margin-top: 5rem;
+  width: 85%;
+  height: 80svh;
+  background-color: var(--white);
+  border-radius: var(--border-rad-medium);
+  position: relative;
+}
+.controlbox .closebtn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  cursor: pointer;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+.closebtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Mobile Styles */
+  /* Adjust styles as needed */
+  .infobox h1 {
+    font-size: var(--font-size-head-mobile);
+  }
+  .infobox p {
+    width: 100%;
+    font-size: var(--font-size-text-mobile);
+    line-height: 2.75;
+  }
+}

@@ -13,7 +13,7 @@ export default function Home() {
           Handcrafted <br /> Excellence.
         </h1>
         <span style={{ zIndex: "2", marginTop: "0.75rem" }}>
-          <Href url={"/"} route={"Customize"} classname={"main-button"} />
+          <Href url={"/"} route={"Customize"} classname={"mainbutton"} />
         </span>
       </section>
 

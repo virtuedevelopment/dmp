@@ -40,8 +40,12 @@ export default function Navbar() {
         </Link>
 
         <div className={styles.shop}>
-          <ShoppingBag />
-          <Globe />
+          <Link href={"/catalog"}>
+            <ShoppingBag />
+          </Link>
+          <Link href={"/contact"}>
+            <Globe />
+          </Link>
         </div>
       </nav>
     </>

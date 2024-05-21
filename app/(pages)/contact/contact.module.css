@@ -1,0 +1,160 @@
+.head {
+  width: 100%;
+  height: 40svh;
+  background: rgba(34, 34, 34, 0.5);
+  background-image: url("https://images.pexels.com/photos/832998/pexels-photo-832998.jpeg?auto=compress&cs=tinysrgb&w=800");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay; /* Ensures the color blends with the image */
+}
+
+.hero {
+  width: 100%;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+}
+.hero .white {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: var(--white);
+  right: 0;
+}
+.hero .main {
+  width: 60%;
+  height: 100svh;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main h1 {
+  width: 100%;
+  font-size: var(--font-size-heading);
+  color: var(--grey);
+}
+.main h4 {
+  font-weight: 300;
+  font-size: var(--font-size-text);
+  color: var(--white);
+}
+
+.formbox {
+  width: 40%;
+  height: 100svh;
+  z-index: 1;
+  padding: 10% 1rem;
+  background-color: var(--white);
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+.inputbox {
+  width: 100%;
+  height: 100%;
+}
+.inputbox input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 0.5px var(--black);
+  color: var(--black);
+  padding: 0.5rem;
+}
+
+.inputbox textarea {
+  width: 100%;
+  height: 175px;
+  border: solid 0.5px var(--black);
+  background-color: transparent;
+  padding: 0.5rem;
+  outline: none;
+  resize: none;
+}
+
+.submitButton {
+  padding: var(--button-padding);
+  border: none;
+  border-radius: var(--border-rad-medium);
+  background-color: var(--black);
+  color: var(--grey);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+.submitButton:hover {
+  background-color: var(--grey);
+  color: var(--white);
+  transition: var(--transition-normal);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  /* Tablet Styles */
+  /* Adjust styles as needed */
+  .white {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .formbox {
+    width: 100%;
+  }
+
+  .main h1 {
+    width: 100%;
+    font-size: var(--font-size-heading-mobile);
+    color: var(--grey);
+  }
+  .main h4 {
+    font-weight: 300;
+    font-size: var(--font-size-text-mobile);
+    color: var(--white);
+  }
+
+  .hero .main {
+    width: 100%;
+    height: 40svh;
+  }
+}
+
+/* Cellphone */
+@media (max-width: 500px) {
+  /* Mobile Styles */
+  /* Adjust styles as needed */
+  .hero {
+    flex-direction: column;
+  }
+  .hero .main {
+    width: 100%;
+    height: 30svh;
+  }
+
+  .main h1 {
+    width: 100%;
+    font-size: var(--font-size-heading-mobile);
+    color: var(--grey);
+  }
+  .main h4 {
+    font-weight: 300;
+    font-size: var(--font-size-text-mobile);
+    color: var(--white);
+  }
+
+  .formbox {
+    width: 100%;
+  }
+}
