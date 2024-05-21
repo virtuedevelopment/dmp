@@ -28,7 +28,7 @@ export default function Footer() {
           <Subscribe />
         </div>
       </nav>
-      <h1>ALDEN SUITS.</h1>
+      <h1>DMP COLLECTIONS.</h1>
     </footer>
   );
 }

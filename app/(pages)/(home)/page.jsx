@@ -34,16 +34,6 @@ export default function Home() {
         <Image src={"/material.svg"} width={500} height={500} alt="material" />
       </section>
 
-      <section className={styles.promotion}>
-        <Image
-          src={"classics_background.svg"}
-          width={500}
-          height={500}
-          alt="background"
-        />
-        <h3>Alden Classics.</h3>
-      </section>
-
       <section className={styles.featured}>
         <Image
           className={styles.back}

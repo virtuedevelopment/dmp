@@ -124,6 +124,7 @@
 
 .peek {
   border: solid 0.5px var(--grey);
+  height: min-content;
   position: relative;
   width: 100%;
   display: flex;
@@ -174,7 +175,7 @@
 /* Modal */
 .modal {
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
   height: 100svh;
   backdrop-filter: blur(3.5px);
@@ -187,12 +188,17 @@
   justify-content: center;
 }
 .modal .controlbox {
-  margin-top: 5rem;
+  margin-top: 4rem;
   width: 85%;
   height: 80svh;
   background-color: var(--white);
   border-radius: var(--border-rad-medium);
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 .controlbox .closebtn {
   background-color: transparent;
@@ -211,6 +217,123 @@
 .closebtn svg {
   width: 16px;
   height: 16px;
+}
+.controlbox .viewbox {
+  width: 100%;
+  height: 65svh;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.viewbox img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
+.viewSelect {
+  width: 60%;
+  height: 100%;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+.viewSelect h2 {
+  color: var(--grey);
+  padding: 0.5rem 0;
+  border-bottom: solid 0.5px var(--grey);
+}
+.viewSelect .tag {
+  background-color: var(--color-main);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-rad-medium);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.productDescription {
+  width: 100%;
+  padding: 1rem 0;
+}
+.productDescription p {
+  line-height: 2;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+.productDescription small {
+  line-height: 2;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+  color: var(--grey);
+}
+
+.materialSelect {
+  padding: 0.75rem 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+.materialSelect button {
+  width: 75px;
+  min-height: 75px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: var(--transition-normal);
+}
+.materialSelect button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.materialSelect button small {
+  color: var(--black);
+  padding: 1px 0;
+}
+.materialSelect .selected {
+  border: solid 1px var(--color-main) !important;
+}
+
+.clrSelect {
+  padding: 0.75rem 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+.clrSelect button {
+  width: 75px;
+  min-height: 75px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: var(--transition-normal);
+  border: solid 1px var(--grey);
+}
+.clrSelect button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.clrSelect button small {
+  color: #262626;
+  padding: 1px 0;
 }
 
 @keyframes spin {
@@ -243,5 +366,22 @@
     width: 100%;
     font-size: var(--font-size-text-mobile);
     line-height: 2.75;
+  }
+
+  .viewbox {
+    flex-direction: column;
+  }
+  .viewbox img {
+    width: 100%;
+    height: 25svh;
+  }
+  .viewbox .viewSelect {
+    width: 100%;
+  }
+  .materialSelect {
+    gap: 0.35rem;
+  }
+  .clrSelect {
+    gap: 0.35rem;
   }
 }

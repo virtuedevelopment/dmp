@@ -1,11 +1,11 @@
 const configurations = {
     // Site metadata and SEO
     metadata: {
-        title: 'Alden Suits © 1884',  // Site Title
+        title: 'DMP COLLECTIONS ©',  // Site Title
         description: '',  // Site Description for SEO
         author: '',  // Author or maintainer of the site
         keywords: ["Suits", "Tuxedos"],  // Array of SEO keywords
-        baseUrl: 'aldensuits.com',  // Base URL of the website
+        baseUrl: 'dmpcallections.ca',  // Base URL of the website
         defaultImage: '',  // Default image for SEO and sharing
         language: 'en',  // Primary language of the website
     },
