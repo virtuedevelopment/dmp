@@ -1,4 +1,4 @@
-"use cliet";
+"use client";
 import React, { useState } from "react";
 import styles from "./catalog.module.css";
 import ProductPeek from "./ProductPeek";

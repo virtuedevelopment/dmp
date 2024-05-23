@@ -46,9 +46,7 @@ export default function About() {
             width={500}
             height={500}
             alt="man in suit"
-            src={
-              "https://images.pexels.com/photos/2709563/pexels-photo-2709563.jpeg?auto=compress&cs=tinysrgb&w=800"
-            }
+            src={"/stock-img01.svg"}
           />
         </div>
       </section>
@@ -75,11 +73,9 @@ export default function About() {
           </div>
           <div className={styles.gridbox}>
             <Image
-              src={
-                "https://images.pexels.com/photos/3613388/pexels-photo-3613388.jpeg?auto=compress&cs=tinysrgb&w=800"
-              }
+              src={"/stock-img02.svg"}
               width={500}
-              height={500}
+              height={300}
               alt="man in suit 2"
             />
           </div>
@@ -107,9 +103,7 @@ export default function About() {
         </h2>
         <div className={styles.container}>
           <Image
-            src={
-              "https://images.pexels.com/photos/2767159/pexels-photo-2767159.jpeg?auto=compress&cs=tinysrgb&w=800"
-            }
+            src={"/stock-img03.svg"}
             width={500}
             height={500}
             alt="man in suit"

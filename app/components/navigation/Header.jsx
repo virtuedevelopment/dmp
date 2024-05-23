@@ -6,9 +6,7 @@ export default function Header({ title }) {
   return (
     <section className={styles.header}>
       <Image
-        src={
-          "https://images.pexels.com/photos/3755706/pexels-photo-3755706.jpeg?auto=compress&cs=tinysrgb&w=800"
-        }
+        src={"/stock-img05.svg"}
         width={500}
         height={500}
         alt="heading image of suits"

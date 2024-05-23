@@ -65,21 +65,24 @@
 }
 
 .logo {
-  font-size: 1rem;
-  font-weight: 600;
+  width: 55px;
+  height: 55px;
   transition: var(--transition-normal);
   text-decoration: none;
   color: var(--white);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logo:hover {
   transition: var(--transition-normal);
   color: var(--color-secondary) !important;
 }
 .logo img {
-  padding-top: 0.75rem;
-  width: 85px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 .logo:hover img {
   transition: var(--transition-normal);
@@ -179,7 +182,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 45svh;
+  min-height: 55svh;
 }
 .header img {
   position: absolute;
@@ -187,7 +190,7 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.35;
-  filter: blur(5px);
+  filter: blur(3.5px);
 }
 .header h1 {
   z-index: 2;

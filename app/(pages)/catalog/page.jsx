@@ -28,8 +28,8 @@ export default function Catalog() {
           </p>
           <Href
             classname={"mainbutton"}
-            route={"Customize"}
-            url={"/customize"}
+            route={"Get in touch with us"}
+            url={"/contact"}
           />
         </div>
       </header>

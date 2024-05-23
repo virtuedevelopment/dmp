@@ -17,6 +17,9 @@
   left: 0;
   filter: saturate(0);
 }
+.hero img {
+  display: none;
+}
 .hero h1 {
   font-size: var(--font-size-subtitle);
   line-height: 1;
@@ -60,7 +63,6 @@
   font-weight: 300;
   width: 90%;
 }
-
 .material img {
   width: 100%;
   height: 70svh;
@@ -146,7 +148,7 @@
   width: 60%;
   color: var(--white);
 }
-.infoboxsub a{
+.infoboxsub a {
   z-index: 3;
 }
 
@@ -179,6 +181,51 @@
   z-index: 2;
 }
 
+.reviews {
+  padding: var(--padding-main);
+  background-color: var(--white);
+}
+.reviews h2 {
+  width: 100%;
+  text-align: center;
+  font-size: var(--font-size-subhead);
+  color: var(--black);
+}
+.reviewbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.review {
+  background-color: var(--grey-tone);
+  padding: 1.5rem 2.5rem;
+}
+.review h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+.review p {
+  color: var(--grey);
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+.review span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-main);
+}
+.review span svg {
+  width: 15px;
+  height: 15px;
+}
+
 @media (max-width: 1000px) {
   /* Tablet Styles */
   /* Adjust styles as needed */
@@ -207,8 +254,22 @@
     justify-content: center;
   }
   .hero h1 {
-    font-size: var(--font-size-subtitle-mobile);
+    font-size: 3rem;
     text-align: center;
+  }
+
+  .hero video {
+    display: none;
+  }
+  .hero img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 95svh;
+    object-fit: cover;
+    filter: saturate(0);
+    top: 0;
+    left: 0;
   }
 
   .material {
@@ -228,11 +289,10 @@
     font-weight: 100;
     width: 90%;
   }
-  .material img{
+  .material img {
     height: 40svh;
     margin-bottom: 1.5rem;
   }
- 
 
   .infoboxsub {
     display: none;
@@ -253,13 +313,13 @@
     align-items: center;
     z-index: 2;
   }
-  .mobileinfo h3{
+  .mobileinfo h3 {
     font-size: var(--font-size-subtitle-mobile);
     text-align: center;
     color: var(--white);
     margin-bottom: 0.75rem;
   }
-  .mobileinfo p{
+  .mobileinfo p {
     color: var(--white);
     font-size: var(--font-size-text-mobile);
     text-align: center;
@@ -278,7 +338,15 @@
     z-index: 2;
   }
 
-  .promotion h3{
+  .promotion h3 {
     font-size: var(--font-size-subtitle-mobile);
+  }
+
+  .reviews {
+    padding: var(--padding-main-mobile);
+  }
+  .reviews h2 {
+    margin-block: 1.5rem;
+    font-size: var(--font-size-subhead-mobile);
   }
 }
