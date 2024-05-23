@@ -78,6 +78,82 @@
   transition: var(--transition-normal);
 }
 
+.searchbox {
+  min-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--grey-tone);
+  padding: 0.25rem 0.75rem;
+  position: relative;
+}
+.searchbox input {
+  border: none;
+  background-color: transparent;
+  color: var(--black);
+  width: 100%;
+  outline: none;
+}
+
+.searchbox .dropdown {
+  width: 350px;
+  height: 250px;
+  position: absolute;
+  z-index: 10;
+
+  top: 25px;
+  right: 0;
+
+  background-color: var(--grey-tone);
+  overflow-y: scroll;
+
+  padding: 0.75rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.65rem;
+}
+
+.dropdown .item {
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  border-block: solid 0.5px var(--grey);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+.dropdown .item:hover {
+  transition: var(--transition-normal);
+  background-color: var(--color-main);
+  border-block: solid 0.5px var(--white);
+}
+.dropdown .item:hover small {
+  color: var(--white);
+  transition: var(--transition-normal);
+}
+.dropdown .item:hover img {
+  border: solid 0.5px var(--white);
+}
+
+.dropdown .item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: solid 0.5px var(--grey);
+}
+.dropdown .item small {
+  color: var(--grey);
+  text-align: right;
+}
+
 .searchbtn {
   display: flex;
   align-items: center;
@@ -86,8 +162,8 @@
   background-color: transparent;
 }
 .searchbtn svg {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 .loading {
@@ -113,7 +189,7 @@
 }
 
 .productbox {
-  height: 85svh;
+  height: 100svh;
   padding: var(--padding-main);
   overflow-y: scroll;
 
@@ -179,7 +255,7 @@
   width: 100%;
   height: 100svh;
   backdrop-filter: blur(3.5px);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
   top: 0;
   left: 0;
 
@@ -238,6 +314,7 @@
   height: 100%;
   padding: 1rem;
   overflow-y: scroll;
+  animation: slideUpFadeIn 0.5s ease-in-out forwards;
 }
 .viewSelect h2 {
   color: var(--grey);
@@ -279,6 +356,7 @@
   justify-content: flex-start;
   gap: 0.75rem;
 }
+
 .materialSelect button {
   width: 75px;
   min-height: 75px;
@@ -291,6 +369,16 @@
   gap: 0.25rem;
   transition: var(--transition-normal);
 }
+.materialSelect button:hover {
+  transition: var(--transition-normal);
+  background-color: var(--color-main);
+  color: var(--white);
+  box-shadow: var(--box-shadow-heavy);
+}
+.materialSelect button:hover small {
+  color: var(--white);
+}
+
 .materialSelect button img {
   width: 100%;
   height: 100%;
@@ -300,8 +388,14 @@
   color: var(--black);
   padding: 1px 0;
 }
-.materialSelect .selected {
-  border: solid 1px var(--color-main) !important;
+.materialSelect button.selected {
+  /* Add your selected styles here */
+  box-shadow: var(--box-shadow-heavy);
+  background-color: var(--color-main);
+  color: var(--white);
+}
+.materialSelect button.selected small {
+  color: var(--white);
 }
 
 .clrSelect {
@@ -316,7 +410,7 @@
 .clrSelect button {
   width: 75px;
   min-height: 75px;
-  border: none;
+  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -324,16 +418,161 @@
   flex-direction: column;
   gap: 0.25rem;
   transition: var(--transition-normal);
-  border: solid 1px var(--grey);
-}
-.clrSelect button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  border: solid 0.5px var(--grey);
 }
 .clrSelect button small {
-  color: #262626;
   padding: 1px 0;
+}
+.clrSelect button.selected {
+  border: solid 2px var(--color-main);
+  box-shadow: var(--box-shadow-heavy);
+}
+
+.styleSelect {
+  padding: 0.75rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+.styleSelect button {
+  min-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border: none;
+  color: var(--grey);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+.styleSelect button:hover {
+  background-color: var(--color-main);
+  color: var(--white);
+  transition: var(--transition-normal);
+}
+.styleSelect button.selected {
+  background-color: var(--color-main);
+  color: var(--white);
+  box-shadow: var(--box-shadow-heavy);
+}
+
+.viewSelect textarea {
+  width: 100%;
+  min-height: 200px;
+  margin: 1rem 0;
+  outline: none;
+  border: solid 0.5px var(--grey);
+  resize: none;
+  padding: 0.75rem;
+  background-color: transparent;
+  color: var(--black);
+}
+
+.nextbutton {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  color: var(--grey);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+.nextbutton:hover {
+  background-color: var(--color-main);
+  color: var(--white);
+  transition: var(--transition-normal);
+  box-shadow: var(--box-shadow-heavy);
+}
+
+.infoSelect {
+  width: 60%;
+  height: 100%;
+  padding: 1rem;
+  overflow-y: scroll;
+  animation: slideUpFadeIn 0.5s ease-in-out forwards;
+}
+.infoSelect h2 {
+  color: var(--grey);
+  padding: 0.5rem 0;
+  border-bottom: solid 0.5px var(--grey);
+}
+
+.infoSelect form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+.infoSelect form input {
+  outline: none;
+  width: 100%;
+  padding: 0.75rem 0.15rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 0.5px var(--grey);
+}
+.loadingbox {
+  width: 60%;
+  height: 100%;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonbox {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.thankyou {
+  width: 60%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.thankyou .tag {
+  background-color: var(--color-main);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-rad-medium);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 100;
+}
+.thankyou h2 {
+  color: var(--grey);
+  font-size: var(--font-size-subhead);
+  text-align: center;
+}
+.thankyou p {
+  text-align: center;
+  width: 80%;
+  font-weight: 200;
+  line-height: 1.75;
+  color: var(--black);
+}
+.thankyou p a {
+  color: var(--color-main);
+  transition: var(--transition-normal);
+}
+.thankyou p a:hover {
+  color: var(--black);
+  transition: var(--transition-normal);
 }
 
 @keyframes spin {
@@ -355,10 +594,35 @@
     opacity: 1;
   }
 }
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @media (max-width: 500px) {
   /* Mobile Styles */
   /* Adjust styles as needed */
+  .nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .nav .options button {
+    font-size: 12px;
+  }
+
+  .searchbox {
+    width: 100%;
+  }
+  .searchbox .dropdown {
+    width: 100%;
+  }
+
   .infobox h1 {
     font-size: var(--font-size-head-mobile);
   }
@@ -376,6 +640,9 @@
     height: 25svh;
   }
   .viewbox .viewSelect {
+    width: 100%;
+  }
+  .viewbox .infoSelect {
     width: 100%;
   }
   .materialSelect {

@@ -1,6 +1,8 @@
 .body {
+  position: relative;
   background-color: var(--black);
   padding: var(--padding-main);
+  z-index: 10;
 }
 .body h1 {
   width: 100%;

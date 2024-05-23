@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./nav.module.css";
 import MegaMenu from "./MegaMenu";
-import { Menu, ShoppingBag, Globe, Minimize2 } from "lucide-react";
+import { Menu, ShoppingBag, Minimize2, Headset } from "lucide-react";
 
 export default function Navbar() {
   //states
@@ -44,7 +44,7 @@ export default function Navbar() {
             <ShoppingBag />
           </Link>
           <Link href={"/contact"}>
-            <Globe />
+            <Headset />
           </Link>
         </div>
       </nav>

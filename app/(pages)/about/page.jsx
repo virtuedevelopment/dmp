@@ -10,9 +10,10 @@ export default function About() {
   return (
     <Transition>
       <Header title={"About Us."} />
+
       <section className={styles.history}>
         <div className={styles.info}>
-          <h2>Alden New England.</h2>
+          <h2>DMP Collection.</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
             ex odit maxime ipsum eum, culpa laboriosam velit? Quam voluptate
@@ -33,8 +34,13 @@ export default function About() {
             deleniti est unde quia.
           </p>
 
-          <Href route={"Customize"} url={"/"} classname={"transparent"} />
+          <Href
+            route={"Customize"}
+            url={"/catalog"}
+            classname={"transparent"}
+          />
         </div>
+
         <div className={styles.imagebox}>
           <Image
             width={500}
@@ -49,8 +55,7 @@ export default function About() {
 
       <section className={styles.alden}>
         <h2>
-          The Alden Shoe Company was founded in 1884 by Charles H. Alden in
-          Middleborough, Massachusetts.
+          DMP Collection Prestige, Putting Style and Elegance on Full Display.
         </h2>
 
         <div className={styles.about}>
@@ -59,8 +64,8 @@ export default function About() {
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using Content here,
-              content here, making it look like readable English. Many desktop
+              distribution of letters, as opposed to using Content here, content
+              here, making it look like readable English. Many desktop
               publishing packages and web page editors now use Lorem Ipsum as
               their default model text, and a search for lorem ipsum will
               uncover many web sites still in their infancy. Various versions
@@ -83,8 +88,8 @@ export default function About() {
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using Content here,
-              content here, making it look like readable English. Many desktop
+              distribution of letters, as opposed to using Content here, content
+              here, making it look like readable English. Many desktop
               publishing packages and web page editors now use Lorem Ipsum as
               their default model text, and a search for lorem ipsum will
               uncover many web sites still in their infancy. Various versions
@@ -115,8 +120,8 @@ export default function About() {
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using Content here,
-              content here, making it look like readable English. Many desktop
+              distribution of letters, as opposed to using Content here, content
+              here, making it look like readable English. Many desktop
               publishing packages and web page editors now use Lorem Ipsum as
               their default model text, and a search for lorem ipsum will
               uncover many web sites still in their infancy. Various versions
@@ -124,7 +129,11 @@ export default function About() {
               purpose (injected humour and the like).
             </p>
 
-            <Href route={"Contact Us"} url={"/"} classname={"transparent"} />
+            <Href
+              route={"Contact Us"}
+              url={"/contact"}
+              classname={"transparent"}
+            />
           </div>
         </div>
       </section>
