@@ -1,5 +1,4 @@
 .body {
-  position: relative;
   background-color: var(--black);
   padding: var(--padding-main);
   z-index: 10;

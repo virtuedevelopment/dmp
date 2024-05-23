@@ -6,8 +6,6 @@ import { Minimize2, VenetianMask, MoveRight, MoveLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 export default function ProductFocus({ product, closeModal }) {
   //selected styles for customization
   const [selectedMaterial, setSelectedMaterial] = useState(); //material of product
