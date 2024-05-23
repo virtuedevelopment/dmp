@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: 90svh;
-  background: url("/catalog-background.svg");
+  background: url("/stock-img06.svg");
   background-size: cover;
   background-position: center;
 
@@ -380,8 +380,8 @@
 }
 
 .materialSelect button img {
-  width: 100%;
-  height: 100%;
+  width: 75px;
+  height: 55px;
   object-fit: cover;
 }
 .materialSelect button small {
@@ -418,7 +418,8 @@
   flex-direction: column;
   gap: 0.25rem;
   transition: var(--transition-normal);
-  border: solid 0.5px var(--grey);
+  /* border: solid 0.5px var(--grey); */
+  border: none;
 }
 .clrSelect button small {
   padding: 1px 0;

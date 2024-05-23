@@ -102,9 +102,10 @@ export default function ProductFocus({ product, closeModal }) {
     const fetchMaterials = async () => {
       try {
         const response = await fetch(
-          "https://gist.githubusercontent.com/virtuedevelopment/a448ca4d174d09cc817d08cec690e104/raw/21699c93d680c6b5c31426be9032ab356c85dc0c/materials.json"
+          "https://gist.githubusercontent.com/virtuedevelopment/a448ca4d174d09cc817d08cec690e104/raw/c02908235d829454c7d0ce3dcf85574b68c5a003/materials.json"
         );
         const data = await response.json();
+        console.log(data);
         setOptions(data);
       } catch (error) {
         console.error("Error fetching materials:", error);

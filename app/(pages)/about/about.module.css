@@ -63,12 +63,12 @@
   background-color: var(--grey-tone);
   padding: 1.25rem;
 }
-.gridbox img {
+.alden img {
   width: 100%;
-  height: 100%;
+  height: 75%;
   object-fit: cover;
 }
-.gridbox p {
+.alden p {
   font-weight: 300;
   line-height: 2.5;
   color: var(--black);
