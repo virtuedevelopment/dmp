@@ -5,7 +5,7 @@ import configurations from "@/_data/config";
 import Link from "next/link";
 import { ArrowUpRight, Search } from "lucide-react";
 import ProductFocus from "./ProductFocus";
-import { useRouter, useSearchParams } from "next/navigation";
+
 
 function debounce(func, delay) {
   let timeoutId;
@@ -18,8 +18,7 @@ function debounce(func, delay) {
 }
 
 export default function CatalogNav({ change }) {
-  
-  const searchParams = useSearchParams();
+
   const [searchValue, setSearchValue] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [catalog, setCatalog] = useState([]);
