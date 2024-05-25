@@ -189,9 +189,7 @@
 }
 
 .productbox {
-  height: 100svh;
   padding: var(--padding-main);
-  overflow-y: scroll;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

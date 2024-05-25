@@ -1,22 +1,26 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./contact.module.css";
 
 export default function ContactForm() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [firstname, setFirstname] = useState();
-  const [lastname, setLasttname] = useState();
-  const [subject, setSubject] = useState();
-  const [email, setEmail] = useState();
-  const [message, setMessage] = useState();
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-  //utility functions
   const toggleLoading = () => {
     setIsLoading(!isLoading);
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+    setError("");
+
     const body = {
       firstname,
       lastname,
@@ -25,7 +29,27 @@ export default function ContactForm() {
       message,
     };
 
-    console.log(body);
+    toggleLoading();
+    try {
+      const response = await fetch("/api/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        router.push("/thank-you");
+      } else {
+        setError(result.error || "Failed to submit the form");
+      }
+    } catch (error) {
+      setError("Failed to submit the form");
+    } finally {
+      toggleLoading();
+    }
   };
 
   return (
@@ -86,6 +110,8 @@ export default function ContactForm() {
       >
         {isLoading ? "Submitting..." : "Submit"}
       </button>
+
+      {error && <span className={styles.error}>{error}</span>}
     </form>
   );
 }

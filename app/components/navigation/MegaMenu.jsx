@@ -10,21 +10,8 @@ export default function MegaMenu({ state, toggle }) {
     <section className={state ? styles.megamenu : styles.megamenuclosed}>
       <div className={styles.megamenulist}>
         <div className={styles.mainmenu}>
-          <h1>Menu</h1>
+          <h1>Main Menu</h1>
           {configurations.routes.mainRoutes.map((page) => (
-            <Href
-              key={page.url}
-              url={page.url}
-              route={page.route}
-              classname={"menulink"}
-              toggle={toggle}
-            />
-          ))}
-        </div>
-
-        <div className={styles.mainmenu}>
-          <h1>Catalog</h1>
-          {configurations.routes.catalogRoutes.map((page) => (
             <Href
               key={page.url}
               url={page.url}
@@ -43,6 +30,14 @@ export default function MegaMenu({ state, toggle }) {
         height={500}
         alt="Man in suit"
       />
+
+      <video
+        src="/menuvid.mp4"
+        className={styles.menuvid}
+        loop
+        muted
+        autoPlay
+      ></video>
     </section>
   );
 }

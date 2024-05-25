@@ -7,7 +7,7 @@ export default function Href({ route, url, classname, toggle }) {
   return (
     <Link onClick={toggle} className={styles[classname]} href={url}>
       {route}
-      <ArrowUpRight />
+      <ArrowUpRight strokeWidth={1} />
     </Link>
   );
 }

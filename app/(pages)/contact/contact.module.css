@@ -88,14 +88,20 @@
   border: none;
   border-radius: var(--border-rad-medium);
   background-color: var(--black);
-  color: var(--grey);
+  color: var(--white);
   transition: var(--transition-normal);
   cursor: pointer;
 }
 .submitButton:hover {
-  background-color: var(--grey);
+  background-color: var(--color-main);
   color: var(--white);
   transition: var(--transition-normal);
+}
+
+.error {
+  color: var(--color-main);
+  display: block;
+  text-align: center;
 }
 
 /* Tablet */

@@ -57,8 +57,8 @@
 }
 
 .menulink {
-  font-weight: 300;
-  font-size: var(--font-size-small);
+  font-weight: 100;
+  font-size: var(--font-size-text);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -70,11 +70,12 @@
   /* border-bottom: solid var(--black) 1px; */
   color: var(--black);
   transition: var(--transition-normal);
-  font-family: var(--body-style);
+  font-family: inherit;
 }
 .menulink svg {
-  width: 15px;
-  height: 15px;
+  width: 35px;
+  height: 35px;
+  transition: var(--transition-normal);
 }
 .menulink:hover {
   padding: 0.5rem 1rem;
@@ -82,6 +83,11 @@
   color: var(--color-secondary);
   transition: var(--transition-normal);
   /* border-bottom: solid var(--color-secondary) 1px; */
+}
+.menulink:hover svg {
+  rotate: 45deg;
+  color: var(--white);
+  transition: var(--transition-normal);
 }
 
 .transparent {
@@ -108,4 +114,14 @@
   background-color: var(--white);
   color: var(--black);
   transition: var(--transition-normal);
+}
+
+@media (max-width: 500px) {
+  .menulink {
+    font-size: var(--font-size-text-mobile);
+  }
+  .menulink svg {
+    width: 20px;
+    height: 20px;
+  }
 }
