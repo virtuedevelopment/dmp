@@ -8,6 +8,8 @@ import CatalogNav from "./CatalogNav";
 import CatalogLoading from "./CatalogLoading";
 import ProductBox from "./ProductBox";
 
+import products from "@/_data/products";
+
 export default function CatalogView() {
   const [current, setCurrent] = useState(); //current catalog title
   const [catalog, setCatalog] = useState([]); // curent catalog items
@@ -15,26 +17,12 @@ export default function CatalogView() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(
-        "https://gist.githubusercontent.com/virtuedevelopment/3f2f9b101adf84c6620ab7a164ecfd09/raw/a878d24ff622322472c89052b8e6f25215ef0847/test_products.json"
-      );
-      const products = await response.json();
-      setCatalog(products);
-    };
-
-    fetchProducts();
+    setCatalog(products);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
-    if (catalog.length > 0) {
-      setIsLoading(false);
-    }
-  }, [catalog, isLoading]);
-
-  useEffect(() => {
-    const filterProds = async () => {
-      // Check categories of each item in catalog
+    const filterProds = () => {
       if (current && current === "all") {
         setFiltered(catalog);
       } else if (current) {
@@ -49,7 +37,7 @@ export default function CatalogView() {
     filterProds();
   }, [current, catalog]);
 
-  //update current filters through the diffeerent categories and sets it as the current
+  //update current filters through the different categories and sets it as the current
   const updateCurrent = (filter) => {
     setCurrent(filter);
     console.log(current);

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowUpRight, Search } from "lucide-react";
 import ProductFocus from "./ProductFocus";
 
+import products from "@/_data/products";
 
 function debounce(func, delay) {
   let timeoutId;
@@ -18,7 +19,6 @@ function debounce(func, delay) {
 }
 
 export default function CatalogNav({ change }) {
-
   const [searchValue, setSearchValue] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [catalog, setCatalog] = useState([]);
@@ -27,15 +27,17 @@ export default function CatalogNav({ change }) {
 
   // Fetch catalog
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(
-        "https://gist.githubusercontent.com/virtuedevelopment/3f2f9b101adf84c6620ab7a164ecfd09/raw/a878d24ff622322472c89052b8e6f25215ef0847/test_products.json"
-      );
-      const products = await response.json();
-      setCatalog(products);
-    };
+    // const fetchProducts = async () => {
+    //   const response = await fetch(
+    //     "https://gist.githubusercontent.com/virtuedevelopment/3f2f9b101adf84c6620ab7a164ecfd09/raw/804c14e7a2751833cd702b9d709edcd527b2f15c/products.json"
+    //   );
+    //   const products = await response.json();
+    //   setCatalog(products);
+    // };
 
-    fetchProducts();
+    // fetchProducts();
+
+    setCatalog(products);
   }, []);
 
   // Debounce the search input

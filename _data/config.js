@@ -45,10 +45,10 @@ const configurations = {
         catalogRoutes: [
             { route: 'all', url: '/catalog', params: { category: 'all' } },
             { route: 'suits', url: '/catalog', params: { category: 'suits' } },
+            { route: 'traditional', url: '/catalog', params: { category: 'traditional' } },
+            { route: 'shirts', url: '/catalog', params: { category: 'shirts' } },
             { route: 'pants', url: '/catalog', params: { category: 'pants' } },
-            { route: 'shoes', url: '/catalog', params: { category: 'shoes' } },
-            { route: 'outerwear', url: '/catalog', params: { category: 'outwear' } },
-            // More user routes
+            { route: 'outwear', url: '/catalog', params: { category: 'coats' } },
         ],
     },
 

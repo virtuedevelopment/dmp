@@ -27,27 +27,7 @@ export default function ProductFocus({ product, closeModal }) {
   //utility
   const [isLoading, setIsLoading] = useState(false);
 
-  //styling options
-  const styleOptions = {
-    suits: [
-      "Single Breasted 1 Button",
-      "Single Breasted 2 Buttons",
-      "Double Breasted 4 Buttons",
-      "Double Breasted 6 Buttons",
-    ],
-    pants: ["No Pleats", "Pleated", "Double Pleats"],
-    shoes: ["Oxfords", "Loafers", "Derby", "Brogues"],
-    outerwear: ["Trench Coat", "Peacoat", "Bomber Jacket", "Overcoat"],
-  };
-
   //utility functions
-  const checkCategory = (selected) => {
-    if (styleOptions[selected]) {
-      return styleOptions[selected];
-    } else {
-      return "other";
-    }
-  };
   const getContrastingTextColor = (hexColor) => {
     const rgb = parseInt(hexColor.slice(1), 16);
     const r = (rgb >> 16) & 0xff;
@@ -113,7 +93,6 @@ export default function ProductFocus({ product, closeModal }) {
     };
 
     // Set category options based on product category
-    setCategoryOptions(checkCategory(product.category));
     fetchMaterials();
   }, []);
 
@@ -184,17 +163,16 @@ export default function ProductFocus({ product, closeModal }) {
 
               <h2>Select Style:</h2>
               <div className={styles.styleSelect}>
-                {categoryOptions &&
-                  categoryOptions.map((style, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedStyle(style)}
-                      className={selectedStyle === style ? styles.selected : ""}
-                    >
-                      <VenetianMask />
-                      {style}
-                    </button>
-                  ))}
+                {product.styleOptions.map((style, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedStyle(style)}
+                    className={selectedStyle === style ? styles.selected : ""}
+                  >
+                    <VenetianMask />
+                    {style}
+                  </button>
+                ))}
               </div>
 
               <h2>Other Specifications:</h2>
