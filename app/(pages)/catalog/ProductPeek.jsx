@@ -7,6 +7,7 @@ export default function ProductPeek({ product, focus }) {
     <button className={styles.peek} onClick={() => focus(product)}>
       <span>{product.category}</span>
       <Image src={product.img} width={250} height={250} alt="prod-peek" />
+      <p className={styles.desc} >{product.description}</p>
       <div className={styles.info}>
         <p>{product.name}</p>
         <small>${product.price}</small>

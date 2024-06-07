@@ -2,17 +2,19 @@
 import React, { useState, useEffect } from "react";
 import styles from "./catalog.module.css";
 import CatalogLoading from "./CatalogLoading";
+import ImgCarousel from "./ImgCarousel";
 import { Minimize2, VenetianMask, MoveRight, MoveLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductFocus({ product, closeModal }) {
   //selected styles for customization
-  const [selectedMaterial, setSelectedMaterial] = useState(); //material of product
+  const [selectedMaterial, setSelectedMaterial] = useState(
+    product.materials[0]
+  ); //material of product
   const [selectedColor, setSelectedColor] = useState(); //color of product
   const [selectedStyle, setSelectedStyle] = useState(); //style of product
   const [additionalInformation, setAdditionalInformation] = useState(); //additonal info
-  const [price, setPrice] = useState(0); //set price for the additonal features
   const [options, setOptions] = useState(); //options for materials
   const [categoryOptions, setCategoryOptions] = useState();
 
@@ -44,7 +46,7 @@ export default function ProductFocus({ product, closeModal }) {
 
     let quoteRequest = {
       item: product.name,
-      material: selectedMaterial.material,
+      material: selectedMaterial,
       color: selectedColor,
       info: additionalInformation,
       name: { first: firstname, last: lastname },
@@ -77,25 +79,6 @@ export default function ProductFocus({ product, closeModal }) {
     }
   };
 
-  // Fetch materials
-  useEffect(() => {
-    const fetchMaterials = async () => {
-      try {
-        const response = await fetch(
-          "https://gist.githubusercontent.com/virtuedevelopment/a448ca4d174d09cc817d08cec690e104/raw/c02908235d829454c7d0ce3dcf85574b68c5a003/materials.json"
-        );
-        const data = await response.json();
-        console.log(data);
-        setOptions(data);
-      } catch (error) {
-        console.error("Error fetching materials:", error);
-      }
-    };
-
-    // Set category options based on product category
-    fetchMaterials();
-  }, []);
-
   return (
     <section className={styles.modal}>
       <div className={styles.controlbox}>
@@ -104,7 +87,9 @@ export default function ProductFocus({ product, closeModal }) {
         </button>
 
         <div className={styles.viewbox}>
-          <Image src={product.img} width={250} height={250} alt="image" />
+          {/* <Image src={product.img} width={250} height={250} alt="image" /> */}
+
+          <ImgCarousel images={product.gallery} />
 
           {step === 1 && (
             <div className={styles.viewSelect}>
@@ -116,32 +101,33 @@ export default function ProductFocus({ product, closeModal }) {
               </div>
 
               <h2>Select Material:</h2>
-              {options && (
-                <div className={styles.materialSelect}>
-                  {options.map((material, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedMaterial(material)}
-                      className={
-                        selectedMaterial?.material === material.material
-                          ? styles.selected
-                          : ""
-                      }
-                    >
-                      <Image
-                        src={material.image}
-                        width={200}
-                        height={200}
-                        alt="image"
-                      />
-                      <small>{material.material}</small>
-                    </button>
-                  ))}
-                </div>
-              )}
+              <div className={styles.materialSelect}>
+                {product.materials.map((material, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setSelectedMaterial(material);
+                      console.log(material);
+                    }}
+                    className={
+                      selectedMaterial?.name === material.name
+                        ? styles.selected
+                        : ""
+                    }
+                  >
+                    <Image
+                      src={material.img}
+                      width={200}
+                      height={200}
+                      alt="image"
+                    />
+                    <small>{material.name}</small>
+                  </button>
+                ))}
+              </div>
 
               <h2>Select Color:</h2>
-              {options && selectedMaterial && (
+              {selectedMaterial && (
                 <div className={styles.clrSelect}>
                   {selectedMaterial.colors.map((clr, index) => (
                     <button

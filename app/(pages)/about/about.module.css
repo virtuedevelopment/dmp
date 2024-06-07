@@ -1,11 +1,12 @@
 .history {
   width: 100%;
-  min-height: 100svh;
-  display: flex;
+  min-height: 80svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .info {
-  width: 50%;
-  min-height: 100svh;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -13,7 +14,7 @@
   justify-content: center;
   gap: 1rem;
 
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
 }
 .info h2 {
@@ -22,107 +23,101 @@
 }
 .info p {
   color: var(--grey);
-  font-size: var(--font-size-small);
-  line-height: 2.5;
+  font-size: 1rem;
+  line-height: 2;
   width: 80%;
 }
 .imagebox {
-  width: 50%;
-  min-height: 100svh;
+  width: 100%;
+  min-height: 100%;
 }
 .imagebox img {
   width: 100%;
-  min-height: 100svh;
+  height: 100%;
   object-fit: cover;
   opacity: 0.75;
 }
 
-.alden {
+.infoAlt {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 2rem 1rem;
+
   background-color: var(--white);
-  padding: var(--padding-main);
 }
-.alden h2 {
-  width: 100%;
-  font-weight: 500;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  color: var(--grey);
+.infoAlt h2 {
   font-size: var(--font-size-subhead);
+  color: var(--grey);
 }
-.alden .about {
+.infoAlt p {
+  color: var(--grey);
+  font-size: 1rem;
+  line-height: 2;
+  width: 80%;
+}
+.infoAlt strong{
+  color: var(--color-main);
+}
+
+.about {
   width: 100%;
-  min-height: 75svh;
-  padding: 0.75rem;
+  min-height: 80svh;
+  background-color: var(--white);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0.75rem;
+  padding: 2rem;
+}
+.about h2 {
+  grid-column: 1/-1;
+  width: 100%;
+
+  font-size: var(--font-size-subhead);
+  text-align: center;
+  color: var(--grey);
 }
 .about .gridbox {
   width: 100%;
-  height: 75svh;
-  background-color: var(--grey-tone);
-  padding: 1.25rem;
-}
-.alden img {
-  width: 100%;
-  height: 75%;
-  object-fit: cover;
-}
-.alden p {
-  font-weight: 300;
-  line-height: 2.5;
-  color: var(--black);
-}
-
-.more {
-  background-color: var(--white);
-  padding: var(--padding-main);
-  min-height: 80svh;
-}
-.more h2 {
-  width: 100%;
-  font-weight: 500;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  color: var(--grey);
-  font-size: var(--font-size-subhead);
-  text-align: right;
-}
-.container {
-  width: 100%;
-  min-height: 75svh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-}
-.container img {
-  width: 60%;
   height: 100%;
-  object-fit: cover;
-  right: 0;
-  position: absolute;
-}
-.container .infobox {
-  width: 50%;
-  background-color: var(--black);
-  -webkit-box-shadow: 34px 34px 0px 5px #808080;
-  box-shadow: 34px 34px 0px 5px #808080;
+  background-color: var(--grey-tone);
 
-  padding: 2.5rem 1.75rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-  z-index: 1;
-  margin-left: 7.5rem;
+  align-items: center;
+  justify-content: center;
 }
-.infobox p {
-  line-height: 2;
+.gridbox h3 {
+  font-size: var(--font-size-subhead);
+  margin-bottom: 1.25rem;
   color: var(--grey);
-  font-weight: 300;
-  font-size: var(--font-size-small);
+  text-align: center;
+}
+.gridbox p {
+  text-align: center;
+  width: 95%;
+  line-height: 1.5;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--grey);
+}
+.about .box {
+  width: 100%;
+  min-height: 65svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+.about .gridbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Tablet */
@@ -135,17 +130,6 @@
   .info p {
     font-size: var(--font-size-text-mobile);
   }
-
-  .alden h2 {
-    font-size: var(--font-size-subhead-mobile);
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .gridbox p {
-    font-size: 15px;
-  }
-
   .more h2 {
     font-size: var(--font-size-subhead-mobile);
     margin-top: 1.5rem;
@@ -178,7 +162,7 @@
   /* Adjust styles as needed */
 
   .history {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
   .info {
     width: 100%;
@@ -193,7 +177,6 @@
   .imagebox img {
     min-height: 50svh;
   }
-
   .more {
     padding: var(--padding-main-mobile);
   }
@@ -202,11 +185,9 @@
     align-items: center;
     justify-content: center;
   }
-
   .container .infobox {
     width: 100%;
   }
-
   .infobox p {
     line-height: 1.5;
     color: var(--grey);
@@ -215,5 +196,19 @@
   }
   .gridbox p {
     font-size: 13px;
+  }
+  .about .box {
+    grid-template-columns: 1fr;
+  }
+  .about h2 {
+    font-size: var(--font-size-subhead-mobile);
+  }
+  .box .gridbox h3 {
+    font-size: 2rem;
+  }
+  .box .gridbox p {
+    width: 100%;
+    line-height: 1.75;
+    font-size: 0.85rem;
   }
 }

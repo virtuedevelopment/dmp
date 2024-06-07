@@ -11,18 +11,18 @@ import CatalogView from "../catalog/CatalogView";
 const reviews = [
   {
     summary: "Great service and ideal perfect fit.",
-    full: "Whenever I bought suits they were either too short, too short in the sleeve or imperfect fit around the body. Problem solved with Hockerty, what a great service and an ideal perfect fit each time.",
+    full: "Whenever I bought suits they were either too short, too short in the sleeve or imperfect fit around the body. Problem solved with DMP, what a great service and an ideal perfect fit each time.",
     name: "Richard gains",
   },
   {
     summary: "My husband Loved his suit!",
-    full: "My husband LOVED his suit for the wedding. Usually, it is very tough for him to find suits, as he is tall and slim. However, we could not have been more thrilled with the Hockerty suit. The quality was fabulous and shipment was timely! Thanks so much!",
+    full: "My husband LOVED his suit for the wedding. Usually, it is very tough for him to find suits, as he is tall and slim. However, we could not have been more thrilled with the DMP suit. The quality was fabulous and shipment was timely! Thanks so much!",
     name: "Alycia Myers",
   },
   {
     summary: "Great service and ideal perfect fit.",
-    full: "Whenever I bought suits they were either too short, too short in the sleeve or imperfect fit around the body. Problem solved with Hockerty, what a great service and an ideal perfect fit each time.",
-    name: "Richard gains",
+    full: "I bought 3 suits to add to my wardrobe and getting a chance to customize everything down to the Material is amazing! DMP really made it easy for us with their quick communication and amazing customer service! Good job guys.",
+    name: "Jason Price",
   },
 ];
 
@@ -44,12 +44,15 @@ export default function Home() {
         <div className={styles.info}>
           <h3>High Quality Materials.</h3>
           <p className={styles.text}>
-            Since 1884, Alden Suits has epitomized the art of luxury tailoring,
-            meticulously handcrafting each piece with the finest materials.
-            Renowned for their use of superior wools and silks, their suits
-            embody a timeless elegance and unparalleled durability. This
-            legendary commitment to quality ensures that every Alden suit is not
-            just attire, but a masterpiece of classic sophistication.
+            At DMP Collection, we prioritize quality over quantity, embracing
+            the advancements in modern fabrics and manufacturing to provide you
+            with the finest materials. Unlike mass producers who compromise
+            quality for profit, we are committed to elegance and excellence. Our
+            high-quality fabrics, exquisite tailoring, and meticulous attention
+            to detail ensure that our customers look and feel their best. <br />
+            <br /> We offer personalized suits and shirts, event stylist
+            services, made-to-measure creations, and image counsel, delivering a
+            sophisticated and exceptional experience tailored to your needs.
           </p>
           <Href
             url={"/about"}
@@ -60,8 +63,6 @@ export default function Home() {
 
         <Image src={"/material.svg"} width={500} height={500} alt="material" />
       </section>
-
-      
 
       <section className={styles.featured}>
         <Image
@@ -82,10 +83,12 @@ export default function Home() {
         <div className={styles.infoboxmain}>
           <h3>Experience.</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            aut cum quam nisi! Recusandae, adipisci, dolorum, modi dolores cum
-            est ipsum sit earum omnis doloribus autem incidunt? Voluptates,
-            atque obcaecati!
+            At DMP Collection, elegance is more than just a word—it is a
+            promise. From the moment you step into our store, you are enveloped
+            in an atmosphere of sophistication and luxury. Our team of skilled
+            artisans and stylists are dedicated to crafting garments that not
+            only fit perfectly but also reflect your unique style and
+            personality.
           </p>
           <span style={{ zIndex: "2" }}>
             <Href
@@ -99,10 +102,11 @@ export default function Home() {
         <div className={styles.infoboxsub}>
           <h3>Elegance.</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            aut cum quam nisi! Recusandae, adipisci, dolorum, modi dolores cum
-            est ipsum sit earum omnis doloribus autem incidunt? Voluptates,
-            atque obcaecati!
+            With our bespoke tailoring, personalized service, and attention to
+            every detail, we ensure that each piece we create is a masterpiece.
+            Experience the refined craftsmanship and unparalleled quality that
+            define DMP Collection. Discover the true essence of elegance with
+            our meticulously designed suits and shirts, tailored just for you.
           </p>
           <Href
             url={"/contact"}
@@ -114,10 +118,12 @@ export default function Home() {
         <div className={styles.mobileinfo}>
           <h3>Experience Elegance.</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            blanditiis enim, delectus omnis fuga adipisci inventore? Dignissimos
-            iusto ex, doloribus eum itaque, dolore exercitationem quas,
-            consequuntur ratione sit corrupti nostrum.
+            At DMP Collection, elegance is more than just a word—it is a
+            promise. From the moment you step into our store, you are enveloped
+            in an atmosphere of sophistication and luxury. Our team of skilled
+            artisans and stylists are dedicated to crafting garments that not
+            only fit perfectly but also reflect your unique style and
+            personality.
           </p>
           <Href
             url={"/catalog"}

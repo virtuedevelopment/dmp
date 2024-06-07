@@ -81,7 +81,7 @@ const createClientEmailTemplate = (quoteRequest) => `
         <div class="info">
           <p>We have received your order for the following item:</p>
           <p><strong>Item:</strong> ${quoteRequest.item}</p>
-          <p><strong>Material:</strong> ${quoteRequest.material}</p>
+          <p><strong>Material:</strong> ${quoteRequest.material.name}</p>
           <p><strong>Color:</strong> ${quoteRequest.color}</p>
           <p>
             <strong>Additional Information:</strong>
@@ -178,7 +178,7 @@ const createProviderEmailTemplate = (quoteRequest) => `
         <h2>Customer Order Details</h2>
         <div class="info">
           <p><strong>Item:</strong> ${quoteRequest.item}</p>
-          <p><strong>Material:</strong> ${quoteRequest.material}</p>
+          <p><strong>Material:</strong> ${quoteRequest.material.name}</p>
           <p><strong>Color:</strong> ${quoteRequest.color}</p>
           <p><strong>Additional Information:</strong> <br>  ${quoteRequest.info}</p>
           <p>
@@ -202,36 +202,36 @@ const createProviderEmailTemplate = (quoteRequest) => `
 `;
 
 export async function POST(request) {
-    const { quoteRequest } = await request.json();
+  const { quoteRequest } = await request.json();
 
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.GMAIL_USER, // Your Gmail email
-            pass: process.env.GMAIL_PASS, // Your Gmail password or app-specific password
-        },
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER, // Your Gmail email
+      pass: process.env.GMAIL_PASS, // Your Gmail password or app-specific password
+    },
+  });
+
+  try {
+    // Email to the provider
+    await transporter.sendMail({
+      from: process.env.GMAIL_USER, // Sender address
+      to: 'kaineosiagwu@gmail.com', // Replace with your provider's email
+      subject: 'DMP Collections: New Custom Order Received',
+      html: createProviderEmailTemplate(quoteRequest),
     });
 
-    try {
-        // Email to the provider
-        await transporter.sendMail({
-            from: process.env.GMAIL_USER, // Sender address
-            to: 'kaineosiagwu@gmail.com', // Replace with your provider's email
-            subject: 'DMP Collections: New Custom Order Received',
-            html: createProviderEmailTemplate(quoteRequest),
-        });
+    // Email to the client
+    await transporter.sendMail({
+      from: process.env.GMAIL_USER, // Sender address
+      to: quoteRequest.email, // Client's email
+      subject: 'DMP Collections: We received your order',
+      html: createClientEmailTemplate(quoteRequest),
+    });
 
-        // Email to the client
-        await transporter.sendMail({
-            from: process.env.GMAIL_USER, // Sender address
-            to: quoteRequest.email, // Client's email
-            subject: 'DMP Collections: We received your order',
-            html: createClientEmailTemplate(quoteRequest),
-        });
-
-        return NextResponse.json({ success: true });
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
 }

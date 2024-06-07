@@ -21,7 +21,7 @@
   display: none;
 }
 .hero h1 {
-  font-size: var(--font-size-subtitle);
+  font-size: var(--font-size-head);
   line-height: 1;
   font-weight: 600;
   opacity: 0;
@@ -46,6 +46,7 @@
 }
 .material .info {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,9 +59,9 @@
   font-size: var(--font-size-subhead);
 }
 .material .info .text {
-  font-size: var(--font-size-small);
-  line-height: 2;
-  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 400;
   width: 90%;
 }
 .material img {
@@ -114,11 +115,12 @@
   z-index: 3;
 }
 .infoboxmain p {
-  font-size: var(--font-size-small);
+  font-size: 1.15rem;
   font-weight: 300;
-  line-height: 2;
-  width: 60%;
+  line-height: 1.75;
+  width: 80%;
   color: var(--white);
+  z-index: 3;
 }
 
 .infoboxsub {
@@ -141,12 +143,13 @@
   margin-bottom: 1rem;
 }
 .infoboxsub p {
-  font-size: var(--font-size-small);
+  font-size: 1.15rem;
   font-weight: 300;
   text-align: right;
   line-height: 2;
-  width: 60%;
+  width: 80%;
   color: var(--white);
+  z-index: 3;
 }
 .infoboxsub a {
   z-index: 3;
@@ -244,6 +247,54 @@
   .material {
     grid-template-columns: 1fr;
   }
+
+  .infoboxsub {
+    display: none;
+  }
+  .infoboxmain {
+    display: none;
+  }
+  .featured {
+    min-height: 75svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileinfo {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+  .mobileinfo h3 {
+    font-size: var(--font-size-subtitle-mobile);
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .mobileinfo p {
+    color: var(--white);
+    font-size: var(--font-size-text-mobile);
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(5px);
+    padding: 0.75rem 0;
+  }
+
+  .featured .front {
+    height: 70%;
+    width: 95%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    z-index: 2;
+  }
 }
 
 @media (max-width: 500px) {
@@ -286,56 +337,12 @@
   .material .info .text {
     font-size: var(--font-size-text-mobile);
     line-height: 2;
-    font-weight: 100;
-    width: 90%;
+    font-weight: 300;
+    width: 100%;
   }
   .material img {
     height: 40svh;
     margin-bottom: 1.5rem;
-  }
-
-  .infoboxsub {
-    display: none;
-  }
-  .infoboxmain {
-    display: none;
-  }
-  .featured {
-    min-height: 75svh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .mobileinfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 2;
-  }
-  .mobileinfo h3 {
-    font-size: var(--font-size-subtitle-mobile);
-    text-align: center;
-    color: var(--white);
-    margin-bottom: 0.75rem;
-  }
-  .mobileinfo p {
-    color: var(--white);
-    font-size: var(--font-size-text-mobile);
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-
-  .featured .front {
-    height: 70%;
-    width: 95%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    z-index: 2;
   }
 
   .promotion h3 {

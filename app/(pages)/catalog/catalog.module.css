@@ -20,6 +20,8 @@
   align-items: flex-start;
   justify-content: center;
 
+  backdrop-filter: blur(3.5px);
+  padding: 1.25rem;
   /* border: dotted 2px red; */
 }
 .infobox h1 {
@@ -27,7 +29,9 @@
   font-size: var(--font-size-head);
 }
 .infobox p {
-  width: 50%;
+  font-size: 1.05rem;
+  font-weight: 400;
+  width: 60%;
   color: var(--white);
   line-height: 2;
   margin-bottom: 1rem;
@@ -63,7 +67,7 @@
   text-decoration: none;
   color: var(--black);
   transition: var(--transition-normal);
-  font-size: 0.95rem;
+  font-size: 1rem;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -74,7 +78,7 @@
   height: 14px;
 }
 .nav .options button:hover {
-  color: var(--color-secondary);
+  color: var(--color-main);
   transition: var(--transition-normal);
 }
 
@@ -85,7 +89,7 @@
   justify-content: space-between;
   gap: 1rem;
   background-color: var(--grey-tone);
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   position: relative;
 }
 .searchbox input {
@@ -95,7 +99,6 @@
   width: 100%;
   outline: none;
 }
-
 .searchbox .dropdown {
   width: 350px;
   height: 250px;
@@ -116,7 +119,6 @@
   justify-content: flex-start;
   gap: 0.65rem;
 }
-
 .dropdown .item {
   border: none;
   padding: 0.5rem;
@@ -142,7 +144,6 @@
 .dropdown .item:hover img {
   border: solid 0.5px var(--white);
 }
-
 .dropdown .item img {
   width: 40px;
   height: 40px;
@@ -153,7 +154,6 @@
   color: var(--grey);
   text-align: right;
 }
-
 .searchbtn {
   display: flex;
   align-items: center;
@@ -222,10 +222,11 @@
 .peek .info {
   width: 100%;
   background-color: var(--white);
+  padding: 0.75rem 0;
 }
 .peek .info p {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   text-align: left;
   color: var(--black);
 }
@@ -233,23 +234,47 @@
   display: block;
   width: 100%;
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   color: var(--black);
 }
 .peek img {
   opacity: 0.5;
-  height: 350px;
+  height: 450px;
   width: 100%;
   object-fit: cover;
+  transition: var(--transition-normal);
+}
+.peek .desc {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 80%;
+  height: 40%;
+  color: var(--white);
+  transition: var(--transition-normal);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.75;
+  opacity: 0;
 }
 .peek:hover {
   box-shadow: var(--box-shadow-heavy);
+}
+.peek:hover img {
+  opacity: 0.2;
+}
+.peek:hover .desc {
+  opacity: 1;
 }
 
 /* Modal */
 .modal {
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   width: 100%;
   height: 100svh;
   backdrop-filter: blur(3.5px);
@@ -262,17 +287,17 @@
   justify-content: center;
 }
 .modal .controlbox {
-  margin-top: 4rem;
+  margin-top: 3.25rem;
   width: 85%;
   height: 85svh;
   background-color: var(--white);
-  border-radius: var(--border-rad-medium);
   position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  z-index: 10000;
 }
 .controlbox .closebtn {
   background-color: transparent;
@@ -294,7 +319,7 @@
 }
 .controlbox .viewbox {
   width: 100%;
-  height: 65svh;
+  height: 70svh;
   z-index: 2;
 
   display: flex;
@@ -302,11 +327,49 @@
   justify-content: space-between;
   gap: 2rem;
 }
-.viewbox img {
+
+.gallerybox {
   width: 40%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.gallerybox .current {
+  width: 100%;
+  min-height: 90%;
   object-fit: cover;
 }
+.gallerybox .selectionbox {
+  width: 100%;
+  min-height: 10%;
+  padding: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+.selectionbox .imageButton {
+  width: 75px;
+  height: 75px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  background-color: var(--black);
+}
+.imageButton img {
+  width: 100%;
+  height: 100%;
+  transform: var(--transition-normal);
+  object-fit: cover;
+}
+.imageButton:hover img {
+  transition: var(--transition-normal);
+  opacity: 0.25;
+}
+
 .viewSelect {
   width: 60%;
   height: 100%;
@@ -326,6 +389,8 @@
   color: var(--white);
   font-size: 12px;
   font-weight: 100;
+  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
 .productDescription {
@@ -354,7 +419,6 @@
   justify-content: flex-start;
   gap: 0.75rem;
 }
-
 .materialSelect button {
   width: 75px;
   min-height: 75px;
@@ -376,7 +440,6 @@
 .materialSelect button:hover small {
   color: var(--white);
 }
-
 .materialSelect button img {
   width: 75px;
   height: 55px;
@@ -406,8 +469,8 @@
   gap: 0.75rem;
 }
 .clrSelect button {
-  width: 75px;
-  min-height: 75px;
+  width: 50px;
+  min-height: 50px;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -501,7 +564,6 @@
   padding: 0.5rem 0;
   border-bottom: solid 0.5px var(--grey);
 }
-
 .infoSelect form {
   width: 100%;
   display: grid;
@@ -526,7 +588,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .buttonbox {
   margin-top: 1rem;
   display: flex;
@@ -534,7 +595,6 @@
   justify-content: flex-start;
   gap: 1rem;
 }
-
 .thankyou {
   width: 60%;
   height: 100%;
@@ -684,4 +744,47 @@
     color: var(--black);
     transition: var(--transition-normal);
   }
+
+  .gallerybox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding:  1rem;
+  }
+  .gallerybox .current {
+    width: 100%;
+    min-height: 70%;
+    object-fit: cover;
+  }
+  .gallerybox .selectionbox {
+    width: 100%;
+    min-height: 30%;
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  .selectionbox .imageButton {
+    width: 75px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    background-color: var(--black);
+  }
+  .imageButton img {
+    width: 100%;
+    height: 100%;
+    transform: var(--transition-normal);
+    object-fit: cover;
+  }
+  .imageButton:hover img {
+    transition: var(--transition-normal);
+    opacity: 0.25;
+  }
+  
 }

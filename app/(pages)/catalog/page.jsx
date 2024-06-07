@@ -20,11 +20,18 @@ export default function Catalog() {
         <div className={styles.infobox}>
           <h1>Custom suits.</h1>
           <p>
-            Are you looking for a custom suit that will enhance your looks and
-            style? Hockerty has the answer! Our suits are not only high-quality
-            but they are also tailored entirely to your measurements. Choose
-            from more than 150 fabrics and various details to design your own
-            look. We guarantee the perfect fit of your tailored Hockerty suit.
+            Step into the world of DMP Collection and explore our exquisite
+            range of high-quality fabrics and designs. Our interactive catalog
+            allows you to browse through our meticulously curated selection of
+            suits and shirts, each crafted to perfection. <br/><br /> With our easy-to-use
+            customization options, you can personalize every detail to your
+            preference, from fabric choices to unique finishing touches. Whether
+            you’re looking for a classic look or a contemporary style, our
+            catalog offers endless possibilities to create your ideal garment.
+            <br /> <br />
+            Experience the convenience and creativity of designing your perfect
+            outfit with DMP Collection. View and customize our catalog today to
+            begin your journey to sartorial elegance.
           </p>
           <Href
             classname={"mainbutton"}

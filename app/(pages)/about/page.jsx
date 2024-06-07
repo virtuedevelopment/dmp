@@ -15,23 +15,26 @@ export default function About() {
         <div className={styles.info}>
           <h2>DMP Collection.</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-            ex odit maxime ipsum eum, culpa laboriosam velit? Quam voluptate
-            assumenda consequatur quasi quisquam dolor corporis iste,
-            exercitationem, eius explicabo autem!
+            It has been long established that quality over quantity surpasses
+            quantity over quality. However, with modernization that gave life to
+            the invention of new fabrics and industrialization that brought
+            advancements in the manufacturing of fabrics, the mass production
+            made it possible for everyone in the society to have access to a
+            diversity of fabrics including the greedy fashionista.
           </p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
-            blanditiis omnis porro aliquid praesentium magnam eum aut quidem
-            repudiandae, hic quasi officia commodi doloremque maiores incidunt
-            deleniti est unde quia.
+            The greedy fashionista uses mass production to gain financial profit
+            regardless of the low quality and harmful fabrics they provide for
+            the society. At DMP Collection, we have found a way to keep our
+            customers looking elegant using high-quality fabrics, together with
+            exquisite tailoring and a particular attention to detail because we
+            believe it is what creates elegance in fashion.
           </p>
 
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
-            blanditiis omnis porro aliquid praesentium magnam eum aut quidem
-            repudiandae, hic quasi officia commodi doloremque maiores incidunt
-            deleniti est unde quia.
+            We also offer personalized suits and shirts, event stylist services,
+            made-to-measure creation, and even image counsel for our customers
+            to get the best experience and service.
           </p>
 
           <Href
@@ -51,79 +54,86 @@ export default function About() {
         </div>
       </section>
 
-      <section className={styles.alden}>
+      <section className={styles.about}>
         <h2>
           DMP Collection Prestige, Putting Style and Elegance on Full Display.
         </h2>
-
-        <div className={styles.about}>
-          <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here, making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for lorem ipsum will uncover many web sites
-            still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
-          </p>
-
-          <Image
-            src={"/stock-img02.svg"}
-            width={500}
-            height={300}
-            alt="man in suit 2"
-          />
-          <p style={{ textAlign: "right" }}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using Content here, content
-            here, making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for lorem ipsum will uncover many web sites
-            still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
-          </p>
+        <div className={styles.box}>
+          <div className={styles.gridbox}>
+            <h3>Our Mission</h3>
+            <p>
+              Our mission at DMP Collection is to embody excellence in clothing
+              by offering our customers an unparalleled bespoke experience. We
+              are committed to accompanying our customers every step of the way,
+              from start to finish, fulfilling their desires with passion and
+              expertise. At DMP Collection, the customers wish is our command.
+              We offer an exceptional made-to-measure service, using a wide
+              range of quality fabrics to create garments that perfectly reflect
+              each individuals unique personality and style
+            </p>
+          </div>
+          <div className={styles.gridbox}>
+            <img src="/stock-img02.svg" alt="image" />
+          </div>
+          <div className={styles.gridbox}>
+            <h3>Our Vision </h3>
+            <p>
+              Our vision at DMP Collection is to become the global benchmark for
+              bespoke, present in every region of the globe. We aspire to
+              establish our footprint in every corner of the world, offering
+              excellent customer service and unparalleled sustainability in
+              everything we do. We envision an extensive network of service
+              points and production facilities, enabling the DMP Collection
+              family to reach far and wide. Our ultimate goal is to become the
+              undisputed world leader in the made-to-measure market, redefining
+              industry standards and inspiring excellence in every aspect of our
+              business.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className={styles.more}>
-        <h2>
-          Still a family owned business, still carrying forward a tradition of
-          quality genuine-welted shoemakingthat is exceptional in every way.
-        </h2>
-        <div className={styles.container}>
+      <section className={styles.history}>
+        <div className={styles.imagebox}>
           <Image
-            src={"/stock-img03.svg"}
             width={500}
             height={500}
             alt="man in suit"
+            src={"/stock-img03.svg"}
           />
+        </div>
 
-          <div className={styles.infobox}>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using Content here, content
-              here, making it look like readable English. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
-              their default model text, and a search for lorem ipsum will
-              uncover many web sites still in their infancy. Various versions
-              have evolved over the years, sometimes by accident, sometimes on
-              purpose (injected humour and the like).
-            </p>
+        <div className={styles.infoAlt}>
+          <h2>Our Values</h2>
+          <p>
+            <strong>Loyalty</strong> <br />
+            We honor our commitments to our customers and our community,
+            building relationships of trust and loyalty that endure over time.
+          </p>
+          <p>
+            <strong>Prestige</strong> <br />
+            We strive for excellence and exceptionality in everything we do,
+            striving to maintain our reputation as a prestigious and respected
+            brand.
+          </p>
 
-            <Href
-              route={"Contact Us"}
-              url={"/contact"}
-              classname={"transparent"}
-            />
-          </div>
+          <p>
+            <strong>Fairness</strong> <br />
+            We treat every individual with respect and equality, ensuring that
+            our business practices are fair and equitable to all.
+          </p>
+
+          <p>
+            <strong>Dynamism</strong> <br />
+            We embrace energy and enthusiasm in everything we do, constantly
+            seeking to innovate and raise industry standards.
+          </p>
+
+          <Href
+            route={"Customize"}
+            url={"/catalog"}
+            classname={"transparent"}
+          />
         </div>
       </section>
     </Transition>
