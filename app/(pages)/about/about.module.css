@@ -1,3 +1,60 @@
+.header {
+  background-color: var(--white);
+  padding: 2rem 2.25rem;
+}
+.header big {
+  color: var(--black);
+  letter-spacing: 2px;
+}
+.header h1 {
+  margin-top: 0.75rem;
+  font-size: var(--font-size-subtitle);
+  color: var(--color-main);
+}
+.header .imagereel {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.imagereel img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.dmp {
+  background-color: var(--white);
+  padding: var(--padding-main);
+}
+.dmp big {
+  display: block;
+  font-size: var(--font-size-subhead);
+}
+.dmp big span {
+  color: var(--color-secondary);
+}
+.dmp .information {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.textbox h4 {
+  font-size: var(--font-size-sub);
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+.textbox p {
+  color: var(--grey);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
 .history {
   width: 100%;
   min-height: 80svh;
@@ -12,9 +69,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 
-  padding: 1rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 .info h2 {
@@ -23,8 +80,7 @@
 }
 .info p {
   color: var(--grey);
-  font-size: 1rem;
-  line-height: 2;
+  line-height: 1.5;
   width: 80%;
 }
 .imagebox {
@@ -35,7 +91,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.75;
 }
 
 .infoAlt {
@@ -62,7 +117,7 @@
   line-height: 2;
   width: 80%;
 }
-.infoAlt strong{
+.infoAlt strong {
   color: var(--color-main);
 }
 
@@ -110,7 +165,7 @@
   width: 100%;
   min-height: 65svh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 1rem;
 }
@@ -124,12 +179,6 @@
 @media (max-width: 1000px) {
   /* Tablet Styles */
   /* Adjust styles as needed */
-  .info h2 {
-    font-size: var(--font-size-subhead-mobile);
-  }
-  .info p {
-    font-size: var(--font-size-text-mobile);
-  }
   .more h2 {
     font-size: var(--font-size-subhead-mobile);
     margin-top: 1.5rem;
@@ -154,12 +203,21 @@
     width: 75%;
     max-height: none;
   }
+
+  .header .imagereel {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Cellphone */
 @media (max-width: 500px) {
   /* Mobile Styles */
   /* Adjust styles as needed */
+
+  .dmp .information {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
   .history {
     grid-template-columns: 1fr;
@@ -210,5 +268,9 @@
     width: 100%;
     line-height: 1.75;
     font-size: 0.85rem;
+  }
+
+  .header .imagereel {
+    grid-template-columns: 1fr;
   }
 }

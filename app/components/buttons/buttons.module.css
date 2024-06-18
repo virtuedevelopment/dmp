@@ -7,12 +7,12 @@
   gap: 1rem;
 
   padding: var(--button-padding);
-  background-color: var(--white);
+  background-color: var(--color-main);
   border-radius: var(--border-rad-large);
   transition: var(--transition-normal);
   text-decoration: none;
 
-  color: var(--black);
+  color: var(--white);
   line-height: 1.15;
   font-weight: 100;
 }
@@ -22,8 +22,8 @@
 }
 
 .mainbutton:hover {
-  background-color: var(--color-main);
-  color: var(--color-secondary);
+  background-color: var(--white);
+  color: var(--color-main);
   transition: var(--transition-normal);
   box-shadow: 0px 0px 7px 5px rgba(255, 255, 255, 0.05);
 }
@@ -111,8 +111,9 @@
   height: 15px;
 }
 .transparent:hover {
-  background-color: var(--white);
-  color: var(--black);
+  border: none;
+  background-color: var(--color-main);
+  color: var(--white);
   transition: var(--transition-normal);
 }
 

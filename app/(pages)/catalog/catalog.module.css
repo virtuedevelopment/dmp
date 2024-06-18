@@ -1,7 +1,8 @@
 .header {
   width: 100%;
-  height: 90svh;
+  min-height: 90svh;
   background: url("/stock-img06.svg");
+  background-filter: saturate(0);
   background-size: cover;
   background-position: center;
 
@@ -12,8 +13,8 @@
 }
 .infobox {
   width: 100%;
-  height: 75svh;
-  margin-top: 2.5rem;
+  min-height: 75svh;
+  margin-top: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -46,7 +47,7 @@
 .nav {
   width: 100%;
   padding: var(--padding-navigation);
-  box-shadow: var(--box-shadow-heavy);
+  border-bottom: solid 0.5px var(--grey);
 
   display: flex;
   align-items: center;
@@ -67,7 +68,8 @@
   text-decoration: none;
   color: var(--black);
   transition: var(--transition-normal);
-  font-size: 1rem;
+  font-family: var(--body-style);
+  font-size: var(--body-text);
   border: none;
   background: transparent;
   cursor: pointer;
@@ -281,50 +283,58 @@
   background-color: rgba(0, 0, 0, 0.85);
   top: 0;
   left: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .modal .controlbox {
-  margin-top: 3.25rem;
-  width: 85%;
-  height: 85svh;
+  width: 100%;
+  height: 100%;
   background-color: var(--white);
   position: relative;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   z-index: 10000;
 }
-.controlbox .closebtn {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--black);
-  cursor: pointer;
 
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 2;
-}
-.closebtn svg {
-  width: 16px;
-  height: 16px;
-}
-.controlbox .viewbox {
+.controlbox .focusNav {
+  display: block;
   width: 100%;
-  height: 70svh;
-  z-index: 2;
-
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.closebtn {
+  border: none;
+  background-color: var(--color-main);
+  color: var(--white);
+  padding: 0.5rem 1.75rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.closebtn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.controlbox .viewbox {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-y: scroll;
+  padding: 1rem 0;
   gap: 2rem;
 }
 
@@ -339,13 +349,13 @@
 }
 .gallerybox .current {
   width: 100%;
-  min-height: 90%;
+  flex-grow: 1;
   object-fit: cover;
 }
 .gallerybox .selectionbox {
   width: 100%;
-  min-height: 10%;
-  padding: 1rem 0rem;
+  min-height: 15%;
+  padding: 0.5rem 0rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -372,9 +382,6 @@
 
 .viewSelect {
   width: 60%;
-  height: 100%;
-  padding: 1rem;
-  overflow-y: scroll;
   animation: slideUpFadeIn 0.5s ease-in-out forwards;
 }
 .viewSelect h2 {
@@ -395,19 +402,21 @@
 
 .productDescription {
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 .productDescription p {
   line-height: 2;
-  font-weight: 200;
   margin-bottom: 0.5rem;
   color: var(--black);
+  font-family: var(--body-style);
+  font-weight: 300;
 }
 .productDescription small {
   line-height: 2;
-  font-weight: 200;
+  font-weight: 400;
   margin-bottom: 0.5rem;
   color: var(--grey);
+  font-family: var(--body-style);
 }
 
 .materialSelect {
@@ -595,6 +604,7 @@
   justify-content: flex-start;
   gap: 1rem;
 }
+
 .thankyou {
   width: 60%;
   height: 100%;
@@ -669,7 +679,16 @@
   /* Adjust styles as needed */
   .nav {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+    padding-top: 1rem;
+    border: none;
+  }
+  .nav .options{
+    display: flex;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
   }
   .nav .options button {
     font-size: 12px;
@@ -682,14 +701,25 @@
     width: 100%;
   }
 
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  .infobox {
+    padding: 1.5rem 0;
+    align-items: center;
+  }
   .infobox h1 {
-    font-size: var(--font-size-head-mobile);
+    margin-bottom: 0rem;
+    text-align: center;
   }
   .infobox p {
     width: 100%;
-    font-size: var(--font-size-text-mobile);
-    line-height: 2.75;
+    text-align: center;
+    font-size: var(--font-size-text);
+    line-height: 1.5;
+    scale: 0.85;
   }
+
   .modal .controlbox {
     padding: 0.75rem;
   }
@@ -752,7 +782,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding:  1rem;
+    padding: 1rem;
   }
   .gallerybox .current {
     width: 100%;
@@ -786,5 +816,4 @@
     transition: var(--transition-normal);
     opacity: 0.25;
   }
-  
 }

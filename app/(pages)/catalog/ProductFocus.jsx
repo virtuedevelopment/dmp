@@ -82,13 +82,14 @@ export default function ProductFocus({ product, closeModal }) {
   return (
     <section className={styles.modal}>
       <div className={styles.controlbox}>
-        <button className={styles.closebtn} onClick={closeModal}>
-          <Minimize2 />
-        </button>
+
+        <div className={styles.focusNav}>
+          <button className={styles.closebtn} onClick={closeModal}>
+            Close View  <Minimize2 />
+          </button>
+        </div>
 
         <div className={styles.viewbox}>
-          {/* <Image src={product.img} width={250} height={250} alt="image" /> */}
-
           <ImgCarousel images={product.gallery} />
 
           {step === 1 && (
@@ -243,6 +244,7 @@ export default function ProductFocus({ product, closeModal }) {
             </div>
           )}
         </div>
+        
       </div>
     </section>
   );

@@ -12,7 +12,7 @@
 
   /* Color Variables */
   --color-main: #cf352e;
-  --color-secondary: #fff;
+  --color-secondary: #da5e58;
   /* --color-tertiary: ;
   --color-accent: ;
   --color-neutral: ; */
@@ -36,26 +36,22 @@
   --body-style: "Poppins", sans-serif;
 
   /* Font Sizing */
-  --font-size-heading: 6.5rem;
-  --font-size-heading-mobile: 3.5rem;
+  --font-size-heading: 7.5rem;
 
   --font-size-heading-max: calc(var(--font-size-heading) * 1.5);
-  --font-size-heading-max-mobile: calc(var(--font-size-heading-mobile) * 1.5);
 
   --font-size-head: calc(var(--font-size-heading) * 0.85);
-  --font-size-head-mobile: calc(var(--font-size-heading-mobile) * 0.85);
 
   --font-size-subtitle: calc(var(--font-size-heading) * 0.66);
-  --font-size-subtitle-mobile: calc(var(--font-size-heading-mobile) * 0.66);
 
   --font-size-subhead: calc(var(--font-size-heading) * 0.43);
-  --font-size-subhead-mobile: calc(var(--font-size-heading-mobile) * 0.43);
 
-  --font-size-text: calc(var(--font-size-heading) * 0.22);
-  --font-size-text-mobile: calc(var(--font-size-heading-mobile) * 0.22);
+  --font-size-sub: calc(var(--font-size-heading) * 0.30);
 
-  --font-size-small: calc(var(--font-size-heading) * 0.13);
-  --font-size-small-mobile: calc(var(--font-size-heading-mobile) * 0.13);
+  --font-size-text: 1rem;
+
+  --font-size-small: 0.85rem
+
 
   /* Transition and Effects */
   --transition-fast: 0.3s ease-in-out;
@@ -79,6 +75,14 @@
   box-sizing: border-box;
   font-family: inherit;
   scroll-behavior: smooth;
+}
+
+* h1{
+  font-size: var(--font-size-heading);
+}
+
+* p{
+  font-size: var(--font-size-text);
 }
 
 /* Component and Utility Styles */
@@ -237,6 +241,11 @@ body {
 @media (max-width: 1000px) {
   /* Tablet Styles */
   /* Adjust styles as needed */
+
+  :root{
+    --font-size-heading: 5.5rem;
+  }
+
   .logo p {
     font-size: var(--font-size-subhead);
   }
@@ -246,6 +255,12 @@ body {
 @media (max-width: 500px) {
   /* Mobile Styles */
   /* Adjust styles as needed */
+
+  :root{
+    --font-size-heading: 3.75rem;
+    --padding-navigation: 0;
+  }
+
   .logo p {
     font-size: var(--font-size-subhead-mobile);
   }

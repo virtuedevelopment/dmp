@@ -1,12 +1,12 @@
-import { Jost } from "next/font/google";
+import { Tenor_Sans } from "next/font/google";
 import "./globals.css";
 import configurations from "@/_data/config";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
 
-const jost = Jost({
+const tenor = Tenor_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400"],
 });
 
 export const metadata = {
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jost.className}>
+      <body className={tenor.className}>
         <Navbar />
         {children}
         <Footer />

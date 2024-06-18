@@ -25,17 +25,25 @@
 .hero .main {
   width: 60%;
   height: 100svh;
-  padding: 1.5rem;
-
+  padding: 1.5rem 3.5rem;
+  background: linear-gradient(
+      to bottom,
+      rgba(207, 53, 46, 0.5),
+      rgba(30, 30, 30, 1)
+    ),
+    url("https://d1fufvy4xao6k9.cloudfront.net/images/lookbook/pitti-uomo-summer-23/dkt_4.jpg");
+  background-size: cover;
+  /* background-blend-mode: overlay; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .main h1 {
   width: 100%;
   font-size: var(--font-size-heading);
-  color: var(--grey);
+  color: var(--white);
 }
 .main h4 {
   font-weight: 300;
@@ -122,8 +130,6 @@
 
   .main h1 {
     width: 100%;
-    font-size: var(--font-size-heading-mobile);
-    color: var(--grey);
   }
   .main h4 {
     font-weight: 300;
@@ -146,18 +152,14 @@
   }
   .hero .main {
     width: 100%;
-    height: 30svh;
+    padding: 1.5rem;
+    gap: 1rem;
   }
-
   .main h1 {
-    width: 100%;
-    font-size: var(--font-size-heading-mobile);
-    color: var(--grey);
+    text-align: center;
   }
   .main h4 {
-    font-weight: 300;
-    font-size: var(--font-size-text-mobile);
-    color: var(--white);
+    text-align: center;
   }
 
   .formbox {

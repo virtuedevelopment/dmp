@@ -10,7 +10,6 @@ import ContactForm from "./ContactForm";
 export default function Contact() {
   return (
     <Transition>
-      <section className={styles.head}></section>
       <section className={styles.hero}>
         <div className={styles.main}>
           <h1>Contact us.</h1>

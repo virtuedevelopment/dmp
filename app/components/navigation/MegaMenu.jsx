@@ -23,21 +23,6 @@ export default function MegaMenu({ state, toggle }) {
         </div>
       </div>
 
-      <Image
-        className={styles.menuimg}
-        src={"/menu_img.svg"}
-        width={500}
-        height={500}
-        alt="Man in suit"
-      />
-
-      <video
-        src="/menuvid.mp4"
-        className={styles.menuvid}
-        loop
-        muted
-        autoPlay
-      ></video>
     </section>
   );
 }

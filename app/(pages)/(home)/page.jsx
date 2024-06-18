@@ -20,7 +20,7 @@ const reviews = [
     name: "Alycia Myers",
   },
   {
-    summary: "Great service and ideal perfect fit.",
+    summary: "Wonderful suits, even better service.",
     full: "I bought 3 suits to add to my wardrobe and getting a chance to customize everything down to the Material is amazing! DMP really made it easy for us with their quick communication and amazing customer service! Good job guys.",
     name: "Jason Price",
   },
@@ -31,10 +31,11 @@ export default function Home() {
     <Transition>
       <section className={styles.hero}>
         <img src="/stock-img06.svg" alt="man in suit" />
-        <video src={"/backvid.mp4"} loop autoPlay muted></video>
+
         <h1>
           Handcrafted <br /> Excellence.
         </h1>
+
         <span style={{ zIndex: "2", marginTop: "0.75rem" }}>
           <Href url={"/catalog"} route={"Customize"} classname={"mainbutton"} />
         </span>
@@ -134,7 +135,7 @@ export default function Home() {
       </section>
 
       <section className={styles.reviews}>
-        <h2>Reviewed by our clients.</h2>
+        <h3>Reviewed by our clients.</h3>
         <div className={styles.reviewbox}>
           {reviews.map((review, index) => (
             <div key={index} className={styles.review}>

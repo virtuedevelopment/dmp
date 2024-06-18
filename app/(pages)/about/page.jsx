@@ -9,42 +9,90 @@ import Href from "@/app/components/buttons/Href";
 export default function About() {
   return (
     <Transition>
-      <Header title={"About Us."} />
+      <header className={styles.header}>
+        <big>ABOUT US</big>
+        <h1>True Quaility & Elegance.</h1>
 
-      <section className={styles.history}>
-        <div className={styles.info}>
-          <h2>DMP Collection.</h2>
-          <p>
-            It has been long established that quality over quantity surpasses
-            quantity over quality. However, with modernization that gave life to
-            the invention of new fabrics and industrialization that brought
-            advancements in the manufacturing of fabrics, the mass production
-            made it possible for everyone in the society to have access to a
-            diversity of fabrics including the greedy fashionista.
-          </p>
-          <p>
-            The greedy fashionista uses mass production to gain financial profit
-            regardless of the low quality and harmful fabrics they provide for
-            the society. At DMP Collection, we have found a way to keep our
-            customers looking elegant using high-quality fabrics, together with
-            exquisite tailoring and a particular attention to detail because we
-            believe it is what creates elegance in fashion.
-          </p>
+        <div className={styles.imagereel}>
+          <Image
+            src={
+              "https://dqp736wsu6w3m.cloudfront.net/s3bucket/w1000/looks/1700/-2024-06-06-12-54-57.jpg"
+            }
+            width={400}
+            height={400}
+            alt="header image"
+          />
 
-          <p>
-            We also offer personalized suits and shirts, event stylist services,
-            made-to-measure creation, and even image counsel for our customers
-            to get the best experience and service.
-          </p>
+          <Image
+            src={
+              "https://dqp736wsu6w3m.cloudfront.net/s3bucket/w1000/looks/1687/black-tux-with-bow-tie-2024-06-04-14-34-42.jpg"
+            }
+            width={400}
+            height={400}
+            alt="header image"
+          />
 
-          <Href
-            route={"Customize"}
-            url={"/catalog"}
-            classname={"transparent"}
+          <Image
+            src={
+              "https://d1fufvy4xao6k9.cloudfront.net/looks/1607/navy-blue-blazer-forest-green-chinos-2024-04-25-14-30-10.jpeg"
+            }
+            width={400}
+            height={400}
+            alt="header image"
+          />
+
+          <Image
+            src={
+              "https://dqp736wsu6w3m.cloudfront.net/s3bucket/w1000/looks/1682/-2024-06-03-14-39-03.jpg"
+            }
+            width={400}
+            height={400}
+            alt="header image"
           />
         </div>
+      </header>
 
-        <div className={styles.imagebox}>
+      <section className={styles.dmp}>
+        <big>
+          DMP Collection Prestige, Putting <span>Style</span> and{" "}
+          <span>Elegance</span> on <span>Full Display</span>.
+        </big>
+
+        <div className={styles.information}>
+          <div className={styles.textbox}>
+            <h4>Our Establishment</h4>
+            <p>
+              It has been long established that quality over quantity surpasses
+              quantity over quality. However, with modernization that gave life
+              to the invention of new fabrics and industrialization that brought
+              advancements in the manufacturing of fabrics, the mass production
+              made it possible for everyone in the society to have access to a
+              diversity of fabrics including the greedy fashionista.
+            </p>
+
+            <p>
+              The greedy fashionista uses mass production to gain financial
+              profit regardless of the low quality and harmful fabrics they
+              provide for the society. At DMP Collection, we have found a way to
+              keep our customers looking elegant using high-quality fabrics,
+              together with exquisite tailoring and a particular attention to
+              detail because we believe it is what creates elegance in fashion.
+            </p>
+
+            <p>
+              We also offer personalized suits and shirts, event stylist
+              services, made-to-measure creation, and even image counsel for our
+              customers to get the best experience and service.
+            </p>
+
+            <Href
+              route={"Customize"}
+              url={"/catalog"}
+              classname={"transparent"}
+            />
+          </div>
+
+          <div className={styles.imagebox}>
           <Image
             width={500}
             height={500}
@@ -52,13 +100,13 @@ export default function About() {
             src={"/stock-img01.svg"}
           />
         </div>
+        </div>
       </section>
 
       <section className={styles.about}>
-        <h2>
-          DMP Collection Prestige, Putting Style and Elegance on Full Display.
-        </h2>
+
         <div className={styles.box}>
+
           <div className={styles.gridbox}>
             <h3>Our Mission</h3>
             <p>
@@ -72,9 +120,7 @@ export default function About() {
               each individuals unique personality and style
             </p>
           </div>
-          <div className={styles.gridbox}>
-            <img src="/stock-img02.svg" alt="image" />
-          </div>
+
           <div className={styles.gridbox}>
             <h3>Our Vision </h3>
             <p>
@@ -90,6 +136,7 @@ export default function About() {
               business.
             </p>
           </div>
+          
         </div>
       </section>
 

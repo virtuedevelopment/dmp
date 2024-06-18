@@ -23,11 +23,12 @@ export default function Catalog() {
             Step into the world of DMP Collection and explore our exquisite
             range of high-quality fabrics and designs. Our interactive catalog
             allows you to browse through our meticulously curated selection of
-            suits and shirts, each crafted to perfection. <br/><br /> With our easy-to-use
-            customization options, you can personalize every detail to your
-            preference, from fabric choices to unique finishing touches. Whether
-            you’re looking for a classic look or a contemporary style, our
-            catalog offers endless possibilities to create your ideal garment.
+            suits and shirts, each crafted to perfection. <br />
+            <br /> With our easy-to-use customization options, you can
+            personalize every detail to your preference, from fabric choices to
+            unique finishing touches. Whether you’re looking for a classic look
+            or a contemporary style, our catalog offers endless possibilities to
+            create your ideal garment.
             <br /> <br />
             Experience the convenience and creativity of designing your perfect
             outfit with DMP Collection. View and customize our catalog today to
@@ -35,8 +36,8 @@ export default function Catalog() {
           </p>
           <Href
             classname={"mainbutton"}
-            route={"Get in touch with us"}
-            url={"/contact"}
+            route={"Customize Suit"}
+            url={"/customize"}
           />
         </div>
       </header>
