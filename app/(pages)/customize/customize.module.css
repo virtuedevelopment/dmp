@@ -1,0 +1,234 @@
+.main {
+  min-height: 725px;
+  background-color: var(--white);
+  position: relative;
+  display: flex;
+}
+
+.next {
+  min-width: 125px;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--color-main);
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition-normal);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.next svg {
+  width: 14px;
+  height: 14px;
+}
+
+.previous {
+  min-width: 125px;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition-normal);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.previous svg {
+  width: 14px;
+  height: 14px;
+}
+
+.formError {
+  border: solid 0.5px var(--color-main) !important;
+}
+
+/* Welcome box */
+.Welcome_Container {
+  width: 100%;
+  min-height: 700px;
+  background: url("https://d1fufvy4xao6k9.cloudfront.net/images/lookbook/pitti-uomo-summer-23/dkt_9.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcomebox {
+  max-width: 1000px;
+  min-width: 350px;
+  width: 60%;
+
+  min-height: 75%;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow-heavy);
+
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+.welcomebox h2 {
+  font-size: var(--font-size-subhead);
+  color: var(--color-secondary);
+  text-align: center;
+}
+.welcomebox small {
+  text-align: center;
+  width: 80%;
+  font-family: var(--body-style);
+  color: var(--grey);
+  font-weight: 300;
+}
+.welcomebox form {
+  width: 100%;
+  flex-grow: 1;
+  padding: 0.75rem 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.welcomebox form input {
+  outline: none;
+  border: none;
+  height: 50px;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  border: solid 0.5px var(--grey);
+}
+.welcomebox form textarea {
+  outline: none;
+  width: 100%;
+  grid-column: 1/-1;
+  height: 125px;
+  resize: none;
+
+  padding: 0.75rem;
+  background-color: transparent;
+  border: solid 0.5px var(--grey);
+}
+.welcomebox form .buttonbox {
+  width: 100%;
+  grid-column: 1/-1;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Editor */
+.Editor_Container {
+  width: 100%;
+  transition: var(--transition-normal);
+  left: -100svw;
+  animation: open 1s ease-in-out forwards;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.view {
+  background-color: var(--grey-tone);
+}
+.selector {
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 1.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.selector h3 {
+  color: var(--grey);
+  width: 100%;
+  padding-bottom: 0.25rem;
+  border-bottom: solid 0.5px var(--grey-tone);
+}
+.selector .buttonbox {
+  width: 100%;
+  grid-column: 1/-1;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Loading */
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 4;
+}
+.loading svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-main);
+  animation: spin 1s linear infinite;
+}
+.loading p {
+  color: var(--grey);
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes open {
+  0% {
+    left: -100svw;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 500px) {
+  /* Welcome box */
+  .Welcome_Container {
+    padding: 1.25rem;
+  }
+  .welcomebox {
+    width: 100%;
+    height: 100%;
+  }
+  .welcomebox small {
+    width: 100%;
+  }
+  .welcomebox form {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Editor */
+  .Editor_Container {
+    grid-template-columns: 1fr;
+  }
+}
