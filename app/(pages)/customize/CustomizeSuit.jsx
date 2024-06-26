@@ -275,7 +275,7 @@ export default function CustomizeSuit() {
   const [req, setReq] = useState({ personal_information: {} }); //multistates will add information to forms
 
   //multistate utilities
-  const [currentForm, setCurrentForm] = useState(2); // 1 -> 3
+  const [currentForm, setCurrentForm] = useState(1); // 1 -> 3
   const previous = () => {
     setCurrentForm(currentForm - 1);
   };
