@@ -36,4 +36,53 @@
   padding: 0.75rem;
   border: none;
   cursor: pointer;
+  transition: var(--transition-normal);
+}
+.dropdown button:hover {
+  transition: var(--transition-normal);
+  color: var(--white);
+  background-color: var(--color-main);
+}
+
+/* Option View */
+.optionview {
+  width: 100%;
+  min-width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--black);
+  border: solid 0.5px var(--grey);
+  position: relative;
+}
+.optionview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.optionview .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  transition: var(--transition-normal);
+  text-align: center;
+  background-color: rgba(33, 33, 33, 0.25);
+}
+.optionview .info small {
+  width: 80%;
+}
+.optionview:hover .info {
+  opacity: 0;
 }

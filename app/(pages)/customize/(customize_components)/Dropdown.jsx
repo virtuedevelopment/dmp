@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./customize_components.module.css";
-
 import { ChevronUp, ChevronDown } from "lucide-react";
 
-/* this component is a drodpown options selector for the customize suit component */
+/* this component is a dropdown options selector for the customize suit component */
 
 export default function Dropdown({ options, state, title }) {
   const [open, setOpen] = useState(false);
@@ -24,17 +23,16 @@ export default function Dropdown({ options, state, title }) {
     <>
       <div onClick={toggle} className={styles.selector}>
         <span>
-        <small>{title}:</small>
-        <p>{current}</p>
+          <small>{title}:</small>
+          <p>{current.title}</p>
         </span>
-
         {open ? <ChevronUp /> : <ChevronDown />}
       </div>
       {open && (
         <div className={styles.dropdown}>
-          {options.map((option) => (
-            <button onClick={() => selectCurrent(option)} key={option}>
-              {option}
+          {options.map((option, index) => (
+            <button onClick={() => selectCurrent(option)} key={index}>
+              {option.title}
             </button>
           ))}
         </div>

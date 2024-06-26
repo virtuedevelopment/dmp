@@ -7,6 +7,7 @@ import styles from "./customize.module.css";
 import { LoaderCircle, ChevronRight, ChevronLeft } from "lucide-react";
 import custom_options from "@/_data/Custom";
 import Dropdown from "./(customize_components)/Dropdown";
+import OptionView from "./(customize_components)/OptionView";
 
 //component imports
 
@@ -191,11 +192,23 @@ const Welcome = ({ next, req, setReq }) => {
 
 //Second state jacket
 const Editor = ({ back, next, req, setReq }) => {
-  const [style, setStyle] = useState();
+  //jacket style
+  const [style, setStyle] = useState(custom_options.jacket.style[0]);
+  const [lining, setLining] = useState(custom_options.jacket.lining[0]);
+  const [button, setButton] = useState(custom_options.jacket.button[0]);
+  const [lapel, setLapel] = useState(custom_options.jacket.lapel[0]);
+  const [canvas, setCanvas] = useState(custom_options.jacket.canvas[0]);
 
   return (
     <section className={styles.Editor_Container}>
-      <div className={styles.view}>suit view</div>
+      <div className={styles.view}>
+        {style && <OptionView option={style} />}
+        {lining && <OptionView option={lining} />}
+        {button && <OptionView option={button} />}
+        {lapel && <OptionView option={lapel} />}
+        {canvas && <OptionView option={canvas} />}
+      </div>
+
       <aside className={styles.selector}>
         <h3>Jacket:</h3>
         <Dropdown
@@ -204,50 +217,39 @@ const Editor = ({ back, next, req, setReq }) => {
           icon={null}
           title={"Style"}
         />
+
+        <Dropdown
+          options={custom_options.jacket.lining}
+          state={setLining}
+          icon={null}
+          title={"Lining"}
+        />
         <Dropdown
           options={custom_options.jacket.button}
-          state={setStyle}
+          state={setButton}
           icon={null}
           title={"Buttons"}
         />
         <Dropdown
-          options={custom_options.jacket.monogram}
-          state={setStyle}
-          icon={null}
-          title={"Monogram"}
-        />
-        <Dropdown
           options={custom_options.jacket.lapel}
-          state={setStyle}
+          state={setLapel}
           icon={null}
           title={"Lapel"}
         />
         <Dropdown
           options={custom_options.jacket.canvas}
-          state={setStyle}
+          state={setCanvas}
           icon={null}
           title={"Canvas"}
         />
 
-        <h3>Trousers:</h3>
-
-        <h3>Waistcoat:</h3>
-
-        <h3>Material:</h3>
-
-        <h3>Measurements:</h3>
-
-        <h3>Additional Specifications:</h3>
-
         <div className={styles.buttonbox}>
           <button type="button" onClick={back} className={styles.previous}>
-            {" "}
             <ChevronLeft /> Back
           </button>
 
           <button type="submit" className={styles.next}>
-            {" "}
-            Confirm <ChevronRight />{" "}
+            Confirm <ChevronRight />
           </button>
         </div>
       </aside>
@@ -273,7 +275,7 @@ export default function CustomizeSuit() {
   const [req, setReq] = useState({ personal_information: {} }); //multistates will add information to forms
 
   //multistate utilities
-  const [currentForm, setCurrentForm] = useState(1); // 1 -> 3
+  const [currentForm, setCurrentForm] = useState(2); // 1 -> 3
   const previous = () => {
     setCurrentForm(currentForm - 1);
   };
