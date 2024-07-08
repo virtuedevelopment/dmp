@@ -23,7 +23,6 @@
   width: 14px;
   height: 14px;
 }
-
 .previous {
   min-width: 125px;
   padding: 0.5rem 1rem;
@@ -42,7 +41,6 @@
   width: 14px;
   height: 14px;
 }
-
 .formError {
   border: solid 0.5px var(--color-main) !important;
 }
@@ -156,6 +154,17 @@
   padding-bottom: 0.25rem;
   border-bottom: solid 0.5px var(--grey-tone);
 }
+
+.selector_dropdown {
+  padding: 1rem;
+  border: none;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .selector .buttonbox {
   width: 100%;
   grid-column: 1/-1;
@@ -196,6 +205,26 @@
 }
 .loading p {
   color: var(--grey);
+}
+
+/* Buttons */
+#waistcoat_toggle {
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-main);
+  color: var(--white);
+  transition: var(--transition-normal);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+#waistcoat_toggle:hover {
+  background-color: var(--black);
+  transition: var(--transition-normal);
 }
 
 /* Animations */

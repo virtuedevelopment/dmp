@@ -4,8 +4,17 @@ import { useRouter } from "next/navigation";
 import styles from "./customize.module.css";
 
 //utitlity imports
-import { LoaderCircle, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  LoaderCircle,
+  ChevronRight,
+  ChevronLeft,
+  ChevronUp,
+  ChevronDown,
+  Ban,
+  CirclePlus,
+} from "lucide-react";
 import custom_options from "@/_data/Custom";
+import materials from "@/_data/materials";
 import Dropdown from "./(customize_components)/Dropdown";
 import OptionView from "./(customize_components)/OptionView";
 
@@ -192,12 +201,58 @@ const Welcome = ({ next, req, setReq }) => {
 
 //Second state jacket
 const Editor = ({ back, next, req, setReq }) => {
+  //toggle buttons
+  const [jacketToggle, setJacketToggle] = useState(true);
+  const [trouserToggle, setTrouserToggle] = useState(false);
+  const [materialToggle, setMaterialToggle] = useState(false);
+
+  const trigger = (dropdown) => {
+    if (dropdown === "jacket") {
+      setJacketToggle(!jacketToggle);
+    } else if (dropdown === "trouser") {
+      setTrouserToggle(!trouserToggle);
+    } else if (dropdown === "material") {
+      setMaterialToggle(!materialToggle);
+    }
+  };
+
   //jacket style
   const [style, setStyle] = useState(custom_options.jacket.style[0]);
   const [lining, setLining] = useState(custom_options.jacket.lining[0]);
   const [button, setButton] = useState(custom_options.jacket.button[0]);
   const [lapel, setLapel] = useState(custom_options.jacket.lapel[0]);
   const [canvas, setCanvas] = useState(custom_options.jacket.canvas[0]);
+
+  //trouser style
+  const [waistband, setWaistband] = useState(
+    custom_options.trouser.waistband[0]
+  );
+  const [pocket, setPocket] = useState(custom_options.trouser.pocket[0]);
+  const [pleat, setPleat] = useState(custom_options.trouser.pleat[0]);
+  const [hem, setHem] = useState(custom_options.trouser.hem[0]);
+  const [trouserButton, setTrouserButton] = useState(
+    custom_options.trouser.button[0]
+  );
+
+  //waistcoat states
+  const [waistcoat, setWaistcoat] = useState(false);
+  const [closure, setClosure] = useState(custom_options.waistcoat.closure[0]);
+  const [waistcoatStyle, setWaistcoatStyle] = useState(
+    custom_options.waistcoat.style[0]
+  );
+  const [waistcoatPocket, setWaistcoatPocket] = useState(
+    custom_options.waistcoat.pocket[0]
+  );
+  const [backside, setBackside] = useState(custom_options.waistcoat.back[0]);
+  const [waistcoatLining, setWaistcoatLining] = useState(
+    custom_options.waistcoat.lining[0]
+  );
+  const [waistcoatButton, setWaistcoatButton] = useState(
+    custom_options.waistcoat.button[0]
+  );
+  const toggle_waistcoat = () => {
+    setWaistcoat(!waistcoat);
+  };
 
   return (
     <section className={styles.Editor_Container}>
@@ -210,38 +265,185 @@ const Editor = ({ back, next, req, setReq }) => {
       </div>
 
       <aside className={styles.selector}>
-        <h3>Jacket:</h3>
-        <Dropdown
-          options={custom_options.jacket.style}
-          state={setStyle}
-          icon={null}
-          title={"Style"}
-        />
+        <h3>Suit Styling:</h3>
 
-        <Dropdown
-          options={custom_options.jacket.lining}
-          state={setLining}
-          icon={null}
-          title={"Lining"}
-        />
-        <Dropdown
-          options={custom_options.jacket.button}
-          state={setButton}
-          icon={null}
-          title={"Buttons"}
-        />
-        <Dropdown
-          options={custom_options.jacket.lapel}
-          state={setLapel}
-          icon={null}
-          title={"Lapel"}
-        />
-        <Dropdown
-          options={custom_options.jacket.canvas}
-          state={setCanvas}
-          icon={null}
-          title={"Canvas"}
-        />
+        <button
+          type="button"
+          onClick={() => trigger("jacket")}
+          className={styles.selector_dropdown}
+        >
+          <p>Jacket Customization</p>
+          {jacketToggle ? (
+            <ChevronDown strokeWidth={1.5} />
+          ) : (
+            <ChevronUp strokeWidth={1.5} />
+          )}
+        </button>
+
+        {jacketToggle && (
+          <>
+            <Dropdown
+              options={custom_options.jacket.style}
+              state={setStyle}
+              icon={null}
+              title={"Style"}
+            />
+
+            <Dropdown
+              options={custom_options.jacket.lining}
+              state={setLining}
+              icon={null}
+              title={"Lining"}
+            />
+            <Dropdown
+              options={custom_options.jacket.button}
+              state={setButton}
+              icon={null}
+              title={"Buttons"}
+            />
+            <Dropdown
+              options={custom_options.jacket.lapel}
+              state={setLapel}
+              icon={null}
+              title={"Lapel"}
+            />
+            <Dropdown
+              options={custom_options.jacket.canvas}
+              state={setCanvas}
+              icon={null}
+              title={"Canvas"}
+            />
+          </>
+        )}
+
+        <button
+          type="button"
+          onClick={() => trigger("trouser")}
+          className={styles.selector_dropdown}
+        >
+          <p>Trouser Customization</p>
+          {trouserToggle ? (
+            <ChevronDown strokeWidth={1.5} />
+          ) : (
+            <ChevronUp strokeWidth={1.5} />
+          )}
+        </button>
+
+        {trouserToggle && (
+          <>
+            <Dropdown
+              options={custom_options.trouser.waistband}
+              state={setWaistband}
+              icon={null}
+              title={"Waistband"}
+            />
+            <Dropdown
+              options={custom_options.trouser.pocket}
+              state={setPocket}
+              icon={null}
+              title={"Pockets"}
+            />
+            <Dropdown
+              options={custom_options.trouser.pleat}
+              state={setPleat}
+              icon={null}
+              title={"Pleat"}
+            />
+            <Dropdown
+              options={custom_options.trouser.hem}
+              state={setHem}
+              icon={null}
+              title={"Hem Finishing"}
+            />
+          </>
+        )}
+
+        <h3>Additional Styling:</h3>
+
+        <button
+          type="button"
+          onClick={() => trigger("material")}
+          className={styles.selector_dropdown}
+        >
+          <p>Material & Measurements</p>
+          {materialToggle ? (
+            <ChevronDown strokeWidth={1.5} />
+          ) : (
+            <ChevronUp strokeWidth={1.5} />
+          )}
+        </button>
+
+        {materialToggle && (
+          <>
+            <Dropdown
+              options={custom_options.materials}
+              title={"Jacket Material"}
+            />
+
+            <Dropdown
+              options={custom_options.materials}
+              title={"Trouser Material"}
+            />
+          </>
+        )}
+
+        <button
+          type="button"
+          onClick={toggle_waistcoat}
+          id={styles.waistcoat_toggle}
+        >
+          {waistcoat ? (
+            <>
+              <Ban strokeWidth={3} /> <p>Waistcoat -$150.00</p>
+            </>
+          ) : (
+            <>
+              <CirclePlus strokeWidth={3} />
+              <p>Waistcoat +$150.00</p>
+            </>
+          )}
+        </button>
+
+        {waistcoat && (
+          <>
+            <h3>Waistcoat:</h3>
+            <Dropdown
+              options={custom_options.waistcoat.closure}
+              state={setClosure}
+              title={"Closure"}
+            />
+
+            <Dropdown
+              options={custom_options.waistcoat.style}
+              state={setWaistcoatStyle}
+              title={"Style"}
+            />
+
+            <Dropdown
+              options={custom_options.waistcoat.pocket}
+              state={setWaistcoatPocket}
+              title={"Pocket"}
+            />
+
+            <Dropdown
+              options={custom_options.waistcoat.back}
+              state={setBackside}
+              title={"Back"}
+            />
+
+            <Dropdown
+              options={custom_options.waistcoat.lining}
+              state={setWaistcoatLining}
+              title={"Lining"}
+            />
+
+            <Dropdown
+              options={custom_options.waistcoat.button}
+              state={setWaistcoatButton}
+              title={"Buttons"}
+            />
+          </>
+        )}
 
         <div className={styles.buttonbox}>
           <button type="button" onClick={back} className={styles.previous}>
@@ -275,7 +477,7 @@ export default function CustomizeSuit() {
   const [req, setReq] = useState({ personal_information: {} }); //multistates will add information to forms
 
   //multistate utilities
-  const [currentForm, setCurrentForm] = useState(1); // 1 -> 3
+  const [currentForm, setCurrentForm] = useState(2); // 1 -> 3
   const previous = () => {
     setCurrentForm(currentForm - 1);
   };

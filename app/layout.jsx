@@ -1,12 +1,12 @@
-import { Tenor_Sans } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import configurations from "@/_data/config";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
 
-const tenor = Tenor_Sans({
+const tenor = Sora({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata = {
