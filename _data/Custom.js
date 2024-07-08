@@ -19,14 +19,16 @@ const custom_options = {
         ],
 
         button: [
-            { title: 'Black', description: '', img: '' },
-            { title: 'Dark Brown', description: 'G8', img: '' },
-            { title: 'Brown', description: '', img: '' },
-            { title: 'Light Brown', description: '', img: '' },
-            { title: 'Beige', description: '', img: '' },
-            { title: 'Cream', description: '', img: '' },
-            { title: 'Off-White', description: '', img: '' },
-            { title: 'Light-Grey', description: '', img: '' }
+            { title: 'Black', description: 'BOHA2', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/BOHA2' },
+            { title: 'Black', description: 'MH1F', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/MH1F' },
+            { title: 'Black Horn', description: 'MH1', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/MH1' },
+            { title: 'Dark Brown', description: 'TFH01', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/TFH01' },
+            { title: 'Brown', description: 'G8', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/G8' },
+            { title: 'Light Brown', description: 'TBR13867', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/TBR1387' },
+            { title: 'Beige', description: 'NB01', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/NB01' },
+            { title: 'Beige and Dark Brown', description: 'BOHA4', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/BOHA4' },
+            { title: 'Off-White', description: 'T17', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/T17' },
+            { title: 'Light-Grey', description: 'nb02', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/NB02' }
         ],
         lapel: [
             { title: 'Notch', description: 'The most standard and versatile lapel works well for any occasion.', img: '/lapels/notch_lapel.avif' },
@@ -44,112 +46,96 @@ const custom_options = {
 
     trouser: {
         waistband: [
-            { title: 'Standard Button', description: 'A classic, straightforward waistband with an exposed button.', img: '' },
-            { title: 'Standard Hidden Button', description: 'Our classic waistband with a single hidden button under a squared shaped closure.', img: '' },
-            { title: 'Drawstring Elasticated Sides', description: 'A partially elastic waistband with a drawstring closure', img: '' },
-            { title: 'Extended Peak', description: 'A bold sartorial closure with a extended peak and a single exposed button. Found on our Braddon trouser', img: '' },
-            { title: 'Extended Straight', description: 'A sleek, waistband with a hidden button and single belt loop for securing the extended closure. Found on our Brentwood trouser', img: '' },
-            { title: 'Extended Peak Slim', description: 'This sartorial waistband features a slim peak closure with two belt loops and exposed button. Found on our Blake trouser', img: '' },
-            { title: 'Single Sided Closure', description: 'A clean, featureless front, using instead a buckle closure on the right hip of the waistband. Found on our Fellini trouser', img: '' },
-            { title: 'Double Side Closure', description: 'This military-inspired style features a distinct adjustable buckles on both hips and a full extension across the front.', img: '' }
+            { title: 'Standard Button', description: 'A classic, straightforward waistband with an exposed button.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBBR7' },
+            { title: 'Standard Hidden Button', description: 'Our classic waistband with a single hidden button under a squared shaped closure.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBWA6' },
+            { title: 'Drawstring Elasticated Sides', description: 'A partially elastic waistband with a drawstring closure', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBAPES10' },
+            { title: 'Extended Peak', description: 'A bold sartorial closure with a extended peak and a single exposed button. Found on our Braddon trouser', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBBR3' },
+            { title: 'Extended Straight', description: 'A sleek, waistband with a hidden button and single belt loop for securing the extended closure. Found on our Brentwood trouser', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBBR5' },
+            { title: 'Extended Peak Slim', description: 'This sartorial waistband features a slim peak closure with two belt loops and exposed button. Found on our Blake trouser', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBBL2' },
+            { title: 'Single Sided Closure', description: 'A clean, featureless front, using instead a buckle closure on the right hip of the waistband. Found on our Fellini trouser', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBFE8' },
+            { title: 'Double Side Closure', description: 'This military-inspired style features a distinct adjustable buckles on both hips and a full extension across the front.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/WBGU9' }
         ],
         pocket: [
-            { title: 'Slanted', description: '', img: '' },
-            { title: 'Jetted', description: '', img: '' },
-            { title: 'Seam', description: '', img: '' },
+            { title: 'Slanted', description: 'The most common style, slanted pockets are versatile enough for casual and more formal occasions.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/FPSL1' },
+            { title: 'Jetted', description: 'Formal & exclusively aesthetic, jetted pockets are defined by a fine trimmed slit cut into the fabric.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/FPJ2' },
+            { title: 'Seam', description: 'The pocket is built into the side seams. They provide a clean, streamlined silhouette.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/FPSE3' },
         ],
         pleat: [
-            { title: 'None', description: '', img: '' },
-            { title: 'Standard Single Pleat', description: '', img: '' },
-            { title: 'Standard Double Pleat', description: '', img: '' },
-            { title: 'Forward Single Pleat', description: '', img: '' },
-            { title: 'Forward Double Pleat', description: '', img: '' },
+            { title: 'None', description: 'Non-pleated trousers, known as flat fronted, lie flat against the leg for a neat, versatile appeal.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/PLNO1' },
+            { title: 'Standard Single Pleat', description: 'The standard single pleat opens towards the side seam.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/PLS2' },
+            { title: 'Standard Double Pleat', description: 'Double standard pleats opens towards the side seam', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/PLD3' },
+            { title: 'Forward Single Pleat', description: 'A single forward pleat opens towards the crotch.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/PLRS4' },
+            { title: 'Forward Double Pleat', description: 'Double forward pleats opens towards the crotch.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/PLRD5' },
         ],
         hem: [
-            { title: 'Unfinished', description: '', img: '' },
-            { title: 'Plain', description: '', img: '' },
-            { title: 'Turn Up 4cm', description: '', img: '' },
-            { title: 'Turn Up 5cm', description: '', img: '' },
+            { title: 'Unfinished', description: 'Unfinished hems offer 11 extra centimeters of fabric, allowing you to finish the trousers your way.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/THFUF4' },
+            { title: 'Plain', description: 'Hemmed trousers feature the bottom fabric folded up inside the pant leg for a clean finish.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/THFP1' },
+            { title: 'Turn Up 4cm', description: '4cm cuffs show more of the sock, grants the illusion of height and adds weight for a nicer drape.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/THFT4cm2' },
+            { title: 'Turn Up 5cm', description: 'Bold 5cm cuffs show even more sock or ankle, grants the illusion of height & adds weight for a nicer drape.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Trousers/THFT5cm3' },
         ],
         button: [
-            { title: 'Brown', description: '', img: '' },
+            { title: 'Black', description: 'BOHA2', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/BOHA2' },
+            { title: 'Black', description: 'MH1F', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/MH1F' },
+            { title: 'Black Horn', description: 'MH1', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/MH1' },
+            { title: 'Dark Brown', description: 'TFH01', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/TFH01' },
+            { title: 'Brown', description: 'G8', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/G8' },
+            { title: 'Light Brown', description: 'TBR13867', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/TBR1387' },
+            { title: 'Beige', description: 'NB01', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/NB01' },
+            { title: 'Beige and Dark Brown', description: 'BOHA4', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/BOHA4' },
+            { title: 'Off-White', description: 'T17', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/T17' },
+            { title: 'Light-Grey', description: 'nb02', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/NB02' }
         ]
-
     },
 
     waistcoat: {
         closure: [
-            { title: 'Single Breasted 4 Button', description: 'This classic single-breasted waistcoat is crafted with 4 buttons.', img: '' },
-            { title: 'Single Breasted 5 Button', description: 'This classic single-breasted waistcoat is crafted with 5 buttons.', img: '' },
-            { title: 'Single Breasted 6 Button', description: 'This classic single-breasted waistcoat is crafted with 6 buttons.', img: '' },
-            { title: 'Double Breasted 6 Button', description: 'An elevated take on the traditional waistcoat, this double-breasted style features a 6-button closure.', img: '' },
-            { title: 'Double Breasted 8 Button', description: 'A bolder, more elevated take on the traditional waistcoat, this double-breasted style features an 8 button closure.', img: '' }
+            { title: 'Single Breasted 4 Button', description: 'This classic single-breasted waistcoat is crafted with 4 buttons.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/CSB4BN1' },
+            { title: 'Single Breasted 5 Button', description: 'This classic single-breasted waistcoat is crafted with 5 buttons.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/CSB5BN2' },
+            { title: 'Single Breasted 6 Button', description: 'This classic single-breasted waistcoat is crafted with 6 buttons.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/CSB6BN3' },
+            { title: 'Double Breasted 6 Button', description: 'An elevated take on the traditional waistcoat, this double-breasted style features a 6-button closure.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/CDB6BN4' },
+            { title: 'Double Breasted 8 Button', description: 'A bolder, more elevated take on the traditional waistcoat, this double-breasted style features an 8 button closure.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/CDB8BN5' }
         ],
         style: [
-            { title: 'V Shaped', description: 'A common style for casual layering, without lapels for a clean finish.', img: '' },
-            { title: 'Notch Lapel', description: 'For a versatile styling accent that add a fuller look to single-breasted waistcoats.', img: '' },
-            { title: 'Peak Lapel', description: 'Classic and refined, peak lapels bring a touch of timeless elegance.', img: '' },
-            { title: 'Horse Shoe', description: 'A formal pick, featuring a deep, rounded neckline and a collar with no lapel.', img: '' }
+            { title: 'V Shaped', description: 'A common style for casual layering, without lapels for a clean finish.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/STVS1' },
+            { title: 'Notch Lapel', description: 'For a versatile styling accent that add a fuller look to single-breasted waistcoats.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/STNL2' },
+            { title: 'Peak Lapel', description: 'Classic and refined, peak lapels bring a touch of timeless elegance.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/STPL3' },
+            { title: 'Horse Shoe', description: 'A formal pick, featuring a deep, rounded neckline and a collar with no lapel.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/STUU1' }
         ],
         pocket: [
-            { title: 'Straight Pocket', description: 'Straight pockets are a common style featuring a pocket affixed to the inside of a lined garment.', img: '' },
-            { title: 'Jetted Pocket', description: 'Formal & exclusively aesthetic, jetted pockets are defined by a fine trimmed slit cut into the fabric.', img: '' }
+            { title: 'Straight Pocket', description: 'Straight pockets are a common style featuring a pocket affixed to the inside of a lined garment.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/SPSP2' },
+            { title: 'Jetted Pocket', description: 'Formal & exclusively aesthetic, jetted pockets are defined by a fine trimmed slit cut into the fabric.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/SPJP3' }
         ],
         back: [
-            { title: 'Lining', description: 'This more formal style of waistcoat features a silk-lined back and is usually part of a 3-piece suit.', img: '' },
-            { title: 'Fabric', description: 'This more casual style of waistcoat features a fabric-lined back and is perfect to wear as a separate.', img: '' }
+            { title: 'Lining', description: 'This more formal style of waistcoat features a silk-lined back and is usually part of a 3-piece suit.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/BSL1' },
+            { title: 'Fabric', description: 'This more casual style of waistcoat features a fabric-lined back and is perfect to wear as a separate.', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/Waistcoat/BSF2' }
         ],
         lining: [
-            { title: 'Black', description: '', img: '' },
-            { title: 'Dark Brown', description: 'G8', img: '' },
-            { title: 'Brown', description: '', img: '' },
-            { title: 'Light Brown', description: '', img: '' },
-            { title: 'Beige', description: '', img: '' },
-            { title: 'Cream', description: '', img: '' },
-            { title: 'Off-White', description: '', img: '' },
-            { title: 'Light-Grey', description: '', img: '' },
-            { title: 'Off-White', description: '', img: '' },
-            { title: 'Light-Grey', description: '', img: '' }
+            { title: 'White', description: '1098', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/1098' },
+            { title: 'Light Brown', description: '1107', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/1107' },
+            { title: 'Light Grey', description: '3220', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/3220' },
+            { title: 'Black', description: '100', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/100' },
+            { title: 'Dark Brown', description: '1047', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/1047' },
+            { title: 'Red', description: '1230', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/230' },
+            { title: 'Dark Red', description: '1249', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/249' },
+            { title: 'Burgundy', description: '3276', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/COLOR-3276' },
+            { title: 'Blue', description: '9680', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/9680' },
+            { title: 'Navy Blue', description: '1197', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/197' }
         ],
         button: [
-            { title: 'Black', description: '', img: '' },
-            { title: 'Dark Brown', description: 'G8', img: '' },
-            { title: 'Brown', description: '', img: '' },
-            { title: 'Light Brown', description: '', img: '' },
-            { title: 'Beige', description: '', img: '' },
-            { title: 'Cream', description: '', img: '' },
-            { title: 'Off-White', description: '', img: '' },
-            { title: 'Light-Grey', description: '', img: '' }
+            { title: 'Black', description: 'BOHA2', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/BOHA2' },
+            { title: 'Black', description: 'MH1F', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/MH1F' },
+            { title: 'Black Horn', description: 'MH1', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/MH1' },
+            { title: 'Dark Brown', description: 'TFH01', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/TFH01' },
+            { title: 'Brown', description: 'G8', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/G8' },
+            { title: 'Light Brown', description: 'TBR13867', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/TBR1387' },
+            { title: 'Beige', description: 'NB01', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/NB01' },
+            { title: 'Beige and Dark Brown', description: 'BOHA4', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/BOHA4' },
+            { title: 'Off-White', description: 'T17', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/T17' },
+            { title: 'Light-Grey', description: 'nb02', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/buttons_v2/NB02' }
         ]
     },
 
     materials: [
-        {
-            "title": "Satin",
-            "composition": "100% Polyester",
-            "description": "Smooth, glossy fabric typically used for formal wear and lingerie.",
-            "img": "https://m.media-amazon.com/images/I/91852GbuTnL._AC_UF894,1000_QL80_.jpg",
-            "colors": [
-                { "color": "Red", "code": "#FF4500" },
-                { "color": "Navy", "code": "#1A2D5C" },
-                { "color": "Charcoal", "code": "#36454F" },
-                { "color": "Black", "code": "#282C35" },
-                { "color": "Grey", "code": "#A9A9A9" }
-            ]
-        },
-        {
-            "title": "Corduroy",
-            "composition": "100% Cotton",
-            "description": "Textured fabric with intricate patterns, ideal for upholstery and outerwear.",
-            "img": "https://www.hempfortex.com/cdn/shop/products/HG4578_2_800x.jpg?v=1642149505",
-            "colors": [
-                { "color": "Red", "code": "#FF4500" },
-                { "color": "Navy", "code": "#1A2D5C" },
-                { "color": "Charcoal", "code": "#36454F" },
-                { "color": "Black", "code": "#282C35" },
-                { "color": "Grey", "code": "#A9A9A9" }
-            ]
-        },
         {
             "title": "Cotton Linen",
             "composition": "50% Cotton, 50% Linen",
@@ -227,35 +213,21 @@ const custom_options = {
                 { "color": "Black", "code": "#282C35" },
                 { "color": "Grey", "code": "#A9A9A9" }
             ]
-        },
-        {
-            "title": "Shirt Fabric",
-            "composition": "100% Cotton",
-            "description": "Versatile and durable fabric suitable for dress shirts and casual shirts.",
-            "img": "https://example.com/images/shirt-fabric.jpg",
-            "colors": [
-                { "color": "Red", "code": "#FF4500" },
-                { "color": "Navy", "code": "#1A2D5C" },
-                { "color": "Charcoal", "code": "#36454F" },
-                { "color": "Black", "code": "#282C35" },
-                { "color": "Grey", "code": "#A9A9A9" }
-            ]
-        },
-        {
-            "title": "Wrinkle Free",
-            "composition": "60% Cotton, 40% Polyester",
-            "description": "Easy-care fabric that resists wrinkles, perfect for travel and daily wear.",
-            "img": "https://www.ecotextile.com/images/stories/2014/February/smooth-fabric.jpg",
-            "colors": [
-                { "color": "Red", "code": "#FF4500" },
-                { "color": "Navy", "code": "#1A2D5C" },
-                { "color": "Charcoal", "code": "#36454F" },
-                { "color": "Black", "code": "#282C35" },
-                { "color": "Grey", "code": "#A9A9A9" }
-            ]
         }
-    ]
+    ],
 
+    colors: [
+        { title: 'White', description: '1098', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/1098' },
+        { title: 'Light Brown', description: '1107', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/1107' },
+        { title: 'Light Grey', description: '3220', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/3220' },
+        { title: 'Black', description: '100', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/100' },
+        { title: 'Dark Brown', description: '1047', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/1047' },
+        { title: 'Red', description: '1230', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/230' },
+        { title: 'Dark Red', description: '1249', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/249' },
+        { title: 'Burgundy', description: '3276', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/COLOR-3276' },
+        { title: 'Blue', description: '9680', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/9680' },
+        { title: 'Navy Blue', description: '1197', img: 'https://cdn.suitsupply.com/image/upload/b_rgb:ffffff,c_fit,f_auto,h_450,q_auto:good,w_450/custommade/thumbs2/lining_ui_v3/197' }
+    ]
 
 };
 

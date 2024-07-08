@@ -202,7 +202,7 @@ const Welcome = ({ next, req, setReq }) => {
 //Second state jacket
 const Editor = ({ back, next, req, setReq }) => {
   //toggle buttons
-  const [jacketToggle, setJacketToggle] = useState(true);
+  const [jacketToggle, setJacketToggle] = useState(false);
   const [trouserToggle, setTrouserToggle] = useState(false);
   const [materialToggle, setMaterialToggle] = useState(false);
 
@@ -254,17 +254,50 @@ const Editor = ({ back, next, req, setReq }) => {
     setWaistcoat(!waistcoat);
   };
 
+  //material and sizing states
+  const [jacketMaterial, setJacketMaterial] = useState(
+    custom_options.materials[0]
+  );
+  const [trouserMaterial, setTrouserMaterial] = useState(
+    custom_options.materials[0]
+  );
+
+  const [jacketSizing, setJacketSizing] = useState({
+    sleeve: "",
+    shoulder: "",
+    chest: "",
+    stomach: "",
+  });
+
+  const [trouserSizing, setTrouserSizing] = useState({
+    leg: "",
+    waist: "",
+    hips: "",
+    thigh: "",
+  });
+
+  //sizing input function
+  const handleInputChange = (e, type, field) => {
+    const value = e.target.value;
+
+    if (type === "jacket") {
+      setJacketSizing({
+        ...jacketSizing,
+        [field]: value,
+      });
+    } else if (type === "trouser") {
+      setTrouserSizing({
+        ...trouserSizing,
+        [field]: value,
+      });
+    }
+  };
+
   return (
     <section className={styles.Editor_Container}>
-      <div className={styles.view}>
-        {style && <OptionView option={style} />}
-        {lining && <OptionView option={lining} />}
-        {button && <OptionView option={button} />}
-        {lapel && <OptionView option={lapel} />}
-        {canvas && <OptionView option={canvas} />}
-      </div>
-
       <aside className={styles.selector}>
+        <h1>Customization Options:</h1>
+
         <h3>Suit Styling:</h3>
 
         <button
@@ -355,6 +388,13 @@ const Editor = ({ back, next, req, setReq }) => {
               icon={null}
               title={"Hem Finishing"}
             />
+
+            <Dropdown
+              options={custom_options.trouser.button}
+              state={setTrouserButton}
+              icon={null}
+              title={"Buttons"}
+            />
           </>
         )}
 
@@ -384,6 +424,82 @@ const Editor = ({ back, next, req, setReq }) => {
               options={custom_options.materials}
               title={"Trouser Material"}
             />
+
+            <h4>Jacket Sizing:</h4>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={jacketSizing.sleeve}
+                placeholder="Sleeve Length (inches)"
+                onChange={(e) => handleInputChange(e, "jacket", "sleeve")}
+              />
+            </div>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={jacketSizing.shoulder}
+                placeholder="Shoulder Width (inches)"
+                onChange={(e) => handleInputChange(e, "jacket", "shoulder")}
+              />
+            </div>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={jacketSizing.chest}
+                placeholder="Chest Around (inches)"
+                onChange={(e) => handleInputChange(e, "jacket", "chest")}
+              />
+            </div>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={jacketSizing.stomach}
+                placeholder="Stomach (inches)"
+                onChange={(e) => handleInputChange(e, "jacket", "stomach")}
+              />
+            </div>
+
+            <h4>Trouser Sizing:</h4>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={trouserSizing.leg}
+                placeholder="Leg Length (inches)"
+                onChange={(e) => handleInputChange(e, "trouser", "leg")}
+              />
+            </div>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={trouserSizing.waist}
+                placeholder="Pants Waist (inches)"
+                onChange={(e) => handleInputChange(e, "trouser", "waist")}
+              />
+            </div>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={trouserSizing.hips}
+                placeholder="Hips (inches)"
+                onChange={(e) => handleInputChange(e, "trouser", "hips")}
+              />
+            </div>
+
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                value={trouserSizing.thigh}
+                placeholder="Thigh (inches)"
+                onChange={(e) => handleInputChange(e, "trouser", "thigh")}
+              />
+            </div>
           </>
         )}
 
@@ -477,7 +593,7 @@ export default function CustomizeSuit() {
   const [req, setReq] = useState({ personal_information: {} }); //multistates will add information to forms
 
   //multistate utilities
-  const [currentForm, setCurrentForm] = useState(2); // 1 -> 3
+  const [currentForm, setCurrentForm] = useState(1); // 1 -> 3
   const previous = () => {
     setCurrentForm(currentForm - 1);
   };

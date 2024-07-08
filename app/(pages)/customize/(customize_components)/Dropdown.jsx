@@ -22,17 +22,35 @@ export default function Dropdown({ options, state, title }) {
   return (
     <>
       <div onClick={toggle} className={styles.selector}>
-        <span>
-          <small>{title}:</small>
-          <p>{current.title}</p>
-        </span>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: "0.75rem",
+          }}
+        >
+          <img
+            style={{ width: "40px", height: "40px", borderRadius: "5px" }}
+            src={current.img}
+            alt="current selected"
+          />
+          <span>
+            <small>{title}:</small>
+            <p>{current.title}</p>
+          </span>
+        </div>
         {open ? <ChevronUp /> : <ChevronDown />}
       </div>
       {open && (
         <div className={styles.dropdown}>
           {options.map((option, index) => (
             <button onClick={() => selectCurrent(option)} key={index}>
-              {option.title}
+              <span className={styles.dropdown_info}>
+                <p>{option.title}</p>
+                <small>{option.description}</small>
+              </span>
+              <img src={option.img} alt="img" />
             </button>
           ))}
         </div>
