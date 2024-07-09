@@ -2,9 +2,17 @@ import React from "react";
 import Transition from "@/app/components/page/Transition";
 import Header from "@/app/components/navigation/Header";
 import styles from "./about.module.css";
+import seo_config from "@/_data/seoConfig";
 
 import Image from "next/image";
 import Href from "@/app/components/buttons/Href";
+
+export const metadata = {
+  title: seo_config.about.title,
+  description: seo_config.about.description,
+  keywords: seo_config.about.keywords,
+  ...seo_config.about.other,
+};
 
 export default function About() {
   return (
@@ -93,20 +101,18 @@ export default function About() {
           </div>
 
           <div className={styles.imagebox}>
-          <Image
-            width={500}
-            height={500}
-            alt="man in suit"
-            src={"/stock-img01.svg"}
-          />
-        </div>
+            <Image
+              width={500}
+              height={500}
+              alt="man in suit"
+              src={"/stock-img01.svg"}
+            />
+          </div>
         </div>
       </section>
 
       <section className={styles.about}>
-
         <div className={styles.box}>
-
           <div className={styles.gridbox}>
             <h3>Our Mission</h3>
             <p>
@@ -136,7 +142,6 @@ export default function About() {
               business.
             </p>
           </div>
-          
         </div>
       </section>
 
@@ -178,7 +183,7 @@ export default function About() {
 
           <Href
             route={"Customize"}
-            url={"/catalog"}
+            url={"/customize"}
             classname={"transparent"}
           />
         </div>

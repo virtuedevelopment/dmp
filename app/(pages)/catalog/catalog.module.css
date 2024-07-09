@@ -2,9 +2,8 @@
   width: 100%;
   min-height: 90svh;
   background: url("/stock-img06.svg");
-  background-filter: saturate(0);
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 
   display: flex;
   align-items: center;
@@ -68,19 +67,21 @@
   text-decoration: none;
   color: var(--black);
   transition: var(--transition-normal);
-  font-family: var(--body-style);
   font-size: var(--body-text);
   border: none;
   background: transparent;
   cursor: pointer;
-  font-weight: 300;
+  font-weight: 200;
+  padding: 0.5rem;
+  border-radius: 20px;
 }
 .nav .options button svg {
   width: 14px;
   height: 14px;
 }
 .nav .options button:hover {
-  color: var(--color-main);
+  color: var(--white);
+  background-color: var(--color-main);
   transition: var(--transition-normal);
 }
 
@@ -197,9 +198,9 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
 }
-
 .peek {
   border: solid 0.5px var(--grey);
+  border-radius: 10px;
   height: min-content;
   position: relative;
   width: 100%;
@@ -225,6 +226,8 @@
   width: 100%;
   background-color: var(--white);
   padding: 0.75rem 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .peek .info p {
   width: 100%;
@@ -245,6 +248,8 @@
   width: 100%;
   object-fit: cover;
   transition: var(--transition-normal);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .peek .desc {
   position: absolute;
@@ -262,9 +267,6 @@
   font-weight: 200;
   line-height: 1.75;
   opacity: 0;
-}
-.peek:hover {
-  box-shadow: var(--box-shadow-heavy);
 }
 .peek:hover img {
   opacity: 0.2;
@@ -315,7 +317,7 @@
   color: var(--white);
   padding: 0.5rem 1.75rem;
   cursor: pointer;
-
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,6 +353,7 @@
   width: 100%;
   flex-grow: 1;
   object-fit: cover;
+  border-radius: 10px;
 }
 .gallerybox .selectionbox {
   width: 100%;
@@ -368,12 +371,14 @@
   cursor: pointer;
   transition: var(--transition-normal);
   background-color: var(--black);
+  border-radius: 10px;
 }
 .imageButton img {
   width: 100%;
   height: 100%;
   transform: var(--transition-normal);
   object-fit: cover;
+  border-radius: 10px;
 }
 .imageButton:hover img {
   transition: var(--transition-normal);
@@ -387,7 +392,7 @@
 .viewSelect h2 {
   color: var(--grey);
   padding: 0.5rem 0;
-  border-bottom: solid 0.5px var(--grey);
+  font-weight: 500;
 }
 .viewSelect .tag {
   background-color: var(--color-main);
@@ -396,7 +401,7 @@
   color: var(--white);
   font-size: 12px;
   font-weight: 100;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   display: inline-block;
 }
 
@@ -406,8 +411,8 @@
 }
 .productDescription p {
   line-height: 2;
-  margin-bottom: 0.5rem;
-  color: var(--black);
+  margin-bottom: 0.25rem;
+  color: var(--grey);
   font-family: var(--body-style);
   font-weight: 300;
 }
@@ -439,6 +444,7 @@
   flex-direction: column;
   gap: 0.25rem;
   transition: var(--transition-normal);
+  border-radius: 10px;
 }
 .materialSelect button:hover {
   transition: var(--transition-normal);
@@ -453,10 +459,14 @@
   width: 75px;
   height: 55px;
   object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .materialSelect button small {
   color: var(--black);
-  padding: 1px 0;
+  font-size: 10px;
+  padding: 1px 2px;
+
 }
 .materialSelect button.selected {
   /* Add your selected styles here */
@@ -478,9 +488,10 @@
   gap: 0.75rem;
 }
 .clrSelect button {
-  width: 50px;
+  min-width: 60px;
   min-height: 50px;
-  border-radius: 100px;
+  padding: 0.25rem;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -488,7 +499,7 @@
   flex-direction: column;
   gap: 0.25rem;
   transition: var(--transition-normal);
-  /* border: solid 0.5px var(--grey); */
+  color: var(--white);
   border: none;
 }
 .clrSelect button small {
@@ -510,6 +521,7 @@
 .styleSelect button {
   min-width: max-content;
   display: flex;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -534,6 +546,9 @@
   width: 100%;
   min-height: 200px;
   margin: 1rem 0;
+  border-radius: 10px;
+  font-weight: 200;
+  font-size: 16px;
   outline: none;
   border: solid 0.5px var(--grey);
   resize: none;
@@ -553,6 +568,7 @@
   color: var(--grey);
   cursor: pointer;
   transition: var(--transition-normal);
+  border-radius: 10px;
 }
 .nextbutton:hover {
   background-color: var(--color-main);
@@ -571,7 +587,6 @@
 .infoSelect h2 {
   color: var(--grey);
   padding: 0.5rem 0;
-  border-bottom: solid 0.5px var(--grey);
 }
 .infoSelect form {
   width: 100%;
@@ -583,10 +598,11 @@
 .infoSelect form input {
   outline: none;
   width: 100%;
-  padding: 0.75rem 0.15rem;
+  padding: 0.75rem 0.5rem;
   background-color: transparent;
   border: none;
-  border-bottom: solid 0.5px var(--grey);
+  border: solid 0.5px var(--grey);
+  border-radius: 10px;
 }
 .loadingbox {
   width: 60%;
@@ -683,7 +699,7 @@
     padding-top: 1rem;
     border: none;
   }
-  .nav .options{
+  .nav .options {
     display: flex;
     padding: 0.5rem 0;
     gap: 0.5rem;

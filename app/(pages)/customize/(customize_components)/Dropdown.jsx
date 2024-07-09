@@ -5,14 +5,18 @@ import { ChevronUp, ChevronDown } from "lucide-react";
 
 /* this component is a dropdown options selector for the customize suit component */
 
-export default function Dropdown({ options, state, title }) {
+export default function Dropdown({ options, state, title, selected }) {
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState(options[0]);
+  const [current, setCurrent] = useState(selected);
 
-  //util functions
+  useEffect(() => {
+    setCurrent(selected);
+  }, [selected]);
+
   const toggle = () => {
     setOpen(!open);
   };
+
   const selectCurrent = (selected) => {
     setCurrent(selected);
     state(selected);

@@ -76,7 +76,8 @@
   outline: none;
   background-color: transparent;
   border: none;
-  border-bottom: solid 0.5px var(--black);
+  border: solid 0.5px var(--black);
+  border-radius: 10px;
   color: var(--black);
   padding: 0.5rem;
 }
@@ -89,6 +90,7 @@
   padding: 0.5rem;
   outline: none;
   resize: none;
+  border-radius: 10px;
 }
 
 .submitButton {

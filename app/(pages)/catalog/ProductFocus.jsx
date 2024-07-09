@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./catalog.module.css";
+import custom_options from "@/_data/Custom";
 import CatalogLoading from "./CatalogLoading";
 import ImgCarousel from "./ImgCarousel";
 import { Minimize2, VenetianMask, MoveRight, MoveLeft } from "lucide-react";
@@ -28,16 +29,6 @@ export default function ProductFocus({ product, closeModal }) {
 
   //utility
   const [isLoading, setIsLoading] = useState(false);
-
-  //utility functions
-  const getContrastingTextColor = (hexColor) => {
-    const rgb = parseInt(hexColor.slice(1), 16);
-    const r = (rgb >> 16) & 0xff;
-    const g = (rgb >> 8) & 0xff;
-    const b = (rgb >> 0) & 0xff;
-    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    return luminance > 128 ? "black" : "white";
-  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -82,10 +73,9 @@ export default function ProductFocus({ product, closeModal }) {
   return (
     <section className={styles.modal}>
       <div className={styles.controlbox}>
-
         <div className={styles.focusNav}>
           <button className={styles.closebtn} onClick={closeModal}>
-            Close View  <Minimize2 />
+            Close <Minimize2 />
           </button>
         </div>
 
@@ -108,7 +98,6 @@ export default function ProductFocus({ product, closeModal }) {
                     key={index}
                     onClick={() => {
                       setSelectedMaterial(material);
-                      console.log(material);
                     }}
                     className={
                       selectedMaterial?.name === material.name
@@ -130,19 +119,19 @@ export default function ProductFocus({ product, closeModal }) {
               <h2>Select Color:</h2>
               {selectedMaterial && (
                 <div className={styles.clrSelect}>
-                  {selectedMaterial.colors.map((clr, index) => (
+                  {custom_options.colors.map((clr, index) => (
                     <button
-                      style={{
-                        backgroundColor: clr.code,
-                        color: getContrastingTextColor(clr.code),
-                      }}
                       key={index}
-                      onClick={() => setSelectedColor(clr.color)}
+                      onClick={() => setSelectedColor(clr.title)}
                       className={
-                        selectedColor === clr.color ? styles.selected : ""
+                        selectedColor === clr.title ? styles.selected : ""
                       }
+                      style={{
+                        background: `url(${clr.img})`,
+                        backgroundSize: "cover",
+                      }}
                     >
-                      <small>{clr.color}</small>
+                      <small>{clr.title}</small>
                     </button>
                   ))}
                 </div>
@@ -179,7 +168,7 @@ export default function ProductFocus({ product, closeModal }) {
             <div className={styles.infoSelect}>
               <h2>Personal Information:</h2>
 
-              <form>
+              <form onSubmit={submit}>
                 <input
                   value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
@@ -208,20 +197,20 @@ export default function ProductFocus({ product, closeModal }) {
                   type="phone"
                   placeholder="Phone number*"
                 />
+
+                <div className={styles.buttonbox}>
+                  <button
+                    onClick={() => setStep(1)}
+                    className={styles.nextbutton}
+                  >
+                    <MoveLeft /> Previous{" "}
+                  </button>
+
+                  <button type="submit" className={styles.nextbutton}>
+                    Get Quote <MoveRight />{" "}
+                  </button>
+                </div>
               </form>
-
-              <div className={styles.buttonbox}>
-                <button
-                  onClick={() => setStep(1)}
-                  className={styles.nextbutton}
-                >
-                  <MoveLeft /> Previous{" "}
-                </button>
-
-                <button onClick={submit} className={styles.nextbutton}>
-                  Get Quote <MoveRight />{" "}
-                </button>
-              </div>
             </div>
           )}
 
@@ -232,8 +221,8 @@ export default function ProductFocus({ product, closeModal }) {
               <p>
                 We are proccessing your quote and will contact you as soon as we
                 check our supply. if you have any questions, please{" "}
-                <Link href={"/"}>contact us</Link> so we can help you as soon as
-                possible.
+                <Link href={"/contact"}>contact us</Link> so we can help you as
+                soon as possible.
               </p>
             </div>
           )}
@@ -244,7 +233,6 @@ export default function ProductFocus({ product, closeModal }) {
             </div>
           )}
         </div>
-        
       </div>
     </section>
   );

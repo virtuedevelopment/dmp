@@ -4,6 +4,14 @@ import Transition from "@/app/components/page/Transition";
 import Href from "@/app/components/buttons/Href";
 
 import CatalogView from "./CatalogView";
+import seo_config from "@/_data/seoConfig";
+
+export const metadata = {
+  title: seo_config.catalog.title,
+  description: seo_config.catalog.description,
+  keywords: seo_config.catalog.keywords,
+  ...seo_config.catalog.other,
+};
 
 export default function Catalog() {
   //catalog header x
@@ -12,7 +20,7 @@ export default function Catalog() {
 
   //open items display x
 
-  //pop up modal for getting quote
+  //pop up modal for getting quote x
 
   return (
     <Transition>

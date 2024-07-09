@@ -6,6 +6,14 @@ import Image from "next/image";
 import Transition from "@/app/components/page/Transition";
 import Header from "@/app/components/navigation/Header";
 import ContactForm from "./ContactForm";
+import seo_config from "@/_data/seoConfig";
+
+export const metadata = {
+  title: seo_config.contact.title,
+  description: seo_config.contact.description,
+  keywords: seo_config.contact.keywords,
+  ...seo_config.contact.other,
+};
 
 export default function Contact() {
   return (

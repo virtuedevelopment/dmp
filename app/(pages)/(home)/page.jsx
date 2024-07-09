@@ -7,6 +7,14 @@ import { Star } from "lucide-react";
 
 import ProductBox from "../catalog/ProductBox";
 import CatalogView from "../catalog/CatalogView";
+import seo_config from "@/_data/seoConfig";
+
+export const metadata = {
+  title: seo_config.home.title,
+  description: seo_config.home.description,
+  keywords: seo_config.home.keywords,
+  ...seo_config.home.other,
+};
 
 const reviews = [
   {

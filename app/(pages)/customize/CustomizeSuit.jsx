@@ -13,10 +13,9 @@ import {
   Ban,
   CirclePlus,
 } from "lucide-react";
+import Link from "next/link";
 import custom_options from "@/_data/Custom";
-import materials from "@/_data/materials";
 import Dropdown from "./(customize_components)/Dropdown";
-import OptionView from "./(customize_components)/OptionView";
 
 //component imports
 
@@ -45,26 +44,19 @@ import OptionView from "./(customize_components)/OptionView";
 */
 
 //First state user information
-const Welcome = ({ next, req, setReq }) => {
-  //User information states
+const Welcome = ({ next, personalInformation, setPersonalInformation }) => {
   const router = useRouter();
   const [firstname, setFirstname] = useState(
-    req.personal_information.firstname || ""
+    personalInformation.firstname || ""
   );
-  const [lastname, setLastname] = useState(
-    req.personal_information.lastname || ""
-  );
-  const [email, setEmail] = useState(req.personal_information.email || "");
+  const [lastname, setLastname] = useState(personalInformation.lastname || "");
+  const [email, setEmail] = useState(personalInformation.email || "");
   const [reference, setReference] = useState(
-    req.personal_information.reference || ""
+    personalInformation.reference || ""
   );
-  const [phone, setPhone] = useState(req.personal_information.phone || "");
-  const [address, setAddress] = useState(
-    req.personal_information.address || ""
-  );
-  const [message, setMessage] = useState(
-    req.personal_information.message || ""
-  );
+  const [phone, setPhone] = useState(personalInformation.phone || "");
+  const [address, setAddress] = useState(personalInformation.address || "");
+  const [message, setMessage] = useState(personalInformation.message || "");
 
   //error states
   const [formErrors, setFormErrors] = useState({
@@ -74,7 +66,6 @@ const Welcome = ({ next, req, setReq }) => {
     address: false,
   });
 
-  //utils
   const previous = () => {
     router.push("/catalog");
   };
@@ -92,19 +83,15 @@ const Welcome = ({ next, req, setReq }) => {
     setFormErrors(errors);
 
     if (Object.values(errors).every((error) => !error)) {
-      // No errors, proceed to the next step
-      setReq((prevReq) => ({
-        ...prevReq,
-        personal_information: {
-          firstname,
-          lastname,
-          email,
-          reference,
-          phone,
-          address,
-          message,
-        },
-      }));
+      setPersonalInformation({
+        firstname,
+        lastname,
+        email,
+        reference,
+        phone,
+        address,
+        message,
+      });
       next();
     } else {
       alert("Please correct the errors in the form.");
@@ -126,6 +113,7 @@ const Welcome = ({ next, req, setReq }) => {
             className={formErrors.firstname === true ? styles.formError : ""}
             type="text"
             placeholder="first name*"
+            value={firstname}
             onChange={(e) => {
               setFirstname(e.target.value);
               setFormErrors((prevState) => ({
@@ -138,6 +126,7 @@ const Welcome = ({ next, req, setReq }) => {
             className={formErrors.lastname === true ? styles.formError : ""}
             type="text"
             placeholder="lastname*"
+            value={lastname}
             onChange={(e) => {
               setLastname(e.target.value);
               setFormErrors((prevState) => ({ ...prevState, lastname: false }));
@@ -147,6 +136,7 @@ const Welcome = ({ next, req, setReq }) => {
             className={formErrors.email === true ? styles.formError : ""}
             type="text"
             placeholder="Email Address*"
+            value={email}
             onChange={(e) => {
               setEmail(e.target.value);
               setFormErrors((prevState) => ({ ...prevState, email: false }));
@@ -156,6 +146,7 @@ const Welcome = ({ next, req, setReq }) => {
             className={formErrors.address === true ? styles.formError : ""}
             type="text"
             placeholder="Address*"
+            value={address}
             onChange={(e) => {
               setAddress(e.target.value);
               setFormErrors((prevState) => ({ ...prevState, address: false }));
@@ -165,17 +156,20 @@ const Welcome = ({ next, req, setReq }) => {
           <input
             type="text"
             placeholder="phone number"
+            value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
 
           <input
             type="text"
             placeholder="How did you hear about us"
+            value={reference}
             onChange={(e) => setReference(e.target.value)}
           />
 
           <textarea
             placeholder="Optional Message"
+            value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
 
@@ -200,7 +194,56 @@ const Welcome = ({ next, req, setReq }) => {
 };
 
 //Second state jacket
-const Editor = ({ back, next, req, setReq }) => {
+const Editor = ({
+  back,
+  next,
+  style,
+  setStyle,
+  lining,
+  setLining,
+  button,
+  setButton,
+  lapel,
+  setLapel,
+  canvas,
+  setCanvas,
+  waistband,
+  setWaistband,
+  pocket,
+  setPocket,
+  pleat,
+  setPleat,
+  hem,
+  setHem,
+  trouserButton,
+  setTrouserButton,
+  waistcoat,
+  setWaistcoat,
+  closure,
+  setClosure,
+  waistcoatStyle,
+  setWaistcoatStyle,
+  waistcoatPocket,
+  setWaistcoatPocket,
+  backside,
+  setBackside,
+  waistcoatLining,
+  setWaistcoatLining,
+  waistcoatButton,
+  setWaistcoatButton,
+  jacketMaterial,
+  setJacketMaterial,
+  trouserMaterial,
+  setTrouserMaterial,
+  jacketSizing,
+  setJacketSizing,
+  trouserSizing,
+  setTrouserSizing,
+  jacketColor,
+  setJacketColor,
+  trouserColor,
+  setTrouserColor,
+}) => {
   //toggle buttons
   const [jacketToggle, setJacketToggle] = useState(false);
   const [trouserToggle, setTrouserToggle] = useState(false);
@@ -216,67 +259,10 @@ const Editor = ({ back, next, req, setReq }) => {
     }
   };
 
-  //jacket style
-  const [style, setStyle] = useState(custom_options.jacket.style[0]);
-  const [lining, setLining] = useState(custom_options.jacket.lining[0]);
-  const [button, setButton] = useState(custom_options.jacket.button[0]);
-  const [lapel, setLapel] = useState(custom_options.jacket.lapel[0]);
-  const [canvas, setCanvas] = useState(custom_options.jacket.canvas[0]);
-
-  //trouser style
-  const [waistband, setWaistband] = useState(
-    custom_options.trouser.waistband[0]
-  );
-  const [pocket, setPocket] = useState(custom_options.trouser.pocket[0]);
-  const [pleat, setPleat] = useState(custom_options.trouser.pleat[0]);
-  const [hem, setHem] = useState(custom_options.trouser.hem[0]);
-  const [trouserButton, setTrouserButton] = useState(
-    custom_options.trouser.button[0]
-  );
-
-  //waistcoat states
-  const [waistcoat, setWaistcoat] = useState(false);
-  const [closure, setClosure] = useState(custom_options.waistcoat.closure[0]);
-  const [waistcoatStyle, setWaistcoatStyle] = useState(
-    custom_options.waistcoat.style[0]
-  );
-  const [waistcoatPocket, setWaistcoatPocket] = useState(
-    custom_options.waistcoat.pocket[0]
-  );
-  const [backside, setBackside] = useState(custom_options.waistcoat.back[0]);
-  const [waistcoatLining, setWaistcoatLining] = useState(
-    custom_options.waistcoat.lining[0]
-  );
-  const [waistcoatButton, setWaistcoatButton] = useState(
-    custom_options.waistcoat.button[0]
-  );
   const toggle_waistcoat = () => {
     setWaistcoat(!waistcoat);
   };
 
-  //material and sizing states
-  const [jacketMaterial, setJacketMaterial] = useState(
-    custom_options.materials[0]
-  );
-  const [trouserMaterial, setTrouserMaterial] = useState(
-    custom_options.materials[0]
-  );
-
-  const [jacketSizing, setJacketSizing] = useState({
-    sleeve: "",
-    shoulder: "",
-    chest: "",
-    stomach: "",
-  });
-
-  const [trouserSizing, setTrouserSizing] = useState({
-    leg: "",
-    waist: "",
-    hips: "",
-    thigh: "",
-  });
-
-  //sizing input function
   const handleInputChange = (e, type, field) => {
     const value = e.target.value;
 
@@ -298,6 +284,26 @@ const Editor = ({ back, next, req, setReq }) => {
       <aside className={styles.selector}>
         <h1>Customization Options:</h1>
 
+        <div className={styles.custom_info}>
+          <big>Welcome to Our Suit Customization Station</big>
+          <p>
+            At our customization station, you have the opportunity to
+            personalize every detail of your suit, including sizing and
+            additional features. Should you require a feature not listed here,
+            you are welcome to submit a custom order by emailing us at{" "}
+            <a href="mailto:dmpcollections@gmail.com">
+              dmpcollections@gmail.com
+            </a>
+            . Our team will gladly assist in incorporating your desired details.
+          </p>
+
+          <p>
+            The base price for our suits is <span> $799.99 CAD</span>. Your
+            final quote will be adjusted based on the additional styles and
+            features you select. Enjoy the customization process!
+          </p>
+        </div>
+
         <h3>Suit Styling:</h3>
 
         <button
@@ -318,32 +324,32 @@ const Editor = ({ back, next, req, setReq }) => {
             <Dropdown
               options={custom_options.jacket.style}
               state={setStyle}
-              icon={null}
+              selected={style}
               title={"Style"}
             />
 
             <Dropdown
               options={custom_options.jacket.lining}
               state={setLining}
-              icon={null}
+              selected={lining}
               title={"Lining"}
             />
             <Dropdown
               options={custom_options.jacket.button}
               state={setButton}
-              icon={null}
+              selected={button}
               title={"Buttons"}
             />
             <Dropdown
               options={custom_options.jacket.lapel}
               state={setLapel}
-              icon={null}
+              selected={lapel}
               title={"Lapel"}
             />
             <Dropdown
               options={custom_options.jacket.canvas}
               state={setCanvas}
-              icon={null}
+              selected={canvas}
               title={"Canvas"}
             />
           </>
@@ -367,24 +373,28 @@ const Editor = ({ back, next, req, setReq }) => {
             <Dropdown
               options={custom_options.trouser.waistband}
               state={setWaistband}
+              selected={waistband}
               icon={null}
               title={"Waistband"}
             />
             <Dropdown
               options={custom_options.trouser.pocket}
               state={setPocket}
+              selected={pocket}
               icon={null}
               title={"Pockets"}
             />
             <Dropdown
               options={custom_options.trouser.pleat}
               state={setPleat}
+              selected={pleat}
               icon={null}
               title={"Pleat"}
             />
             <Dropdown
               options={custom_options.trouser.hem}
               state={setHem}
+              selected={hem}
               icon={null}
               title={"Hem Finishing"}
             />
@@ -392,6 +402,7 @@ const Editor = ({ back, next, req, setReq }) => {
             <Dropdown
               options={custom_options.trouser.button}
               state={setTrouserButton}
+              selected={trouserButton}
               icon={null}
               title={"Buttons"}
             />
@@ -417,12 +428,28 @@ const Editor = ({ back, next, req, setReq }) => {
           <>
             <Dropdown
               options={custom_options.materials}
+              state={setJacketMaterial}
+              selected={jacketMaterial}
               title={"Jacket Material"}
+            />
+            <Dropdown
+              options={custom_options.colors}
+              state={setJacketColor}
+              selected={jacketColor}
+              title={"Jacket Color"}
             />
 
             <Dropdown
               options={custom_options.materials}
+              state={setTrouserMaterial}
+              selected={trouserMaterial}
               title={"Trouser Material"}
+            />
+            <Dropdown
+              options={custom_options.colors}
+              state={setTrouserColor}
+              selected={trouserColor}
+              title={"Trouser Color"}
             />
 
             <h4>Jacket Sizing:</h4>
@@ -510,12 +537,12 @@ const Editor = ({ back, next, req, setReq }) => {
         >
           {waistcoat ? (
             <>
-              <Ban strokeWidth={3} /> <p>Waistcoat -$150.00</p>
+              <Ban strokeWidth={3} /> <p>Waistcoat</p>
             </>
           ) : (
             <>
               <CirclePlus strokeWidth={3} />
-              <p>Waistcoat +$150.00</p>
+              <p>Waistcoat</p>
             </>
           )}
         </button>
@@ -526,36 +553,42 @@ const Editor = ({ back, next, req, setReq }) => {
             <Dropdown
               options={custom_options.waistcoat.closure}
               state={setClosure}
+              selected={closure}
               title={"Closure"}
             />
 
             <Dropdown
               options={custom_options.waistcoat.style}
               state={setWaistcoatStyle}
+              selected={waistcoatStyle}
               title={"Style"}
             />
 
             <Dropdown
               options={custom_options.waistcoat.pocket}
               state={setWaistcoatPocket}
+              selected={waistcoatPocket}
               title={"Pocket"}
             />
 
             <Dropdown
               options={custom_options.waistcoat.back}
               state={setBackside}
+              selected={backside}
               title={"Back"}
             />
 
             <Dropdown
               options={custom_options.waistcoat.lining}
               state={setWaistcoatLining}
+              selected={waistcoatLining}
               title={"Lining"}
             />
 
             <Dropdown
               options={custom_options.waistcoat.button}
               state={setWaistcoatButton}
+              selected={waistcoatButton}
               title={"Buttons"}
             />
           </>
@@ -566,7 +599,7 @@ const Editor = ({ back, next, req, setReq }) => {
             <ChevronLeft /> Back
           </button>
 
-          <button type="submit" className={styles.next}>
+          <button type="button" onClick={next} className={styles.next}>
             Confirm <ChevronRight />
           </button>
         </div>
@@ -576,7 +609,20 @@ const Editor = ({ back, next, req, setReq }) => {
 };
 
 //Third state results
-const finished = ({}) => {};
+const ThankYou = ({}) => {
+  return (
+    <section className={styles.ThankYou}>
+      <img src="/favicon.ico" alt="" />
+      <h2>Thank you for your order!</h2>
+      <p>
+        We are proccessing your request and will get back to you via email.
+        Please feel free to check our <Link href={"/catalog"}>catalog</Link>, or
+        you can learn more <Link href={"/about"}>about us</Link>. DMP
+        Collections is happy to be of service.
+      </p>
+    </section>
+  );
+};
 
 //Loading state
 const Loading = () => {
@@ -589,31 +635,201 @@ const Loading = () => {
 };
 
 export default function CustomizeSuit() {
-  //request body
-  const [req, setReq] = useState({ personal_information: {} }); //multistates will add information to forms
+  const [personalInformation, setPersonalInformation] = useState({});
+  const [style, setStyle] = useState(custom_options.jacket.style[0]);
+  const [lining, setLining] = useState(custom_options.jacket.lining[0]);
+  const [button, setButton] = useState(custom_options.jacket.button[0]);
+  const [lapel, setLapel] = useState(custom_options.jacket.lapel[0]);
+  const [canvas, setCanvas] = useState(custom_options.jacket.canvas[0]);
+  const [waistband, setWaistband] = useState(
+    custom_options.trouser.waistband[0]
+  );
+  const [pocket, setPocket] = useState(custom_options.trouser.pocket[0]);
+  const [pleat, setPleat] = useState(custom_options.trouser.pleat[0]);
+  const [hem, setHem] = useState(custom_options.trouser.hem[0]);
+  const [trouserButton, setTrouserButton] = useState(
+    custom_options.trouser.button[0]
+  );
+  const [waistcoat, setWaistcoat] = useState(false);
+  const [closure, setClosure] = useState(custom_options.waistcoat.closure[0]);
+  const [waistcoatStyle, setWaistcoatStyle] = useState(
+    custom_options.waistcoat.style[0]
+  );
+  const [waistcoatPocket, setWaistcoatPocket] = useState(
+    custom_options.waistcoat.pocket[0]
+  );
+  const [backside, setBackside] = useState(custom_options.waistcoat.back[0]);
+  const [waistcoatLining, setWaistcoatLining] = useState(
+    custom_options.waistcoat.lining[3]
+  );
+  const [waistcoatButton, setWaistcoatButton] = useState(
+    custom_options.waistcoat.button[0]
+  );
+  const [jacketMaterial, setJacketMaterial] = useState(
+    custom_options.materials[0]
+  );
+  const [trouserMaterial, setTrouserMaterial] = useState(
+    custom_options.materials[0]
+  );
+  const [jacketSizing, setJacketSizing] = useState({
+    sleeve: "",
+    shoulder: "",
+    chest: "",
+    stomach: "",
+  });
+  const [trouserSizing, setTrouserSizing] = useState({
+    leg: "",
+    waist: "",
+    hips: "",
+    thigh: "",
+  });
 
-  //multistate utilities
-  const [currentForm, setCurrentForm] = useState(1); // 1 -> 3
+  const [jacketColor, setJacketColor] = useState(custom_options.colors[3]);
+  const [trouserColor, setTrouserColor] = useState(custom_options.colors[3]);
+
+  const [currentForm, setCurrentForm] = useState(1);
+  const [loading, setLoading] = useState(false);
+
   const previous = () => {
     setCurrentForm(currentForm - 1);
   };
+
   const next = () => {
     setCurrentForm(currentForm + 1);
   };
 
-  //general utilities
-  const [loading, setLoading] = useState(false);
+  const submit = async () => {
+    setLoading(true);
+
+    const customSuit = {
+      jacket: {
+        style,
+        lining,
+        button,
+        lapel,
+        canvas,
+      },
+      trousers: {
+        waistband,
+        pocket,
+        pleat,
+        hem,
+        trouserButton,
+      },
+      waistcoat: waistcoat
+        ? {
+            closure,
+            waistcoatStyle,
+            waistcoatPocket,
+            backside,
+            waistcoatLining,
+            waistcoatButton,
+          }
+        : undefined,
+      options: {
+        jacketMaterial,
+        trouserMaterial,
+        jacketSizing,
+        trouserSizing,
+        jacketColor,
+        trouserColor,
+      },
+    };
+
+    const req = {
+      personalInformation,
+      customSuit,
+    };
+
+    try {
+      const response = await fetch("/api/custom-suit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log("Email sent successfully");
+        setLoading(false);
+        setCurrentForm(3);
+      } else {
+        console.error("Failed to send email:", result.error);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setLoading(false);
+    }
+  };
 
   return (
     <main className={styles.main}>
-      {/* Loading State */}
       {loading && <Loading />}
 
-      {/* Multistate */}
-      {currentForm === 1 && <Welcome next={next} req={req} setReq={setReq} />}
-      {currentForm === 2 && (
-        <Editor next={next} back={previous} req={req} setReq={setReq} />
+      {!loading && currentForm === 1 && (
+        <Welcome
+          next={next}
+          personalInformation={personalInformation}
+          setPersonalInformation={setPersonalInformation}
+        />
       )}
+      {!loading && currentForm === 2 && (
+        <Editor
+          next={submit}
+          back={previous}
+          style={style}
+          setStyle={setStyle}
+          lining={lining}
+          setLining={setLining}
+          button={button}
+          setButton={setButton}
+          lapel={lapel}
+          setLapel={setLapel}
+          canvas={canvas}
+          setCanvas={setCanvas}
+          waistband={waistband}
+          setWaistband={setWaistband}
+          pocket={pocket}
+          setPocket={setPocket}
+          pleat={pleat}
+          setPleat={setPleat}
+          hem={hem}
+          setHem={setHem}
+          trouserButton={trouserButton}
+          setTrouserButton={setTrouserButton}
+          waistcoat={waistcoat}
+          setWaistcoat={setWaistcoat}
+          closure={closure}
+          setClosure={setClosure}
+          waistcoatStyle={waistcoatStyle}
+          setWaistcoatStyle={setWaistcoatStyle}
+          waistcoatPocket={waistcoatPocket}
+          setWaistcoatPocket={setWaistcoatPocket}
+          backside={backside}
+          setBackside={setBackside}
+          waistcoatLining={waistcoatLining}
+          setWaistcoatLining={setWaistcoatLining}
+          waistcoatButton={waistcoatButton}
+          setWaistcoatButton={setWaistcoatButton}
+          jacketMaterial={jacketMaterial}
+          setJacketMaterial={setJacketMaterial}
+          trouserMaterial={trouserMaterial}
+          setTrouserMaterial={setTrouserMaterial}
+          jacketSizing={jacketSizing}
+          setJacketSizing={setJacketSizing}
+          trouserSizing={trouserSizing}
+          setTrouserSizing={setTrouserSizing}
+          jacketColor={jacketColor}
+          setJacketColor={setJacketColor}
+          trouserColor={trouserColor}
+          setTrouserColor={setTrouserColor}
+        />
+      )}
+      {!loading && currentForm === 3 && <ThankYou />}
     </main>
   );
 }

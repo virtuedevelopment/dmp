@@ -1,7 +1,7 @@
 const products = [
   {
     "name": "Classic Single-Breasted Suit",
-    "price": 350.99,
+    "price": 799.99,
     "description": "An exquisite classic suit, tailored to perfection. Ideal for formal occasions and business meetings.",
     "category": "suits",
     "img": "https://d1fufvy4xao6k9.cloudfront.net/looks/1694/-2024-06-05-16-36-28.jpg",
@@ -74,7 +74,7 @@ const products = [
 
   {
     name: "Classic Double-Breasted Suit",
-    price: 499.99,
+    price: 799.99,
     description: "A sophisticated double-breasted suit that offers timeless elegance and modern style.",
     category: "suits",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/1690/gray-plaid-suit-with-light-blue-shirt-2024-06-05-16-17-27.jpg",
@@ -146,8 +146,8 @@ const products = [
   },
 
   {
-    name: "Classic Two Piece Tuxedo",
-    price: 1599.99,
+    name: "Classic Two Piece Toxedo",
+    price: 1299.99,
     description: "A luxurious classic tuxedo that exudes sophistication and class. Perfect for black-tie events.",
     category: "suits",
     img: "https://dqp736wsu6w3m.cloudfront.net/s3bucket/w1000/looks/1687/black-tux-with-bow-tie-2024-06-04-14-34-42.jpg",
@@ -220,9 +220,9 @@ const products = [
   },
 
   {
-    name: "Classic Wedding Suit",
-    price: 1799.99,
-    description: "An elegant wedding suit tailored to perfection, ensuring you look your best on your special day.",
+    name: "Classic Toxedo Package",
+    price: 1499.99,
+    description: "An elegantsuit tailored to perfection, ensuring you look your best on your special day. Suit comes fully equiped with multiple pieces.",
     category: "suits",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/1667/-2024-05-21-18-05-47.jpeg",
     styleOptions: [
@@ -441,7 +441,7 @@ const products = [
 
   {
     name: "Classic Dress Shirts",
-    price: 49.99,
+    price: 210.00,
     description: "Elegant classic shirts, perfect for any occasion. Available in various fits and styles.",
     category: "shirts",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/923/blue%20blazer%20black%20pants.jpg",
@@ -569,7 +569,7 @@ const products = [
 
   {
     name: "Classic Dress Pants",
-    price: 59.99,
+    price: 255.00,
     description: "Timeless classic dress pants that offer both style and comfort. A staple in any gentleman's wardrobe.",
     category: "pants",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/1609/blue-navy-blazer-red-chinos-2024-04-29-11-44-14.jpg",
@@ -671,7 +671,7 @@ const products = [
 
   {
     name: "Classic Coat",
-    price: 149.99,
+    price: 909.00,
     description: "A timeless classic peacoat that combines style and warmth. Perfect for the winter season.",
     category: "outwear",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/866/Snapinsta%201%20(7)%20(1).jpg",

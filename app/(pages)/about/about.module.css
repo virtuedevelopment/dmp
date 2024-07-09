@@ -31,7 +31,8 @@
 }
 .dmp big {
   display: block;
-  font-size: var(--font-size-subhead);
+  font-size: var(--font-size-sub);
+  text-align: center;
 }
 .dmp big span {
   color: var(--color-secondary);
@@ -52,6 +53,8 @@
 .textbox p {
   color: var(--grey);
   margin-bottom: 0.75rem;
+  font-weight: 200;
+  width: 80%;
   line-height: 1.5;
 }
 
@@ -82,6 +85,7 @@
   color: var(--grey);
   line-height: 1.5;
   width: 80%;
+  font-weight: 200;
 }
 .imagebox {
   width: 100%;
@@ -155,10 +159,10 @@
 }
 .gridbox p {
   text-align: center;
-  width: 95%;
-  line-height: 1.5;
+  width: 90%;
+  line-height: 1.75;
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--grey);
 }
 .about .box {
@@ -217,6 +221,18 @@
   .dmp .information {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .dmp big {
+    text-align: center;
+  }
+  .textbox {
+    align-items: center;
+    text-align: center;
+  }
+
+  .textbox p {
+    width: 100%;
+    text-align: center;
   }
 
   .history {
