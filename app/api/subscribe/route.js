@@ -6,44 +6,44 @@ const GIST_ID = process.env.GIST_ID;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 const getEmailsFromGist = async () => {
-    const response = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
-        headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-        },
-    });
-    const gist = await response.json();
-    return JSON.parse(gist.files['subscribers.json'].content);
+  const response = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+    headers: {
+      'Authorization': `Bearer ${GITHUB_TOKEN}`,
+    },
+  });
+  const gist = await response.json();
+  return JSON.parse(gist.files['subscribers.json'].content);
 };
 
 const updateGist = async (emails) => {
-    await fetch(`https://api.github.com/gists/${GIST_ID}`, {
-        method: 'PATCH',
-        headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Content-Type': 'application/json',
+  await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Bearer ${GITHUB_TOKEN}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      files: {
+        'subscribers.json': {
+          content: JSON.stringify(emails, null, 2),
         },
-        body: JSON.stringify({
-            files: {
-                'subscribers.json': {
-                    content: JSON.stringify(emails, null, 2),
-                },
-            },
-        }),
-    });
+      },
+    }),
+  });
 };
 
 const sendEmail = async (email, type) => {
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASS,
-        },
-    });
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
 
-    const subject = type === 'admin' ? 'New Subscriber' : 'Thank you for subscribing';
-    const html = type === 'admin'
-        ? `
+  const subject = type === 'admin' ? 'New Subscriber' : 'Thank you for subscribing';
+  const html = type === 'admin'
+    ? `
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,7 +127,7 @@ const sendEmail = async (email, type) => {
 </body>
 </html>
 `
-        : `
+    : `
 <!DOCTYPE html>
 <html>
   <head>
@@ -242,36 +242,36 @@ const sendEmail = async (email, type) => {
 </html>
 `;
 
-    await transporter.sendMail({
-        from: process.env.GMAIL_USER,
-        to: type === 'admin' ? 'virtuetech.development@gmail.com' : email,
-        subject,
-        html,
-    });
+  await transporter.sendMail({
+    from: process.env.GMAIL_USER,
+    to: type === 'admin' ? 'dmpcollectionprestige@gmail.com' : email,
+    subject,
+    html,
+  });
 };
 
 export async function POST(request) {
-    const { email } = await request.json();
+  const { email } = await request.json();
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
+  }
+
+  try {
+    const emails = await getEmailsFromGist();
+    if (emails.includes(email)) {
+      return NextResponse.json({ success: false, error: 'Email already subscribed' }, { status: 400 });
     }
 
-    try {
-        const emails = await getEmailsFromGist();
-        if (emails.includes(email)) {
-            return NextResponse.json({ success: false, error: 'Email already subscribed' }, { status: 400 });
-        }
+    emails.push(email);
+    await updateGist(emails);
 
-        emails.push(email);
-        await updateGist(emails);
+    await sendEmail(email, 'admin');
+    await sendEmail(email, 'subscriber');
 
-        await sendEmail(email, 'admin');
-        await sendEmail(email, 'subscriber');
-
-        return NextResponse.json({ success: true });
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
 }

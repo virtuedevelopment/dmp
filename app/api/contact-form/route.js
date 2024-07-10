@@ -2,17 +2,17 @@ import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
 const sendEmail = async (data, type) => {
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASS,
-        },
-    });
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
 
-    const subject = type === 'admin' ? 'New Contact Form Submission' : 'Thank you for contacting us';
-    const html = type === 'admin'
-        ? `
+  const subject = type === 'admin' ? 'New Contact Form Submission' : 'Thank you for contacting us';
+  const html = type === 'admin'
+    ? `
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,7 +100,7 @@ const sendEmail = async (data, type) => {
 </body>
 </html>
 `
-        : `
+    : `
 <!DOCTYPE html>
 <html>
   <head>
@@ -196,30 +196,30 @@ const sendEmail = async (data, type) => {
 </html>
 `;
 
-    await transporter.sendMail({
-        from: process.env.GMAIL_USER,
-        to: type === 'admin' ? 'virtuetech.development@gmail.com' : data.email,
-        subject,
-        html,
-    });
+  await transporter.sendMail({
+    from: process.env.GMAIL_USER,
+    to: type === 'admin' ? 'dmpcollectionprestige@gmail.com' : data.email,
+    subject,
+    html,
+  });
 };
 
 export async function POST(request) {
-    const { firstname, lastname, subject, email, message } = await request.json();
+  const { firstname, lastname, subject, email, message } = await request.json();
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
-    }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
+  }
 
-    const data = { firstname, lastname, subject, email, message };
+  const data = { firstname, lastname, subject, email, message };
 
-    try {
-        await sendEmail(data, 'admin');
-        await sendEmail(data, 'subscriber');
+  try {
+    await sendEmail(data, 'admin');
+    await sendEmail(data, 'subscriber');
 
-        return NextResponse.json({ success: true });
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
 }

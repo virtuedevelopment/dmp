@@ -216,7 +216,7 @@ export async function POST(request) {
     // Email to the provider
     await transporter.sendMail({
       from: process.env.GMAIL_USER, // Sender address
-      to: 'kaineosiagwu@gmail.com', // Replace with your provider's email
+      to: 'dmpcollectionprestige@gmail.com', // Replace with your provider's email
       subject: 'DMP Collections: New Custom Order Received',
       html: createProviderEmailTemplate(quoteRequest),
     });

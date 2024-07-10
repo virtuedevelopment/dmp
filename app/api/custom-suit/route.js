@@ -417,7 +417,7 @@ const sendEmail = async (data, type) => {
 
   await transporter.sendMail({
     from: process.env.GMAIL_USER,
-    to: type === 'admin' ? 'virtuetech.development@gmail.com' : data.personalInformation.email,
+    to: type === 'admin' ? 'dmpcollectionprestige@gmail.com' : data.personalInformation.email,
     subject,
     html,
   });
