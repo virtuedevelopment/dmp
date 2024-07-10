@@ -16,19 +16,13 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <div className={styles.menubox}>
-          <h2>SHOP</h2>
-          {configurations.routes.catalogRoutes.map((route) => (
-            <Link key={route.route} href={route.url}>
-              {route.route}
-            </Link>
-          ))}
-        </div>
+
         <div className={styles.menubox}>
           <Subscribe />
         </div>
       </nav>
       <h1>DMP COLLECTIONS.</h1>
+      <Link className="virtue" href={"https://www.virtuetech.live/"}>Powered by Virtue</Link>
     </footer>
   );
 }

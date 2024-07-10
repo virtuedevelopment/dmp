@@ -30,6 +30,7 @@ const configurations = {
             { route: 'Home', url: '/', icon: '' },
             { route: 'About', url: '/about', icon: '' },
             { route: 'Catalog', url: '/catalog', icon: '' },
+            { route: 'Customize', url: '/customize', icon: '' },
             { route: 'Contact', url: '/contact', icon: '' },
             // More main routes
         ],

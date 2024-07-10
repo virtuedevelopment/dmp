@@ -6,21 +6,25 @@
   width: 100%;
   left: 0;
   z-index: -1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .body h1 {
   width: 100%;
-  font-size: 9svw;
+  font-size: 8svw;
   text-align: center;
   color: var(--grey);
-  font-family: var(--body-style);
-  letter-spacing: -10px;
+  letter-spacing: -5px;
   padding: 1rem;
   opacity: 0.25;
 }
 .menugrid {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 .menubox {
   width: 100%;

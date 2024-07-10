@@ -192,6 +192,19 @@ body {
   transition: var(--transition-normal);
 }
 
+.virtue{
+  display: inline-block;
+  text-align: center;
+  justify-self: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 12px;
+  font-weight: 200;
+  color: var(--white);
+  text-decoration: none;
+  background-color: var(--color-main);
+}
+
 /* Animations */
 @keyframes slidedown {
   from {

@@ -94,7 +94,7 @@ export default function About() {
             </p>
 
             <Href
-              route={"Customize"}
+              route={"Catalog"}
               url={"/catalog"}
               classname={"transparent"}
             />

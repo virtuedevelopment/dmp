@@ -45,7 +45,7 @@ export default function Home() {
         </h1>
 
         <span style={{ zIndex: "2", marginTop: "0.75rem" }}>
-          <Href url={"/catalog"} route={"Customize"} classname={"mainbutton"} />
+          <Href url={"/customize"} route={"Customize"} classname={"mainbutton"} />
         </span>
       </section>
 
