@@ -18,6 +18,13 @@
   top: 0;
   left: 0;
 }
+#desktop_img {
+  display: block;
+}
+#cellphone_img {
+  display: none;
+}
+
 .hero h1 {
   font-size: var(--font-size-head);
   line-height: 1;
@@ -331,5 +338,12 @@
   }
   .reviews h3 {
     margin-block: 1rem;
+  }
+
+  #desktop_img {
+    display: none;
+  }
+  #cellphone_img {
+    display: block;
   }
 }

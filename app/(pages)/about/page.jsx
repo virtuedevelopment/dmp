@@ -50,9 +50,7 @@ export default function About() {
           />
 
           <Image
-            src={
-              "https://dqp736wsu6w3m.cloudfront.net/s3bucket/w1000/looks/1682/-2024-06-03-14-39-03.jpg"
-            }
+            src={"/images/blazer.svg"}
             width={400}
             height={400}
             alt="header image"

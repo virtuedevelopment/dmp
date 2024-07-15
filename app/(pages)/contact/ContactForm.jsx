@@ -2,6 +2,17 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./contact.module.css";
+import StylistBox from "./StylistBox";
+
+const stylists = [
+  {
+    img: "/stylists/desouza_mpambu.svg",
+    name: "Desouza Mpambu",
+    experience: "4 years of Experience",
+    description:
+      "I’m here to help you to look best and sharp for any occasions.",
+  },
+];
 
 export default function ContactForm() {
   const router = useRouter();
@@ -10,6 +21,7 @@ export default function ContactForm() {
   const [lastname, setLastname] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
+  const [consultant, setConsultant] = useState(stylists[0]);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -27,6 +39,7 @@ export default function ContactForm() {
       subject,
       email,
       message,
+      consultant,
     };
 
     toggleLoading();
@@ -54,6 +67,17 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={submit}>
+      <div className={styles.consultant_selector_box}>
+        <h2>Select Your Stylist.</h2>
+        {stylists.map((stylist, index) => (
+          <StylistBox
+            key={index}
+            stylist={stylist}
+            setStylist={setConsultant}
+            consultant={consultant}
+          />
+        ))}
+      </div>
       <div className={styles.inputbox}>
         <input
           type="text"

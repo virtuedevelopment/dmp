@@ -38,14 +38,19 @@ export default function Home() {
   return (
     <Transition>
       <section className={styles.hero}>
-        <img src="/stock-img06.svg" alt="man in suit" />
+        <img id={styles.desktop_img} src="/stock-img06.svg" alt="man in suit" />
+        <img id={styles.cellphone_img} src="/backvid.gif" alt="man in suit" />
 
         <h1>
           Handcrafted <br /> Excellence.
         </h1>
 
         <span style={{ zIndex: "2", marginTop: "0.75rem" }}>
-          <Href url={"/customize"} route={"Customize"} classname={"mainbutton"} />
+          <Href
+            url={"/customize"}
+            route={"Customize"}
+            classname={"mainbutton"}
+          />
         </span>
       </section>
 

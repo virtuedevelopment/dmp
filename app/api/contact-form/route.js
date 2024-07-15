@@ -90,6 +90,7 @@ const sendEmail = async (data, type) => {
                 <p><strong>Subject:</strong> ${data.subject}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Message:</strong> ${data.message}</p>
+                <p><strong>Consultant:</strong> ${data.consultant.name}</p>
             </div>
         </div>
         <div class="footer">
@@ -178,7 +179,7 @@ const sendEmail = async (data, type) => {
         <div class="info">
           <p>Dear ${data.firstname} ${data.lastname},</p>
           <p>
-            Thank you for reaching out to DMP Prestige Collections. We have received your inquiry regarding "${data.subject}" and will get back to you within 72 hours or less.
+            Thank you for reaching out to DMP Prestige Collections. We have received your inquiry regarding "${data.subject}" and ${data.consultant.name} will get back to you within 72 hours or less.
           </p>
           <p>
             If you have any further questions or need immediate assistance, please do not hesitate to contact us at <strong>Dmpcollection@gmail.com</strong>.
@@ -205,13 +206,13 @@ const sendEmail = async (data, type) => {
 };
 
 export async function POST(request) {
-  const { firstname, lastname, subject, email, message } = await request.json();
+  const { firstname, lastname, subject, email, message, consultant } = await request.json();
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
   }
 
-  const data = { firstname, lastname, subject, email, message };
+  const data = { firstname, lastname, subject, email, message, consultant };
 
   try {
     await sendEmail(data, 'admin');

@@ -11,7 +11,7 @@
 
 .hero {
   width: 100%;
-  min-height: 100svh;
+  min-height: 80svh;
   position: relative;
   display: flex;
 }
@@ -22,9 +22,8 @@
   background-color: var(--white);
   right: 0;
 }
-.hero .main {
+.main {
   width: 60%;
-  height: 100svh;
   padding: 1.5rem 3.5rem;
   background: linear-gradient(
       to bottom,
@@ -42,8 +41,9 @@
 
 .main h1 {
   width: 100%;
-  font-size: var(--font-size-heading);
+  font-size: var(--font-size-subhead);
   color: var(--white);
+  margin-bottom: 1rem;
 }
 .main h4 {
   font-weight: 300;
@@ -53,9 +53,9 @@
 
 .formbox {
   width: 40%;
-  height: 100svh;
+  min-height: 50svh;
   z-index: 1;
-  padding: 10% 1rem;
+  padding: 1rem;
   background-color: var(--white);
 }
 
@@ -81,7 +81,6 @@
   color: var(--black);
   padding: 0.5rem;
 }
-
 .inputbox textarea {
   width: 100%;
   height: 175px;
@@ -112,6 +111,69 @@
   color: var(--color-main);
   display: block;
   text-align: center;
+}
+
+.consultant_selector_box {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.consultant_selector_box h2 {
+  color: var(--color-main);
+  margin-bottom: 1.5rem;
+}
+
+.stylist {
+  padding: 1rem;
+  width: 300px;
+  border: none;
+  border-radius: 7.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: solid 0.5px var(--grey-tone);
+  cursor: pointer;
+}
+.stylist img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.stylist big {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+}
+.stylist p {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--color-main);
+}
+.stylist small {
+  font-weight: 200;
+  color: var(--grey);
+}
+.stylist span {
+  font-size: 10px;
+  background-color: var(--color-main);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.stylist span svg {
+  width: 10px;
 }
 
 /* Tablet */

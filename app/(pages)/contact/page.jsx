@@ -20,7 +20,7 @@ export default function Contact() {
     <Transition>
       <section className={styles.hero}>
         <div className={styles.main}>
-          <h1>Contact us.</h1>
+          <h1>Book with us.</h1>
           <h4>
             Please let us know if you have any questions or require any
             assistance. We will respond to your message as soon as we can. Thank

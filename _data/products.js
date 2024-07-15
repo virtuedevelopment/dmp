@@ -1,7 +1,7 @@
 const products = [
   {
     "name": "Classic Single-Breasted Suit",
-    "price": 799.99,
+    "price": 649.99,
     "description": "An exquisite classic suit, tailored to perfection. Ideal for formal occasions and business meetings.",
     "category": "suits",
     "img": "https://d1fufvy4xao6k9.cloudfront.net/looks/1694/-2024-06-05-16-36-28.jpg",
@@ -67,6 +67,78 @@ const products = [
     "gallery": [
       "https://d1fufvy4xao6k9.cloudfront.net/looks/1694/-2024-06-05-16-36-28.jpg",
       "https://d1fufvy4xao6k9.cloudfront.net/looks/1568/IMG_2605_cropped.JPG",
+      "https://d1fufvy4xao6k9.cloudfront.net/looks/1484/DSC_0839-Edit%201.jpg",
+      "https://d1fufvy4xao6k9.cloudfront.net/looks/1480/image00001%20(1)%201.jpg"
+    ]
+  },
+  {
+    "name": "Classic Blazer",
+    "price": 410.00,
+    "description": "A handcrafted classic blazer, tailored to perfection. Ideal for formal occasions and business meetings.",
+    "category": "suits",
+    "img": "/images/blazer.svg",
+    "styleOptions": [
+      "Slim Fit",
+      "Classic Fit",
+      "Modern Fit"
+    ],
+    "materials": [
+      {
+        "name": "Cotton Linen",
+        "composition": "50% Cotton, 50% Linen",
+        "description": "Breathable and lightweight fabric perfect for summer wear.",
+        "img": "https://i.ebayimg.com/images/g/JrcAAOSwukVkyOhd/s-l1600.jpg",
+        "colors": [
+          { "color": "Red", "code": "#FF4500" },
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      },
+      {
+        "name": "Super 100s",
+        "composition": "100% Super 100 Wool",
+        "description": "High-quality wool fabric with excellent durability and comfort.",
+        "img": "https://assets-global.website-files.com/5fb638ef16441f801761b4e1/5fb7ae85db3f05507f80120f_MAIN.jpeg",
+        "colors": [
+          { "color": "Red", "code": "#FF4500" },
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      },
+      {
+        "name": "Super 110s",
+        "composition": "100% Super 110 Wool",
+        "description": "High-quality wool fabric offering a perfect balance of comfort and durability.",
+        "img": "https://www.joelandsonfabrics.com/cdn/shop/files/21178d_385x.jpg?v=1688126139",
+        "colors": [
+          { "color": "Red", "code": "#FF4500" },
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      },
+      {
+        "name": "Super 130s",
+        "composition": "100% Super 130 Wool",
+        "description": "Extremely fine wool fabric for luxurious and comfortable suits.",
+        "img": "https://www.joelandsonfabrics.com/cdn/shop/files/23829dpurewoolsuper130_s_385x.jpg?v=1698435400",
+        "colors": [
+          { "color": "Red", "code": "#FF4500" },
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      }
+    ],
+    "gallery": [
+      "/images/blazer.svg",
+      "https://d1fufvy4xao6k9.cloudfront.net/images/lookbook/pitti-uomo-summer-23/dkt_8.2.jpg",
       "https://d1fufvy4xao6k9.cloudfront.net/looks/1484/DSC_0839-Edit%201.jpg",
       "https://d1fufvy4xao6k9.cloudfront.net/looks/1480/image00001%20(1)%201.jpg"
     ]
@@ -147,7 +219,7 @@ const products = [
 
   {
     name: "Classic Two Piece Toxedo",
-    price: 1299.99,
+    price: 1085.99,
     description: "A luxurious classic tuxedo that exudes sophistication and class. Perfect for black-tie events.",
     category: "suits",
     img: "https://dqp736wsu6w3m.cloudfront.net/s3bucket/w1000/looks/1687/black-tux-with-bow-tie-2024-06-04-14-34-42.jpg",
@@ -221,7 +293,7 @@ const products = [
 
   {
     name: "Classic Toxedo Package",
-    price: 1499.99,
+    price: 1385.00,
     description: "An elegantsuit tailored to perfection, ensuring you look your best on your special day. Suit comes fully equiped with multiple pieces.",
     category: "suits",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/1667/-2024-05-21-18-05-47.jpeg",
@@ -295,8 +367,66 @@ const products = [
   },
 
   {
+    name: "Deluxe Safari Shirt",
+    price: 210.00,
+    description: "A luxurious safari shirt designed for adventure and comfort, with a touch of elegance.",
+    category: "outwear",
+    img: "https://content.josephturner.co.uk/Original/mens-stone-safari-shirt-mcsafsstn_0.jpg",
+    styleOptions: [
+      "Safari Shortsleeve Shirt",
+      "Safari Longsleeve Shirt"
+    ],
+    materials: [
+      {
+        "name": "Over Coat",
+        "composition": "100% Wool",
+        "description": "Thick and warm fabric ideal for overcoats and winter wear.",
+        "img": "https://i.etsystatic.com/9202237/r/il/5bf289/4555300154/il_570xN.4555300154_gw5w.jpg",
+        "colors": [
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      },
+      {
+        "name": "Wrinkle Free",
+        "composition": "60% Cotton, 40% Polyester",
+        "description": "Easy-care fabric that resists wrinkles, perfect for travel and daily wear.",
+        "img": "https://www.ecotextile.com/images/stories/2014/February/smooth-fabric.jpg",
+        "colors": [
+          { "color": "Red", "code": "#FF4500" },
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      },
+      {
+        "name": "Super 130s",
+        "composition": "100% Super 130 Wool",
+        "description": "Extremely fine wool fabric for luxurious and comfortable suits.",
+        "img": "https://www.joelandsonfabrics.com/cdn/shop/files/23829dpurewoolsuper130_s_385x.jpg?v=1698435400",
+        "colors": [
+          { "color": "Red", "code": "#FF4500" },
+          { "color": "Navy", "code": "#1A2D5C" },
+          { "color": "Charcoal", "code": "#36454F" },
+          { "color": "Black", "code": "#282C35" },
+          { "color": "Grey", "code": "#A9A9A9" }
+        ]
+      },
+    ],
+    gallery: [
+      "https://d1azn61i9hwokk.cloudfront.net/product_images/big/1501151956_buy-safari-clothing-mens-rufiji-bugtechandtrade-safarielite-long-sleeve-safari-shirt-6.jpg",
+      "https://i.pinimg.com/736x/06/8e/c0/068ec02e13fb75e1afe945f9e0768285.jpg",
+      "https://i.pinimg.com/originals/9b/00/ef/9b00ef962234efb01cf0bb62fbf21d99.jpg",
+      "https://i0.wp.com/www.twentyfirstcenturygent.com/wp-content/uploads/2019/09/DSC08058.jpg?resize=1440%2C1800&ssl=1"
+    ]
+  },
+
+  {
     name: "Deluxe Safari Ensemble",
-    price: 299.99,
+    price: 370.00,
     description: "A luxurious safari ensemble designed for adventure and comfort, with a touch of elegance.",
     category: "outwear",
     img: "https://d1azn61i9hwokk.cloudfront.net/product_images/big/1501151956_buy-safari-clothing-mens-rufiji-bugtechandtrade-safarielite-long-sleeve-safari-shirt-6.jpg",
@@ -441,7 +571,7 @@ const products = [
 
   {
     name: "Classic Dress Shirts",
-    price: 210.00,
+    price: 175.00,
     description: "Elegant classic shirts, perfect for any occasion. Available in various fits and styles.",
     category: "shirts",
     img: "https://d1fufvy4xao6k9.cloudfront.net/looks/923/blue%20blazer%20black%20pants.jpg",
