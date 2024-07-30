@@ -3,6 +3,7 @@ import "./globals.css";
 import configurations from "@/_data/config";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
+import Locked from "./components/Utils/Locked";
 
 const tenor = Sora({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <Locked/>
       </body>
     </html>
   );
